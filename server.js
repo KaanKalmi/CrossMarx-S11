@@ -36,8 +36,6 @@ const sdgData = await fetchJson(apiUrl + '/hf_sdgs'),
     scoresData = await fetchJson(apiUrl + '/hf_scores'),
     companiesData = await fetchJson(apiUrl + '/hf_companies/2')
 
-console.log(companiesData.data.name)
-
 app.get('/', async function (request, response) {
     const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs', responseData = await fetchJson(apiUrl), data = responseData.data || [];
     response.render('index', { data });

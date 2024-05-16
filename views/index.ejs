@@ -1,14 +1,12 @@
 <%- include('partials/head') %>
-<main class="Login-page">
-    <section class="Login-form">
-        <h1>CrossmarX</h1>
+<div class="container-login">
+<section class="Login-form">
+        <h1>Crossmar <span>X</span></h1>
         <label for="username">Gebruikersnaam</label>
         <input type="text" id="username" name="u" placeholder="Voer uw gebruikersnaam in">
         <label for="password">Wachtwoord</label>
         <input type="password" id="password" name="p" placeholder="Voer uw wachtwoord in">
         <button class="login-btn">Log in</button>
-        <label for="onthoud-mij">Onthoud mij</label>
-        <input type="checkbox" id="onthoud-mij" name="onthoud-mij">
         <p>Heeft u nog geen account? <a href="/signup" style="color: green;" >Meld u hier aan</a>.</p>
 
         <footer>
@@ -27,16 +25,16 @@
         </footer>
     </section>
 
-    <section class="Login-side">
-        <h2>Welkom op de website van Handprint Footprint</h2>
-        <p>Op deze pagina kunt u zien hoe goed uw belanghebbenden het doen aan de hand het koppelen van scores aan de SDG's.</p>
-        <p>Log in om te zien hoe goed uw belanghebbenden het doen.</p>
-        <% data.forEach((item, index) => { %>
-            <img src="https://fdnd-agency.directus.app/assets/<%= item.icon %>" class="static-image" width="100" height="
-            100" alt="SDG <%= index + 1 %> ">
-          <% }); %>   
-    </section>
-</main>
+ <section class="Login-side">
+    <h2>Welkom op de website van Handprint Footprint</h2>
+    <p>Op deze pagina kunt u zien hoe goed uw belanghebbenden het doen aan de hand van het koppelen van scores aan de SDG's.</p>
+    <p>Log in om te zien hoe goed uw belanghebbenden het doen.</p> 
+    <% data.forEach((item, index) => { %>
+        <img src="https://fdnd-agency.directus.app/assets/<%= item.icon %>" class="static-image" width="75" height="75" alt="SDG <%= index + 1 %> ">
+    <% }); %>  
+</section>
+</div>
+
 
 
 
