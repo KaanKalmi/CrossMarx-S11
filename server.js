@@ -40,6 +40,7 @@ app.get('/', async function (request, response) {
         sdgs: sdgData.data,
         companies: companiesData.data });
 });
+
 app.post('/dashboard', async function (req, res) {
     const username = req.body.username;
 
@@ -53,5 +54,6 @@ app.post('/dashboard', async function (req, res) {
     });
 
     // Render the dashboard template and pass the posted username
-    res.render('dashboard', { username: username });
+    res.render('dashboard', { username: username, });
 });
+
