@@ -1,7 +1,12 @@
 /* General styles */
 :root {
     --primary-color: #ff5733; /* Updated primary color */
-    --text-color: #333; /* Dark gray */
+    --hover-color: #ff2f00; /* Hover color */
+    --background-gradient: linear-gradient(135deg, #1e1e2f, #252540); /* Dark gradient */
+    --text-color: #e0e0e0; /* Light gray */
+    --border-color: #444; /* Darker gray for borders */
+    --input-padding: 10px; /* Input padding */
+    --transition-duration: 0.3s; /* Transition duration */
 }
 
 html {
@@ -13,27 +18,31 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle, #f5f5f5, #dcdcdc); /* Light gray to darker gray */
+    background: var(--background-gradient);
 }
 
-/* Login and Signup form styles */
+/* Container styles */
 .container-register {
     display: flex;
     justify-content: center;
     height: 100vh;
 }
 
+/* Form styles */
 .Register-form,
 .Login-form {
     width: 100%;
-    max-width: 400px; /* Adjust max-width as needed */
+    max-width: 400px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     overflow-y: auto;
     box-sizing: border-box;
     height: 100vh;
-    margin-bottom: 20px; /* Add some space between forms */
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: #2b2b3c; /* Dark background for form */
 }
+
 
 .form-text-input {
     padding: 20px;
@@ -46,8 +55,8 @@ body {
 .Register-form h1,
 .Login-form h1 {
     font-size: 35px;
-    margin-top: 15px;
-    margin-bottom: 0;
+    margin: 15px 0 0;
+    color: var(--primary-color); /* Heading color */
 }
 
 h2 {
@@ -61,7 +70,7 @@ h3 {
 
 .Register-form span,
 .Login-form span {
-    color: var(--primary-color); /* Green */
+    color: var(--primary-color);
     font-size: 40px;
 }
 
@@ -69,35 +78,31 @@ h3 {
     color: var(--primary-color);
 }
 
+/* Input styles */
 input[type="text"],
 input[type="password"],
-input[type="email"] {
-    width: 100%;
-    padding: 7px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-/* Style the select box */
+input[type="email"],
 #companySelect {
     width: 100%;
-    padding: 7px;
+    padding: var(--input-padding);
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     box-sizing: border-box;
     font-size: 16px;
-  }
-  
-  /* Style the options */
-  #companySelect option {
-    font-size: 16px; /* Adjust font size if needed */
-  }
-  
+    background-color: #3b3b4d; /* Dark background for inputs */
+    color: var(--text-color); /* Light text color */
+    transition: border-color var(--transition-duration);
+}
 
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="email"]:hover,
+#companySelect:hover {
+    border-color: var(--primary-color);
+}
+
+/* Toggle password visibility */
 .toggle-password {
     position: absolute;
     right: 10px;
@@ -110,6 +115,7 @@ input[type="email"] {
     position: relative;
 }
 
+/* Button styles */
 .signup-btn,
 .register-btn {
     width: 100%;
@@ -120,30 +126,57 @@ input[type="email"] {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color var(--transition-duration), transform 0.2s;
+}
+
+.login-btn{
+    width: 30%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    transition: background-color var(--transition-duration), transform 0.2s;
 }
 
 .signup-btn:hover,
 .register-btn:hover {
-    background-color: #ff2f00;
-    transform: scale(1.05); /* Slightly increase size on hover */
+    background-color: var(--hover-color);
+    transform: scale(1.05);
 }
 
 .signup-btn:active,
 .register-btn:active {
-    transform: translateY(2px); /* Move button down 2px when clicked */
+    transform: translateY(2px);
 }
 
+.login-btn:hover{
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.login-btn:active{
+     transform: translateY(2px);
+}
+
+/* Label styles */
 label {
     display: block;
     text-align: left;
+    margin-bottom: 5px;
 }
 
+/* Footer styles */
 footer {
     text-align: center;
     padding: 20px 0;
+    background-color: #2b2b3c;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color);
 }
-
 
 .social-icons {
     list-style: none;
@@ -158,12 +191,17 @@ footer {
 .social-icons li a {
     color: var(--primary-color);
     font-size: 20px;
+    transition: color var(--transition-duration);
+}
+
+.social-icons li a:hover {
+    color: var(--hover-color);
 }
 
 .footer-bottom p {
     margin: 0;
     font-size: 14px;
-    color: #666;
+    color: #aaa;
 }
 
 /* Content side styles */
@@ -171,10 +209,9 @@ footer {
 .Login-side {
     margin: auto;
     text-align: center;
-    flex: 1; /* Occupy remaining space */
+    flex: 1;
     max-width: 800px;
 }
-
 
 .Register-form {
     position: absolute;
@@ -184,27 +221,27 @@ footer {
 
 .Login-form {
     position: relative;
-    z-index: 1; /* Ensure it's above the sign-up form */
-    transition: transform 1.5s ease; /* Smooth transition */
+    z-index: 1;
+    transition: transform 1.5s ease;
 }
 
 .Register-form {
-    transition: transform 1.5s ease, visibility 1.5s linear 1.5s; /* Smooth transition */
+    transition: transform 1.5s ease, visibility 1.5s linear 1.5s;
 }
 
 .Login-form {
-    transform: translateX(-500px); /* Initially off-screen to the right */
-    transition: transform 1.5s ease; /* Smooth transition */
+    transform: translateX(-500px);
+    transition: transform 1.5s ease;
 }
 
 .show {
-    transform: translateX(0); /* Move the login form into view */
+    transform: translateX(0);
 }
 
 .hide {
-    transform: translateY(-700px); /* Move the register form off-screen */
+    transform: translateY(-700px);
 }
 
 .hidden {
-    visibility: hidden; /* Hide the register form after delay */
+    visibility: hidden;
 }
