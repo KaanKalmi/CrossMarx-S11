@@ -1,0 +1,43 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+form input {
+    color: black;
+    background: none;
+    padding: 0.625rem;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+form span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: 0.624rem 0.625rem;
+    color: black;
+    background-color: white;
+    padding-inline: 0.25rem;
+    border: 2px solid transparent;
+    border-radius: 2.5px;
+    transition: translate 250ms, background-color 250ms, border-color 250ms;
+}
+
+form label:focus-within span,
+form:not(:has(:placeholder-shown)) label span {
+    translate: 0.625rem -.7rem;
+    border-color: black;
+}
+
+form ::placeholder {
+    color: transparent;
+}

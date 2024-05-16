@@ -1,3 +1,30 @@
 <%- include('partials/head') %>
 
-<%- include('partials/foot') %>
+    <main>
+        <h1> Login </h1>
+        <form action="">
+            <label>
+                <span>Company</span>
+                <input type="company" name="company" placeholder="Enter your Password" required>
+            </label>
+
+            <label>
+                <span>Username</span>
+                <input type="text" name="username" placeholder="Enter your Username" required>
+            </label>
+
+            <label>
+                <span>Password</span>
+                <input type="password" name="password" placeholder="Enter your Password" required>
+            </label>
+
+
+            <div class="button-wrap">
+                <button type="submit" onclick="solve()">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <%- include('partials/foot') %>
