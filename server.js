@@ -30,13 +30,28 @@ app.listen(app.get('port'), function () {
 
 // Stel het basis endpoint in
 const apiUrl = 'https://fdnd-agency.directus.app/items'
-
-const sdgData = await fetchJson(apiUrl + '/hf_sdgs'),
-    stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders?filter={"company_id":2}'),
-    scoresData = await fetchJson(apiUrl + '/hf_scores'),
-    companiesData = await fetchJson(apiUrl + '/hf_companies/2')
+const sdgData = await fetchJson(apiUrl + '/hf_sdgs')
+const scoresData = await fetchJson(apiUrl + '/hf_scores')
+const companiesData = await fetchJson(apiUrl + '/hf_companies')
 
 app.get('/', async function (request, response) {
     const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs', responseData = await fetchJson(apiUrl), data = responseData.data || [];
-    response.render('index', { data });
+    response.render('index', { data, 
+        sdgs: sdgData.data,
+        companies: companiesData.data });
+});
+app.post('/dashboard', async function (req, res) {
+    const username = req.body.username;
+
+    // Post company name to the API endpoint
+    await fetch(`${apiUrl}/hf_companies`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: username }),
+    });
+
+    // Render the dashboard template and pass the posted username
+    res.render('dashboard', { username: username });
 });

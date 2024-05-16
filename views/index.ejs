@@ -4,8 +4,12 @@
             <div class="form-text-input">
                 <h1>Crossmar<span>X</span></h1>
                 <h3>Login</h3>
-                <label for="username">Gebruikersnaam</label>
-                <input type="text" id="username" name="username" placeholder="Voer uw gebruikersnaam in" required>
+                <label for="companySelect">Selecteer een bedrijf:</label>
+<select id="companySelect" name="companySelect">
+    <% companies.forEach(function(company) { %>
+        <option value="<%= company.id %>"><%= company.name %></option>
+    <% }) %>
+</select>
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" placeholder="Voer uw e-mailadres in" required>
                 <label for="password">Wachtwoord</label>
@@ -40,6 +44,7 @@
             <div class="form-text-input">
                 <h1>Crossmar<span>X</span></h1>
                 <h3>Registreren</h3>
+                <form action="/dashboard" method="POST">
                 <label for="username">Gebruikersnaam</label>
                 <input type="text" id="username" name="username" placeholder="Voer uw gebruikersnaam in" required>
                 <label for="email">E-mail</label>
@@ -54,7 +59,9 @@
                     <input type="password" id="confirm-password" name="confirm-password" placeholder="Bevestig uw wachtwoord" required>
                     <i class="toggle-password fas fa-eye"></i>
                 </div>
+            
                 <button class="register-btn">Registreren</button>
+            </form>
                 <p>Heeft u al een account? <button class="login-btn">Login hier in</button>
                     <footer>
                         <div class="footer-main">
@@ -82,5 +89,10 @@
             <% }); %>  
         </section>
     </div>
+    <%- include('./partials/head', {current: 'dashboard'})%>
+<% companies.forEach(function(company) { %>
+    <li><a href="./<%= company.id %>"> <%= company.name %></a></li>
+<% }) %>
+
 </body>
 </html>

@@ -81,6 +81,23 @@ input[type="email"] {
     font-size: 16px;
 }
 
+/* Style the select box */
+#companySelect {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  /* Style the options */
+  #companySelect option {
+    font-size: 16px; /* Adjust font size if needed */
+  }
+  
+
 .toggle-password {
     position: absolute;
     right: 10px;
