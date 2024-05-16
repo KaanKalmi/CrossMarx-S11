@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-color: black;
+    background: radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
 }
 
 main {
@@ -26,7 +26,6 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: black;
     height: 29rem;
     width: 100%;
     border-radius: 0 0 5px 5px;
@@ -35,7 +34,7 @@ main {
 h1 {
     font-family: "Rubik", sans-serif;
     font-size: 3rem;
-    color: lightcoral;
+    color: orange;
     margin: 1rem 1rem 1.5rem 1rem;
 }
 
