@@ -1,30 +1,51 @@
 <%- include('partials/head') %>
 
     <main>
-        <h1> Login </h1>
-        <form action="">
-            <label>
-                <span>Company</span>
-                <input type="company" name="company" placeholder="Enter your Password" required>
-            </label>
 
-            <label>
-                <span>Username</span>
-                <input type="text" name="username" placeholder="Enter your Username" required>
-            </label>
+        <article class="content">
+            <h1> Welkom </h1>
+            <p>
+                Welcome to the SDG Impact Calculator! This tool will help you assess your environmental footprint and
+                your positive handprint on the world. <br> <br> By understanding both your footprint and handprint, you
+                can make informed choices to live more sustainably.
+            </p>
+            <a href="#login" class="scroll-button">
+                <div class="scroll-wrap">
+                    <?xml version="1.0" ?><svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+                        <title />
+                        <path
+                            d="M81.8457,25.3876a6.0239,6.0239,0,0,0-8.45.7676L48,56.6257l-25.396-30.47a5.999,5.999,0,1,0-9.2114,7.6879L43.3943,69.8452a5.9969,5.9969,0,0,0,9.2114,0L82.6074,33.8431A6.0076,6.0076,0,0,0,81.8457,25.3876Z" />
+                    </svg>
+                </div>
+            </a>
+        </article>
 
-            <label>
-                <span>Password</span>
-                <input type="password" name="password" placeholder="Enter your Password" required>
-            </label>
+        <section class="login" id="login">
+            <h2> Login </h2>
+            <form action="post">
+                <label>
+                    <span>Company</span>
+                    <input type="text" name="company" placeholder="Enter your Password" required>
+                </label>
+
+                <label>
+                    <span>Username</span>
+                    <input type="text" name="username" placeholder="Enter your Username" required>
+                </label>
+
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password" placeholder="Enter your Password" required>
+                </label>
 
 
-            <div class="button-wrap">
-                <button type="submit" onclick="solve()">
-                    Submit
-                </button>
-            </div>
-        </form>
+                <div class="button-wrap">
+                    <button type="submit" onclick="solve()">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </section>
     </main>
 
     <%- include('partials/foot') %>
