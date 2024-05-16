@@ -1,41 +1,77 @@
 <%- include('partials/head') %>
-    <div class="container-register">
+    <div class="container-register" id="container-register">
+        <section class="Login-form">
+            <div class="form-text-input">
+                <h1>Crossmar<span>X</span></h1>
+                <h3>Login</h3>
+                <label for="username">Gebruikersnaam</label>
+                <input type="text" id="username" name="username" placeholder="Voer uw gebruikersnaam in" required>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Voer uw e-mailadres in" required>
+                <label for="password">Wachtwoord</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder="Voer uw wachtwoord in" required>
+                    <i class="toggle-password fas fa-eye"></i>
+                </div>
+                <label for="confirm-password">Bevestig wachtwoord</label>
+                <div class="password-container">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Bevestig uw wachtwoord" required>
+                    <i class="toggle-password fas fa-eye"></i>
+                </div>
+                <button class="signup-btn">Login</button>
+                    <footer>
+                        <div class="footer-main">
+                            <ul class="social-icons">
+                                <li><a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 Handprint Footprint. All rights reserved.</p>
+                        </div>
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+                    </footer>
+            </div>
+            
+        </section>
         <section class="Register-form">
             <div class="form-text-input">
                 <h1>Crossmar<span>X</span></h1>
                 <h3>Registreren</h3>
                 <label for="username">Gebruikersnaam</label>
-                <input type="text" id="username" name="username" placeholder="Voer uw gebruikersnaam in">
+                <input type="text" id="username" name="username" placeholder="Voer uw gebruikersnaam in" required>
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="Voer uw e-mailadres in">
+                <input type="email" id="email" name="email" placeholder="Voer uw e-mailadres in" required>
                 <label for="password">Wachtwoord</label>
                 <div class="password-container">
-                    <input type="password" id="password" name="password" placeholder="Voer uw wachtwoord in">
+                    <input type="password" id="password" name="password" placeholder="Voer uw wachtwoord in" required>
                     <i class="toggle-password fas fa-eye"></i>
                 </div>
                 <label for="confirm-password">Bevestig wachtwoord</label>
                 <div class="password-container">
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Bevestig uw wachtwoord">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Bevestig uw wachtwoord" required>
                     <i class="toggle-password fas fa-eye"></i>
                 </div>
-                
-                <button class="signup-btn">Registreren</button>
+                <button class="register-btn">Registreren</button>
                 <p>Heeft u al een account? <button class="login-btn">Login hier in</button>
+                    <footer>
+                        <div class="footer-main">
+                            <ul class="social-icons">
+                                <li><a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 Handprint Footprint. All rights reserved.</p>
+                        </div>
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+                    </footer>
             </div>
-            <footer>
-                <div class="footer-main">
-                    <ul class="social-icons">
-                        <li><a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="https://linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2024 Handprint Footprint. All rights reserved.</p>
-                </div>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-            </footer>
+            
         </section>
         <section class="Register-side">
             <h2>Welkom op de website van <span>Handprint Footprint</span></h2>
@@ -46,6 +82,5 @@
             <% }); %>  
         </section>
     </div>
-</div>
 </body>
 </html>
