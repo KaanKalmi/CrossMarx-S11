@@ -89,10 +89,5 @@
             <% }); %>  
         </section>
     </div>
-    <%- include('./partials/head', {current: 'dashboard'})%>
-<% companies.forEach(function(company) { %>
-    <li><a href="./<%= company.id %>"> <%= company.name %></a></li>
-<% }) %>
-
 </body>
 </html>
