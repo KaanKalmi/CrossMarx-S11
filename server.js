@@ -32,9 +32,9 @@ app.listen(app.get('port'), function () {
 const apiUrl = 'https://fdnd-agency.directus.app/items'
 
 const sdgData = await fetchJson(apiUrl + '/hf_sdgs'),
-    stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders?filter={"company_id":2}'),
+    stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders?filter={"company_id":4}'),
     scoresData = await fetchJson(apiUrl + '/hf_scores'),
-    companiesData = await fetchJson(apiUrl + '/hf_companies/2')
+    companiesData = await fetchJson(apiUrl + '/hf_companies/4')
 
 console.log(companiesData.data.name)
 

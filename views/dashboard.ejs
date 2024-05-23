@@ -1,1 +1,41 @@
 <%- include('partials/head') %>
+<header> <h1>Overview</h1> </header>
+<section class="company-summary">
+    <div class="company-information">
+        <h2><%= company.name %> </h2>
+            <p><%= company.type %></p>
+        <picture>
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=avif&height=450&width=450" type="image/avif">
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=webp&height=450&width=450" type="image/webp">
+            <img src="https://fdnd-agency.directus.app/assets/<%= company.logo %>" height="450" width="450">
+        </picture>
+    </div>
+    <div class="profile-status">
+        <progress> <!--Maak hier huisje van--></progress>
+    </div>
+</section>
+<article class="company-status">
+    <progress> <!--Maak hier plantenbakje van--></progress>
+</article>
+<section class="stakeholders-list">
+<article class="stakeholder">
+    <div class="stakeholder-information">
+        <h2><%= stakeholder.name %></h2>
+        <p><%= stakeholder.role %></p>
+    </div>
+    <div class="stakeholder-status">
+        <progress> <!--Maak hier boompje van--></progress>
+    </div>
+    <div class="sdg-list">
+        <ul>
+            <% sdgs.forEach(sdg => { %>
+                <li> <picture>
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=avif&height=125&width=125" type="image/avif">
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=webp&height=125&width=125" type="image/webp">
+                    <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>" height="55" width="125" alt="<%= sdg.title %>">
+                </picture></li>
+            <% }) %>
+        </ul>
+    </div>
+</article>
+</section>
