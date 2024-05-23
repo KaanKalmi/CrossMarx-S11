@@ -410,8 +410,9 @@ main {
 
  .SDG-button-container{
     display: flex;
-    bottom: 0;
-    right: 0;
+    justify-content: space-between;
+    row-gap: 10px; 
+    column-gap: 50px; 
  }
 
  @media screen and (min-width: 48em) {
@@ -421,6 +422,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1200px;
     margin: 0 auto;
   }
   
@@ -434,12 +436,14 @@ main {
   }
 
   .SDG-pagina-text{
+    max-width: 1200px;
     h1{
         font-size: 3em;
     }
     p{
         font-size: 1.5em;
     }
+
   }
 
   .sdgs-login {
@@ -457,16 +461,11 @@ main {
     width: 150px; /* Set the desired width */
     height: 150px; /* Set the desired height */
     box-sizing: border-box;
-    overflow: hidden; /* Ensure images don't overflow their containers */
-    position: relative; /* Position for pseudo-elements */
   }
 
-  .sdg-label picture,
   .sdg-label img {
-    width: 100%; /* Ensure the image fills its container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any default inline display */
-    outline: 2px solid var(--text-color);
+    width: 100%; 
+    height: auto; 
   }
 
   /* Add visual styles for the selected state */
@@ -475,8 +474,8 @@ main {
     color: green;
     font-size: 24px;
     position: absolute;
-    top: 85%;
-    left: 85%;
+    top: 20%;
+    left: 90%;
     transform: translate(-50%, -50%);
     z-index: 1; 
   }
