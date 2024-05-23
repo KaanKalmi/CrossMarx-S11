@@ -411,9 +411,11 @@ main {
  .SDG-button-container{
     display: flex;
     justify-content: space-between;
+    margin-top: 20px; /* Voeg een marge boven de container toe om wat ruimte te creëren */
  }
 
- .overslaan-button{
+ .overslaan-button,
+ .submit-button{
     background-color: #28a745; /* Heldere groene kleur */
     color: white;
     padding: 15px 30px;
@@ -421,27 +423,6 @@ main {
     border-radius: 8px;
     font-size: 16px;
     margin-left: 10px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 5px #1c7430; /* Schaduw voor 3D effect */
-    transition: all 0.2s ease-in-out;
-    outline: none;
-  }
-  
-  .overslaan-button:active {
-    background-color: #218838; /* Donkere groene kleur bij klikken */
-    box-shadow: 0 2px #1c7430;
-    transform: translateY(4px); /* Simuleert klikgevoel */
-  }
-
-  .submit-button{
-    background-color: #28a745; /* Heldere groene kleur */
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
     margin-right: 10px;
     margin-bottom: 20px;
     font-weight: bold;
@@ -449,13 +430,14 @@ main {
     box-shadow: 0 5px #1c7430; /* Schaduw voor 3D effect */
     transition: all 0.2s ease-in-out;
     outline: none;
-  }
+ }
 
-  .submit-button:active{
+ .overslaan-button:active,
+ .submit-button:active{
     background-color: #218838; /* Donkere groene kleur bij klikken */
     box-shadow: 0 2px #1c7430;
     transform: translateY(4px); /* Simuleert klikgevoel */
-  }
+ }
  @media screen and (min-width: 48em) {
    
   .SDGs{
@@ -531,5 +513,4 @@ main {
   }
 
  }
-
 
