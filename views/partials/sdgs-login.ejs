@@ -1,7 +1,7 @@
 <div class="sdgs-login">
     <% sdgs.forEach(function(sdg) { %>
-        <label>
-            <input type="checkbox" name="sdg-selection" value="<%= sdg.id %>">
+        <label class="sdg-label">
+            <input type="checkbox" name="sdg-selection" value="<%= sdg.id %>" class="visually-hidden">
             <picture>
               <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon.id %>?format=avif" type="image/avif">
               <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon.id %>?format=webp" type="image/webp">
