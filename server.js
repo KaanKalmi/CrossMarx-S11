@@ -46,3 +46,12 @@ app.get('/', function (request, response) {
         company: companiesData.data,
     })
 })
+
+app.get('/sdg', function (request, response) {
+    response.render('sdg', {
+        sdgs: sdgData.data,
+        stakeholder: stakeholdersData.data,
+        score: scoresData.data,
+        company: companiesData.data,
+    })
+})
