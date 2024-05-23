@@ -22,7 +22,7 @@
 
 body {
     margin: 0;
-    background: radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
+    background: var(--bg-color);
     color: var(--text-color);
     font-family: var(--body-font);
 }
@@ -329,7 +329,6 @@ main {
     h1 {
         margin-bottom: .25em;
         font-size: 1.4em;
-        line-height: 1.2;
         font-family: var(--heading);
     }
 
@@ -350,9 +349,14 @@ main {
     border-bottom: 1px solid var(--text-color);
 }
 
-.SDGs{
-    padding: 5px;
-    text-decoration: none;
+.sdgs-login{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px; /* Adjust the vertical gap */
+    column-gap: 10px; /* Adjust the horizontal gap */
 }
 
 .visually-hidden {
@@ -403,3 +407,89 @@ main {
     content: none;
   }
   
+
+ .SDG-button-container{
+    display: flex;
+    bottom: 0;
+    right: 0;
+ }
+
+ @media screen and (min-width: 48em) {
+   
+  .SDGs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .SDG-pagina{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    margin-top: 75px;
+  }
+
+  .SDG-pagina-text{
+    h1{
+        font-size: 3em;
+    }
+    p{
+        font-size: 1.5em;
+    }
+  }
+
+  .sdgs-login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px; /* Adjust the vertical gap */
+    column-gap: 10px; /* Adjust the horizontal gap */
+  }
+
+  .sdg-label {
+    display: inline-block;
+    cursor: pointer;
+    width: 150px; /* Set the desired width */
+    height: 150px; /* Set the desired height */
+    box-sizing: border-box;
+    overflow: hidden; /* Ensure images don't overflow their containers */
+    position: relative; /* Position for pseudo-elements */
+  }
+
+  .sdg-label picture,
+  .sdg-label img {
+    width: 100%; /* Ensure the image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any default inline display */
+    outline: 2px solid var(--text-color);
+  }
+
+  /* Add visual styles for the selected state */
+  .sdg-label input:checked + .sdg-picture::after {
+    content: '✓';
+    color: green;
+    font-size: 24px;
+    position: absolute;
+    top: 85%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+  }
+
+  /* Hide the checkmark when input is not checked */
+  .sdg-label input:not(:checked) + .sdg-picture::after {
+    content: none;
+  }
+
+  .sdg-label input:checked + picture img {
+    outline: 2px solid var(--text-color);
+  }
+
+ }
+
+
