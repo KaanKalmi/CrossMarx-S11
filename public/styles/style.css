@@ -355,7 +355,6 @@ main {
     text-decoration: none;
 }
 
-/* Hide the checkbox visually but keep it accessible */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -367,21 +366,40 @@ main {
     white-space: nowrap;
     border: 0;
   }
+
+  .sdg-picture {
+    position: relative;
+  }
+  
   
 .sdg-label {
     display: inline-block;
     cursor: pointer;
-    width: 100px; /* Set the desired width */
-    height: 100px; /* Set the desired height */
-    box-sizing: border-box; /* Include padding and border in the dimensions */
-    padding: 0; /* Remove any default padding */
-    border: none; /* Remove any default border */
+    width: 100px; 
+    height: 100px; 
+    box-sizing: border-box;
+    padding: 0; 
+    border: none;
   }
   
-  
-  /* Add visual styles for the selected state */
+
   .sdg-label input:checked + picture img {
-    /* Add your desired styles for the selected state */
     outline: 2px solid var(--text-color);
+  }
+  
+  .sdg-label input:checked + .sdg-picture::after {
+    content: '✓';
+    color: green;
+    font-size: 24px;
+    position: absolute;
+    top: 10%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+  }
+  
+
+  .sdg-label input:not(:checked) + .sdg-picture::after {
+    content: none;
   }
   
