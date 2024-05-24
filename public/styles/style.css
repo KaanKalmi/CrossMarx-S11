@@ -397,6 +397,7 @@ main {
   .sdg-label input:checked + .sdg-picture::after {
     content: '✓';
     color: green;
+
     position: absolute;
     top: 10%;
     left: 85%;
