@@ -401,6 +401,7 @@ main {
     transform: translate(-50%, -50%);
     z-index: 1; 
   }
+
   
 
   .sdg-label input:not(:checked) + .sdg-picture::after {
