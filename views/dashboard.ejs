@@ -9,12 +9,12 @@
 
 <section class="company-summary" id="company-summary">
     <div class="company-information">
-        <h2><%= company.name %> </h2>
         <picture>
-            <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=avif&height=100&width=375" type="image/avif">
-            <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=webp&height=100&width=375" type="image/webp">
-            <img src="https://fdnd-agency.directus.app/assets/<%= company.logo %>" height="100" width="375">
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=avif&height=75&width=275" type="image/avif">
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=webp&height=75&width=275" type="image/webp">
+            <img src="https://fdnd-agency.directus.app/assets/<%= company.logo %>" height="75" width="275">
         </picture>
+        <p> Our slogan blablabla this is us </p>
     </div>
     <div class="profile-status">
         <label><progress class="profile-status-bar" max="100" value="60"></progress></label>
@@ -26,7 +26,7 @@
 </article>
 <!-- 
 <section class="stakeholders-list" id="stakeholders-list">
-    <h3>Stakeholders</h3>
+    <h2>Stakeholders</h2>
     <% stakeholder.forEach(stakeholder => { %>
 <article class="stakeholder">
     <div class="stakeholder-information">

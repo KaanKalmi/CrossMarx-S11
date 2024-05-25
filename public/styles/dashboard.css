@@ -1,7 +1,6 @@
 @import url(style.css);
 
 /* LAYOUT */
-
 main {
     display: grid;
     grid-template-areas:

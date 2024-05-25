@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,62.5,300&display=swap');
+@import url(nav.css);
 
 :root{
     --bg-color:radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
@@ -14,11 +15,13 @@
     --shadow:2px -2px 8px hsl(249, 91%, 9%);
 }
 
-
 body {
     box-sizing: border-box;
     margin: 0;
     background: radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
     color: var(--text-color);
     font-family: var(--body-font);
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
 }
