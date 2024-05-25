@@ -1,43 +1,54 @@
 @import url(style.css);
 
 nav {
-    position: fixed;
-    top: 40%;
-    transition: 0.4s;
-    background: black;
-    width: 50px;
-    height: 145px;
-    overflow: hidden;
+    display: flex;
+    position: sticky;
+    top: 30%;
+    flex-direction: column;
+    border-radius: 0 12px 12px 0;
+    background: #1a0835;
+    padding: 1em 0;
+    width: 125px;
+    height: 250px;
+    color: var(--text-color);
+}
+
+.nav-links {
+    margin-top: 1em;
+    width: 100%;
 
     ul {
-        top: 0;
-        left: 0;
-        margin:auto;
-        width: 100%;
-        line-height: 1.5em;
-        font-family: var(--heading);
+        display: flex;
+        position: relative;
+        column-gap: 0.5em;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
 
-        li {
-            transition: 1s;
-            width: 100%;
-            list-style: none;
-
-            :hover {
-                background: var(--accent);
-                padding: 4px;
-            }
+    li {
+        svg {
+            stroke: var(--text-color);
+            width: 1.75em;
+            height: 1.75em;
         }
 
         a {
-            display: block;
             display: flex;
-            width: 100%;
+            flex-grow: 1;
+            justify-content: center;
+            align-items: center;
+            gap: 1.75em;
+            padding: 0 1em;
+            height: 3.5em;
             color: var(--text-color);
+            font-size: 1.25em;
             text-decoration: none;
         }
+        
+        a:hover { color: #95c5fc; 
+            svg { stroke: #95c5fc; color: #95c5fc; }
+        }
     }
-}
-
-nav:hover, nav.active {
-    width: 175px;
 }
