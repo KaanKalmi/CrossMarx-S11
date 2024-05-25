@@ -1,4 +1,13 @@
 @import url(style.css);
 
+/* LAYOUT */
 
+main {
+    display: grid;
+    grid-template-areas:
+        "head head head"
+        "company company company"
+        "profile profile profile"
+        "stakeholder stakeholder stakeholder";
+}
 

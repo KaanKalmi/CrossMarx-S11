@@ -1,24 +1,30 @@
 <%- include('partials/head') %>
+<%- include('partials/nav') %>
 <main>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+
 <header> 
     <h1>Overview</h1>
 </header>
+
 <section class="company-summary" id="company-summary">
     <div class="company-information">
         <h2><%= company.name %> </h2>
         <picture>
-            <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=avif&height=450&width=450" type="image/avif">
-            <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=webp&height=450&width=450" type="image/webp">
-            <img src="https://fdnd-agency.directus.app/assets/<%= company.logo %>" height="450" width="450">
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=avif&height=100&width=375" type="image/avif">
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=webp&height=100&width=375" type="image/webp">
+            <img src="https://fdnd-agency.directus.app/assets/<%= company.logo %>" height="100" width="375">
         </picture>
     </div>
     <div class="profile-status">
-        <progress> <!--Maak hier huisje van--></progress>
+        <label><progress class="profile-status-bar" max="100" value="60"></progress></label>
     </div>
 </section>
+
 <article class="company-status">
-    <progress> <!--Maak hier plantenbakje van--></progress>
+    <label>Your company score<progress class="points" max="100" value="40"></progress></label>
 </article>
+<!-- 
 <section class="stakeholders-list" id="stakeholders-list">
     <h3>Stakeholders</h3>
     <% stakeholder.forEach(stakeholder => { %>
@@ -28,7 +34,7 @@
         <p><%= stakeholder.type %></p>
     </div>
     <div class="stakeholder-status">
-        <progress> <!--Maak hier boompje van--></progress>
+        <progress></progress>
     </div>
     <div class="sdg-list">
         <ul>
@@ -44,8 +50,9 @@
 </article>
 <% }); %>
 <article>
-    <a href="#"> <svg> <!--HIER KOMT EEN PLUS ICON--></svg></a>
+    <a href="#"></a>
 </article>
-</section>
+</section> -->
+
 </main>
 <%- include('partials/foot') %>
