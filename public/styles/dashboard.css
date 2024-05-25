@@ -11,3 +11,127 @@ main {
         "stakeholder stakeholder stakeholder";
 }
 
+header {
+    grid-area: head;
+    font-size: 1.2em;
+    font-family: var(--heading);
+    letter-spacing: .9em;
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 15px;
+    text-decoration-skip-ink: none;
+    text-underline-offset: -15px;
+    text-transform: uppercase;
+}
+
+.company-summary {
+    display: grid;
+    grid-template-areas:
+        "info info status";
+    grid-area: company;
+    margin: auto;
+    border-radius: var(--object-radius);
+    background-color: #424242a6;
+    backdrop-filter: blur(1000px);
+    box-shadow: var(--shadow);
+    width: 70%;
+    height: 350px;
+
+    .company-information {
+        grid-area: info;
+        padding: 1em;
+        h2 {
+            margin-left: 2em;
+            text-align: left;
+        }
+    }
+
+    .profile-status {
+        grid-area: status;
+        text-align: right;
+        margin-right: 1em;
+        margin-top: 1em;
+    }
+}
+
+.company-status {
+    grid-area: profile;
+    text-align: center;
+    margin: auto;
+    padding: 2em;
+}
+
+.stakeholders-list {
+    grid-area: stakeholder;
+}
+
+/* STATUS BARS */
+.profile-status-bar[value] {
+    --w:120px;
+    --color:
+        linear-gradient(red 0 0) 0 /calc(var(--w)*.3 - 100%) 1px,
+        linear-gradient(orange 0 0) 0 /calc(var(--w)*.6 - 100%) 1px,
+        green;
+    --background: white;
+
+    position: absolute;
+    transform: rotate(-90deg);
+    appearance: none;
+    mask: radial-gradient(#0000 59%, #000 60% 70%, #0000 71%);
+    border-radius: 50%;
+    background: var(--background);
+    width: 60%;
+    height: 60%;
+    overflow: hidden
+}
+
+.profile-status label {
+    --w: 120px;
+    display: inline-grid;
+    position: relative;
+    place-content: center;
+    aspect-ratio: 1;
+    width: var(--w);
+    font-family: var(--heading);
+}
+
+.points[value] {
+    --w: 12em;
+    --color:
+        linear-gradient(red 0 0) 0 /calc(var(--w)*.3 - 100%) 1px,
+        linear-gradient(orange 0 0) 0 /calc(var(--w)*.6 - 100%) 1px,
+        green;
+    --background: lightgrey;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-mask:
+        radial-gradient(circle closest-side, #000 98%, #0000 102%) 0/12.5% 100%,
+        linear-gradient(90deg, #000 50%, #0000 0) 8%/25% 100%;
+    appearance: none;
+    mask: radial-gradient(circle closest-side, #000 98%, #0000 102%) 0/12.5% 100%,
+        linear-gradient(90deg, #000 50%, #0000 0) 8%/25% 100%;
+    margin: 0 10px;
+    border: none;
+    background: var(--background);
+    width: var(--w)
+}
+
+.points[value]::-webkit-progress-bar {
+    background: var(--background);
+}
+
+.points[value]::-webkit-progress-value {
+    background: var(--color);
+}
+
+.points[value]::-moz-progress-bar {
+    background: var(--color);
+}
+
+.company-status label {
+    display: block;
+    margin: 20px 0;
+    font-family: var(--heading);
+}
