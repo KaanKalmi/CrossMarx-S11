@@ -18,6 +18,7 @@
     <progress> <!--Maak hier plantenbakje van--></progress>
 </article>
 <section class="stakeholders-list">
+    <h3>Supplier</h3>
 <article class="stakeholder">
     <div class="stakeholder-information">
         <h2><%= stakeholder.name %></h2>
@@ -30,12 +31,41 @@
         <ul>
             <% sdgs.forEach(sdg => { %>
                 <li> <picture>
-                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=avif&height=125&width=125" type="image/avif">
-                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=webp&height=125&width=125" type="image/webp">
-                    <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>" height="55" width="125" alt="<%= sdg.title %>">
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=avif&height=75&width=75" type="image/avif">
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=webp&height=75&width=75" type="image/webp">
+                    <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>" height="75" width="75" alt="<%= sdg.title %>">
                 </picture></li>
             <% }) %>
         </ul>
     </div>
+</article>
+<article>
+    <a href="#"> <svg> <!--HIER KOMT EEN PLUS ICON--></svg></a>
+</article>
+</section>
+<section class="stakeholders-list">
+    <h3>Clients</h3>
+<article class="stakeholder">
+    <div class="stakeholder-information">
+        <h2><%= stakeholder.name %></h2>
+        <p><%= stakeholder.role %></p>
+    </div>
+    <div class="stakeholder-status">
+        <progress> <!--Maak hier boompje van--></progress>
+    </div>
+    <div class="sdg-list">
+        <ul>
+            <% sdgs.forEach(sdg => { %>
+                <li> <picture>
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=avif&height=75&width=75" type="image/avif">
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=webp&height=75&width=75" type="image/webp">
+                    <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>" height="75" width="75" alt="<%= sdg.title %>">
+                </picture></li>
+            <% }) %>
+        </ul>
+    </div>
+</article>
+<article>
+    <a href="#"> <svg> <!--HIER KOMT EEN PLUS ICON--></svg></a>
 </article>
 </section>
