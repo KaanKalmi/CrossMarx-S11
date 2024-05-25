@@ -1,9 +1,11 @@
 <%- include('partials/head') %>
-<header> <h1>Overview</h1> </header>
-<section class="company-summary">
+<main>
+<header> 
+    <h1>Overview</h1>
+</header>
+<section class="company-summary" id="company-summary">
     <div class="company-information">
         <h2><%= company.name %> </h2>
-            <p><%= company.type %></p>
         <picture>
             <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=avif&height=450&width=450" type="image/avif">
             <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=webp&height=450&width=450" type="image/webp">
@@ -17,13 +19,13 @@
 <article class="company-status">
     <progress> <!--Maak hier plantenbakje van--></progress>
 </article>
-<section class="stakeholders-list">
-    <h3>Supplier</h3>
+<section class="stakeholders-list" id="stakeholders-list">
+    <h3>Stakeholders</h3>
     <% stakeholder.forEach(stakeholder => { %>
 <article class="stakeholder">
     <div class="stakeholder-information">
         <h2><%= stakeholder.name %></h2>
-        <p><%= stakeholder.role %></p>
+        <p><%= stakeholder.type %></p>
     </div>
     <div class="stakeholder-status">
         <progress> <!--Maak hier boompje van--></progress>
@@ -45,3 +47,5 @@
     <a href="#"> <svg> <!--HIER KOMT EEN PLUS ICON--></svg></a>
 </article>
 </section>
+</main>
+<%- include('partials/foot') %>

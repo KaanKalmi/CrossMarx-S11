@@ -1,0 +1,46 @@
+@import url(style.css);
+
+nav {
+    position: fixed;
+    top: 40%;
+    transition: 0.4s;
+    background: black;
+    width: 50px;
+    height: 145px;
+    overflow: hidden;
+
+    ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin:auto;
+        width: 100%;
+        line-height: 1.5em;
+        font-family: var(--heading);
+
+        li {
+            position: relative;
+            transition: 1s;
+            width: 100%;
+            list-style: none;
+
+            :hover {
+                background: var(--accent);
+                padding: 4px;
+            }
+        }
+
+        a {
+            display: block;
+            display: flex;
+            position: relative;
+            width: 100%;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+    }
+}
+
+nav:hover, nav.active {
+    width: 175px;
+}
