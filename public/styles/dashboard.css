@@ -86,10 +86,11 @@ header {
     height: 350px;
     width: 350px;
     overflow: hidden;
-    margin: .2em;
+    margin: 8px;
+    padding: 16px;
 
     .sdg-list{
-        margin-top: 4em;
+        margin-top: 40px;
         margin-inline: 16px;
         overflow-x: scroll;
         ul{
