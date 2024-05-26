@@ -32,6 +32,11 @@
 <article class="stakeholder">
     <div class="stakeholder-background"></div>
     <div class="stakeholder-information">
+        <picture>
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= stakeholder.avatar %>?format=avif&height=75&width=75" type="image/avif">
+            <source srcset="https://fdnd-agency.directus.app/assets/<%= stakeholder.avatar %>?format=webp&height=75&width=75" type="image/webp">
+            <img src="https://fdnd-agency.directus.app/assets/<%= stakeholder.avatar %>" height="75" width="75">
+        </picture>
         <h3><%= stakeholder.name %></h3>
         <p><%= stakeholder.type %></p>
     </div>

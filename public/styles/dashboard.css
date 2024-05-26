@@ -101,8 +101,13 @@ header {
         width: 100%;
         height: 100%;
     }
-
-    .stakeholder-status{ margin-top: 2em; margin-inline: 3em; }
+    .stakeholder-information{
+       float: right;
+            h3{ margin: 0; }
+            p{text-align: right;}
+            img{ border-radius: 12px 0 0 0 ; position: absolute; top: 0; left: 0; }
+    }
+    .stakeholder-status{ margin-top: 40%; }
 
     .sdg-list{
         margin-top: 40px;
