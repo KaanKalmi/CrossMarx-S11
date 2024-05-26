@@ -16,12 +16,11 @@
 }
 
 body {
+    display: flex;
     box-sizing: border-box;
     margin: 0;
     background: radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
     color: var(--text-color);
     font-family: var(--body-font);
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
+    scroll-behavior: smooth;
 }

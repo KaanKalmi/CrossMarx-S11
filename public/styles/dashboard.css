@@ -8,6 +8,8 @@ main {
         "company company company"
         "profile profile profile"
         "stakeholder stakeholder stakeholder";
+    width: 90%;
+    height: 100%;
 }
 
 header {
@@ -17,7 +19,7 @@ header {
     letter-spacing: .9em;
     text-align: center;
     text-decoration-line: underline;
-    text-decoration-color: var(--accent);
+    text-decoration-color: var(--accent-text-color);
     text-decoration-thickness: 15px;
     text-decoration-skip-ink: none;
     text-underline-offset: -15px;
@@ -29,17 +31,18 @@ header {
     grid-template-areas:
         "info info status";
     grid-area: company;
+    backdrop-filter: blur(1000px);
     margin: auto;
+    box-shadow: var(--shadow);
     border-radius: var(--object-radius);
     background-color: #424242a6;
-    backdrop-filter: blur(1000px);
-    box-shadow: var(--shadow);
     width: 70%;
     height: 350px;
 
     .company-information {
         grid-area: info;
         padding: 1em;
+
         h2 {
             margin-left: 2em;
             text-align: left;
@@ -48,17 +51,17 @@ header {
 
     .profile-status {
         grid-area: status;
-        text-align: right;
-        margin-right: 1em;
         margin-top: 1em;
+        margin-right: 1em;
+        text-align: right;
     }
 }
 
 .company-status {
     grid-area: profile;
-    text-align: center;
     margin: auto;
     padding: 2em;
+    text-align: center;
 }
 
 .stakeholders-list {
@@ -67,7 +70,7 @@ header {
 
 /* STATUS BARS */
 .profile-status-bar[value] {
-    --w:120px;
+    --w: 120px;
     --color:
         linear-gradient(red 0 0) 0 /calc(var(--w)*.3 - 100%) 1px,
         linear-gradient(orange 0 0) 0 /calc(var(--w)*.6 - 100%) 1px,
