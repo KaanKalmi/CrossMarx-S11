@@ -3,23 +3,23 @@
 @import url(nav.css);
 
 :root{
-    --bg-color:radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
+    --bg-color:#242424;
     --text-color:#f8f8f8;
-    --accent-text-color:#242424;
+    --accent-text-color:#447560;
     --accent:#067545;
     --heading: "roboto mono", Arial, Helvetica, sans-serif;
     --body-font: "roboto serif", Arial, Helvetica, sans-serif;
     --btn-radius:8px;
     --btn-padding:6px;
     --object-radius:12px;
-    --shadow:2px -2px 8px hsl(249, 91%, 9%);
+    --shadow:2px -2px 8px hsl(0, 0%, 8%);
 }
 
 body {
     display: flex;
     box-sizing: border-box;
     margin: 0;
-    background: radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
+    background: var(--bg-color);
     color: var(--text-color);
     font-family: var(--body-font);
     scroll-behavior: smooth;
