@@ -88,6 +88,10 @@ header {
     height: 300px;
     overflow: hidden;
 
+    .stakeholder-status{
+        margin-top: 2em;
+        margin-inline: 3em;
+    }
     .sdg-list{
         margin-top: 40px;
         margin-inline: 16px;
