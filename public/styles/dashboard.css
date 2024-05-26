@@ -111,8 +111,8 @@ header {
 
     .sdg-list{
         margin-top: 40px;
-        margin-inline: 16px;
         overflow-x: scroll;
+
         ul{
             display: flex;
             flex-direction: row;
