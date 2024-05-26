@@ -22,7 +22,7 @@
 </section>
 
 <article class="company-status">
-    <label>Your company score<progress class="points" max="100" value="40"></progress></label>
+    <label>Your company score <progress class="points" max="100" value="40"></progress> </label>
 </article>
 
 <section class="stakeholders-list" id="stakeholders-list">
@@ -34,15 +34,15 @@
         <p><%= stakeholder.type %></p>
     </div>
     <div class="stakeholder-status">
-        <progress></progress>
+        <progress class="points" max="100" value="20"></progress>
     </div>
     <div class="sdg-list">
         <ul>
             <% sdgs.forEach(sdg => { %>
                 <li> <picture>
-                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=avif&height=75&width=75" type="image/avif">
-                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=webp&height=75&width=75" type="image/webp">
-                    <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>" height="75" width="75" alt="<%= sdg.title %>">
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=avif&height=65&width=65" type="image/avif">
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=webp&height=6&width=65" type="image/webp">
+                    <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>" height="65" width="65" alt="<%= sdg.title %>">
                 </picture></li>
             <% }); %>
         </ul>

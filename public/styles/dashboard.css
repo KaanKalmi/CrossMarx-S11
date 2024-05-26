@@ -69,9 +69,38 @@ header {
 
 .stakeholders-list {
     grid-area: stakeholder;
+    margin-left: 2em;
+    h2{
+        margin-left: 2em;  
+        text-transform: uppercase;
+    }
+
+.stakeholder{
+    display: inline-block;
+    backdrop-filter: blur(25px);
+    border-radius: var(--object-radius);
+    background-image: linear-gradient(-120deg, rgba(53, 52, 56, 0.3), rgba(56, 18, 82, 0.3));
+    background-color: transparent;
+    background-size: 24px 24px;
+    box-shadow: var(--shadow);
+    height: 350px;
+    width: 350px;
+    overflow: hidden;
+    margin: .2em;
+
+    .sdg-list{
+        margin-top: 4em;
+        margin-inline: 16px;
+        overflow-x: scroll;
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+    }
 }
 
-/* STATUS BARS */
+}
 .profile-status-bar[value] {
     --w: 120px;
     --color:
