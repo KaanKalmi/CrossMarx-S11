@@ -61,21 +61,10 @@ li {
     }
 }
 
-nav:hover {
-    width: 250px;
-
+nav:hover { width: 250px;
     span { visibility: visible; }
     a{ animation: entrance .6s ease-out; }
     svg{ animation: entrance .6s ease-out; }
 }
 
-@keyframes entrance {
-    0% {
-        transform: translateX(-1000px);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-
-}
+@keyframes entrance { 0% { transform: translateX(-1000px); } 100% { transform: translateX(0); } }
