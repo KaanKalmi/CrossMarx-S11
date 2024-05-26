@@ -12,7 +12,7 @@
     --btn-radius:8px;
     --btn-padding:6px;
     --object-radius:12px;
-    --shadow:2px -2px 8px hsl(0, 0%, 8%);
+    --shadow:2px 2px 12px hsl(0, 0%, 8%);
 }
 
 body {
