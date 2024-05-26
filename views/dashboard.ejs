@@ -7,6 +7,7 @@
 </header>
 
 <section class="company-summary" id="company-summary">
+    <div class="company-background"></div>
     <div class="company-information">
         <picture>
             <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=avif&height=75&width=275" type="image/avif">
@@ -29,6 +30,7 @@
     <h2>Stakeholders</h2>
     <% stakeholder.forEach(stakeholder => { %>
 <article class="stakeholder">
+    <div class="stakeholder-background"></div>
     <div class="stakeholder-information">
         <h2><%= stakeholder.name %></h2>
         <p><%= stakeholder.type %></p>
