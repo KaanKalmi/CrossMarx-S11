@@ -33,14 +33,14 @@ header {
     grid-area: company;
     backdrop-filter: blur(25px);
     margin: auto;
+    box-shadow: var(--shadow);
     border-radius: var(--object-radius);
     background-image: linear-gradient(-120deg, rgba(53, 52, 56, 0.3), rgba(56, 18, 82, 0.3));
-    background-color: transparent;
     background-size: 24px 24px;
-    box-shadow: var(--shadow);
+    background-color: transparent;
+    padding: 1.5em;
     width: 70%;
     height: 350px;
-    padding: 1.5em;
 
     .company-information {
         grid-area: info;
@@ -77,27 +77,42 @@ header {
 
 .stakeholder{
     display: inline-block;
-    backdrop-filter: blur(25px);
-    border-radius: var(--object-radius);
-    background-image: linear-gradient(-120deg, rgba(53, 52, 56, 0.3), rgba(56, 18, 82, 0.3));
-    background-color: transparent;
-    background-size: 24px 24px;
-    box-shadow: var(--shadow);
-    height: 350px;
-    width: 350px;
-    overflow: hidden;
+    backdrop-filter: blur(100px);
     margin: 8px;
+    box-shadow: var(--shadow);
+    border-radius: var(--object-radius);
+    background-image: linear-gradient(120deg, rgba(53, 56, 61, 0.3),rgba(18, 83, 78, 0.3));
+    background-color: transparent;
     padding: 16px;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
 
     .sdg-list{
         margin-top: 40px;
         margin-inline: 16px;
         overflow-x: scroll;
         ul{
-            list-style: none;
             display: flex;
             flex-direction: row;
+            list-style: none;
+
+            img{
+                border-radius: var(--btn-radius);
+            }
         }
+    }
+
+    .edit{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        float: right;
+        border: none;
+        border-radius: 8px 0 8px 0 ;
+        background-color: rgba(31, 6, 51, 0.7);
+        padding: var(--btn-padding);
+        color: var(--text-color);
     }
 }
 

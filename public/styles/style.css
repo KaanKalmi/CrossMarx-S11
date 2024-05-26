@@ -10,7 +10,7 @@
     --heading: "roboto mono", Arial, Helvetica, sans-serif;
     --body-font: "roboto serif", Arial, Helvetica, sans-serif;
     --btn-radius:8px;
-    --btn-padding:14px;
+    --btn-padding:6px;
     --object-radius:12px;
     --shadow:2px -2px 8px hsl(249, 91%, 9%);
 }
