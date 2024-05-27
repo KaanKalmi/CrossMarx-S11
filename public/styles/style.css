@@ -3,8 +3,8 @@
 @import url(nav.css);
 
 :root{
-    --bg-color:#242424;
-    --text-color:#f8f8f8;
+    --bg-color:#bcbcbc;
+    --text-color:#141414;
     --accent-text-color:#447560;
     --accent:#067545;
     --heading: "roboto mono", Arial, Helvetica, sans-serif;
@@ -16,7 +16,6 @@
 }
 
 body {
-    display: flex;
     box-sizing: border-box;
     margin: 0;
     background: var(--bg-color);

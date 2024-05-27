@@ -1,269 +1,82 @@
-@import url(style.css);
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: var(--body-text);
 
-main {
-    display: grid;
-    grid-template-areas:
-        "head head head"
-        "company company company"
-        "profile profile profile"
-        "stakeholder stakeholder stakeholder";
-    width: 90%;
-    height: 100%;
-}
-
-header {
-    grid-area: head;
-    font-size: 1.2em;
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading);
-    letter-spacing: .9em;
-    text-align: center;
-    text-decoration-line: underline;
-    text-decoration-color: var(--accent-text-color);
-    text-decoration-thickness: 15px;
-    text-decoration-skip-ink: none;
-    text-underline-offset: -15px;
-    text-transform: uppercase;
-}
+  }
 
-.company-summary {
-    display: grid;
-    position: relative;
-    grid-template-areas: "info info status";
-    grid-area: company;
+  header {
     margin: auto;
-    box-shadow: var(--shadow);
-    border-radius: var(--object-radius);
-    padding: 1.5em;
-    width: 70%;
-    height: 350px;
+  }
 
-    .company-background{
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: -1;
-        backdrop-filter: blur(25px); 
-        border-radius: var(--object-radius);
-        background-image: linear-gradient(120deg, rgba(41, 5, 75, 0.3), rgba(56, 18, 82, 0.3));
-        background-color: transparent;
+  main {
+    margin-left: 200px;
+    padding: 2em;
+    width: 100%;
+
+    .company-summary {
+      backdrop-filter: blur(1000px);
+      background-image: linear-gradient(120deg, rgba(81, 13, 102, 0.3), rgba(25, 2, 51, 0.3));
+      background-color: transparent;
+      padding: 1em;
+      width: 70vw;
+      margin-block-end: 1em;
+      border-radius: var(--object-radius);
+
+      .half-width{
+        display: inline-block;
         width: 100%;
-        height: 100%;
-    }
-    .company-information {
-        grid-area: info;
         padding: 1em;
 
-        h2 { margin-left: 2em; text-align: left; }
-    }
-
-    .profile-status {
-        grid-area: status;
-        margin-top: 1em;
-        margin-right: 1em;
-        text-align: right;
-    }
-}
-
-.company-status {
-    grid-area: profile;
-    margin: auto;
-    padding: 2em;
-    text-align: center;
-}
-
-
-@import url("./style.css");
-
-.accordion {
-    width: 70%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    height: 400px;
-    gap: 24px;
-    transition: 0.3s;
-  }
-  
-  .accordion:hover {
-    gap: 8px;
-  }
-  
-  .accordion .accordion-image {
-    position: relative;
-    overflow: hidden;
-    flex: 0 0 80px;
-    border-radius: 50px;
-    opacity: 0.75;
-    cursor: pointer;
-  }
-  
-  .accordion .accordion-image img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(0.5);
-  }
-  
-  .accordion .accordion-image,
-  .accordion .accordion-image img,
-  .accordion .accordion-image .content,
-  .accordion l.accordion-imagei .content span {
-    transition: 0.3s;
-  }
-  
-  .accordion h2 {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 45px;
-    border-bottom: 2px solid #fff;
-    margin-bottom: 10px;
-    white-space: nowrap;
-  }
-  
-  .accordion .accordion-image .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    color: #fff;
-    padding: 15px;
-    background: #02022e;
-    background: linear-gradient(
-      0deg,
-      rgb(0 0 0 / 30%) 10%,
-      rgb(255 255 255 / 0%) 100%
-    );
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  .accordion .accordion-image .content span {
-    position: absolute;
-    z-index: 3;
-    left: 50%;
-    bottom: 50px;
-    translate: -300px 0;
-    visibility: hidden;
-    opacity: 0;
-  }
-  
-  .accordion .accordion-image:hover {
-    flex: 0 1 260px;
-    scale: 1.1;
-    z-index: 10;
-    opacity: 1;
-  }
-  
-  .accordion .accordion-image:hover .content {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .accordion .accordion-image:hover span {
-    translate: -50% 0;
-    opacity: 1;
-    visibility: visible;
-  }
-.stakeholders-list {
-    display: block;
-    grid-area: stakeholder;
-    margin: auto;
-    width: 75%;
-    padding: 1.5em;
-    h2{ text-transform: uppercase; }
-
-.stakeholder{
-    display: inline-block;
-    position: relative;
-    margin: 4px;
-    box-shadow: var(--shadow);
-    border-radius: var(--object-radius);
-    padding: 16px;
-    width: 275px;
-    height: 275px;
-    overflow: hidden;
-    
-    .stakeholder-status{ margin-top: 40%; }
-
-    .sdg-list{
-        margin-top: 40px;
-        overflow-x: scroll;
-
-        ul{
-            display: flex;
-            flex-direction: row;
-            list-style: none;
-
-            img{ border-radius: var(--btn-radius); }
+        .company-status{
+          display: inline-block;
+          width: 45%;
+          padding: .5em;
         }
+      }
+
+      ul{
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+      }
+
+      .calculate{
+        display:block;
+        margin-top: 3em;
+        margin-bottom: 1.5em;
+        text-align: center;
+
+        button{
+        background-color: rgb(223, 203, 252);
+        color: var(--body-text);
+      }
+    }
     }
 
-}
+    .breakdown{
+      backdrop-filter: blur(1000px);
+      background-image: linear-gradient(120deg, rgba(81, 13, 102, 0.3), rgba(25, 2, 51, 0.3));
+      background-color: transparent;
+      padding: 1em;
+      width: 70%;
+      border-radius: var(--object-radius);
 
-}
-.profile-status-bar[value] {
-    --w: 120px;
-    --color:
-        linear-gradient(red 0 0) 0 /calc(var(--w)*.3 - 100%) 1px,
-        linear-gradient(orange 0 0) 0 /calc(var(--w)*.6 - 100%) 1px,
-        green;
-    --background: white;
+      ul{
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+      }
+    }
+  }
 
-    position: absolute;
-    transform: rotate(-90deg);
-    appearance: none;
-    mask: radial-gradient(#0000 59%, #000 60% 70%, #0000 71%);
-    border-radius: 50%;
-    background: var(--background);
-    width: 60%;
-    height: 60%;
-    overflow: hidden
-}
-
-.profile-status label {
-    --w: 120px;
-    display: inline-grid;
-    position: relative;
-    place-content: center;
-    aspect-ratio: 1;
-    width: var(--w);
-    font-family: var(--heading);
-}
-
-.points[value] {
-    --w: 12em;
-    --color:
-        linear-gradient(red 0 0) 0 /calc(var(--w)*.3 - 100%) 1px,
-        linear-gradient(orange 0 0) 0 /calc(var(--w)*.6 - 100%) 1px,
-        green;
-    --background: white;
-
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -webkit-mask:
-        radial-gradient(circle closest-side, #000 98%, #0000 102%) 0/12.5% 100%,
-        linear-gradient(90deg, #000 50%, #0000 0) 8%/25% 100%;
-    appearance: none;
-    mask: radial-gradient(circle closest-side, #000 98%, #0000 102%) 0/12.5% 100%,
-        linear-gradient(90deg, #000 50%, #0000 0) 8%/25% 100%;
-    margin: 0 10px;
+  button{
     border: none;
-    background: var(--background);
-    width: var(--w)
-}
-
-.points[value]::-webkit-progress-bar { background: var(--background); }
-.points[value]::-webkit-progress-value { background: var(--color); }
-.points[value]::-moz-progress-bar { background: var(--color); }
-
-.company-status label {
-    display: block;
-    margin: 20px 0;
+    border-radius: var(--btn-radius);
+    padding: var(--btn-padding);
     font-family: var(--heading);
+  }
 }
