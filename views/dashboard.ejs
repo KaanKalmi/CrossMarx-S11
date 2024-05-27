@@ -11,46 +11,44 @@
     <section>
         <article>
             <h3><%= company.name %></h3>
-            <p>Deelgenomen januari X</p>
-            <p>X medewerkers</p>
-
-            <img src="#" alt="profiel">
-        </article>
-        <article>
-            <div><img src="#" alt="nieuw"></div>
-            <p>Nieuw</p>
+            <p>1834 Employees</p>
+            <picture>
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=avif&height=75&width=275" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=webp&height=75&width=275" type="image/webp">
+                <img src="https://fdnd-agency.directus.app/assets/<%= company.logo %>" height="75" width="275">
+            </picture>
         </article>
     </section>
 
     <section class="set-up">
-        <h2>Begin met opzetten</h2>
+        <h2>Setting up your account</h2>
         <label> Beginner
-            <progress id="file" value="32" max="100"> 32% </progress>
+            <progress class="points" max="100" value="20"></progress>
         </label>
-        <i>Info over hoe de badge gehaald kan worden</i>
+        <i>You can get the profile badge by getting a green (>80%) Score</i>
             <ol>
                 <li><h3>1. Stakeholders</h3>
-                    <i>Info over hoe stakeholders werken</i>
+                    <i>Adding stakeholders will help us calculate your ecological impact</i>
                 </li>
                 <li>
                     <h3>2. SDG's</h3>
-                <i>Info over hoe sdg's werken</i>
+                <i>SDG's are a call to action to end poverty and inequality, protect the planet, and ensure that all people enjoy health, justice and prosperity.</i>
                 </li>
                 <li>
                     <h3>3. Scores</h3>
-                    <i>Info over hoe scores op sdg's werken</i>
+                    <i>Scoring a SDG means that the stakeholder either positively or negetively impacts the chosen SDG</i>
                 </li>
             </ol>
     </section>
 
     <section class="stakeholders">
         <h2>Stakeholders</h2>
-        <i>Info over hoe stakeholders werken</i>
+        <i>Stakeholders are divided into 5 categories: clients, suppliers, financers, employees and environment. You will assign them a minimum of 3 SDG's and we'll calculate their overall impact!</i>
 
         <article>
             <header>
-                <h3>Klanten</h3>
-                <p class="alert">Voeg nog 2 klanten toe*</p>
+                <h3>Clients</h3>
+                <p class="alert">Add 2 Clients*</p>
             </header>
             <ul>
                 <% if (stakeholder.name) { %> 
@@ -58,20 +56,20 @@
                 <li>
                     <a href="/gegevens-form/<%= company.name %>">
                         <h4><%= stakeholder.name %></h4>
-                        <i>info over deze klant</i>
+                        <i>info about client</i>
                         <img src="blabla/<%= stakeholder.avatar %>" alt="">
                     </a>
                 </li>
                 <% } %>
                 <li>
-                    <a href="/gegevens-form/<%= company.name %>">voeg klant toe</a>
+                    <a href="/gegevens-form/<%= company.name %>">Add client</a>
                 </li>
             </ul>
         </article>
         <article>
             <header>
-                <h3>Leveranciers</h3>
-                <p class="alert">Voeg nog 2 leveranciers toe*</p>
+                <h3>Suppliers</h3>
+                <p class="alert">Add 2 Suppliers*</p>
             </header>
             <ul>
                 <% if (stakeholder.name) { %> 
@@ -79,19 +77,19 @@
                 <li>
                     <a href="/gegevens-form/<%= company.name %>">
                         <h4><%= stakeholder.name %></h4>
-                        <i>info over deze leveranciers</i>
+                        <i>info about suppliers</i>
                         <img src="blabla/<%= stakeholder.avatar %>" alt="">
                     </a>
                 </li>
                 <% } %>
                 <li>
-                    <a href="/gegevens-form/<%= company.name %>">voeg leveranciers toe</a>
+                    <a href="/gegevens-form/<%= company.name %>">Add Supplier</a>
                 </li>
             </ul>
         </article>
         <article>
             <header>
-                <h3>Financiers</h3>
+                <h3>Financers</h3>
             </header>
             <ul>
                 <% if (stakeholder.name) { %> 
@@ -99,20 +97,20 @@
                 <li>
                     <a href="/gegevens-form/<%= company.name %>">
                         <h4><%= stakeholder.name %></h4>
-                        <i>info over deze financier</i>
+                        <i>info about Financers</i>
                         <img src="blabla/<%= stakeholder.avatar %>" alt="">
                     </a>
                 </li>
                 <% } %>
                 <li>
-                    <a href="/gegevens-form/<%= company.name %>">voeg financier toe</a>
+                    <a href="/gegevens-form/<%= company.name %>">Add Financers</a>
                 </li>
             </ul>
         </article>
         
         <article>
             <header>    
-                <h3>Medewerkers</h3>
+                <h3>Employees</h3>
             </header>
             <ul>
                 <% if (stakeholder.name) { %> 
@@ -120,20 +118,20 @@
                 <li>
                     <a href="/gegevens-form/<%= company.name %>">
                         <h4><%= stakeholder.name %></h4>
-                        <i>info over deze medewerkers</i>
+                        <i>info about employees</i>
                         <img src="blabla/<%= stakeholder.avatar %>" alt="">
                     </a>
                 </li>
                 <% } %>
                 <li>
-                    <a href="/gegevens-form/<%= company.name %>">voeg medewerkers toe</a>
+                    <a href="/gegevens-form/<%= company.name %>">Add employees</a>
                 </li>
             </ul>
         </article>
 
         <article>
             <header>
-                <h3>Omgeving</h3>
+                <h3>Environment</h3>
             </header>
             <ul>
                 <% if (stakeholder.name) { %> 
@@ -141,23 +139,23 @@
                 <li>
                     <a href="/gegevens-form/<%= company.name %>">
                         <h4><%= stakeholder.name %></h4>
-                        <i>info over deze omgeving</i>
+                        <i>info about Environment</i>
                         <img src="blabla/<%= stakeholder.avatar %>" alt="">
                     </a>
                 </li>
                 <% } %>
                 <li>
-                    <a href="/gegevens-form/<%= company.name %>">voeg omgeving toe</a>
+                    <a href="/gegevens-form/<%= company.name %>">Add Environment</a>
                 </li>
             </ul>
         </article>
     </section>
     <footer>
         <ul>
-            <li><a href="#">Onze Visie</a></li>
+            <li><a href="#">Our vision</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">FAQ</a></li>
-            <li><a href="#">Privacy voorwaarde</a></li>   
+            <li><a href="#">Privacy requirements</a></li>   
         </ul>
         <p>&copy; 2023 CrossMarx</p>
     </footer>
