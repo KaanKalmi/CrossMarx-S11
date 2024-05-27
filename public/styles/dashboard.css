@@ -17,6 +17,9 @@
     padding: 2em;
     width: 80%;
 
+    .center-aligned {
+      text-align: center;
+    }
     .company-summary {
       backdrop-filter: blur(1000px);
       background-image: linear-gradient(120deg, rgba(216, 216, 216, 0.674), rgba(252, 252, 252, 0.491));
