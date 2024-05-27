@@ -1,4 +1,4 @@
-<<<<<<< main
+
 const loginBtn = document.querySelector('.btn-green')
 const requiredInputs = document.querySelectorAll('[required]')
 const emailInput = document.querySelector('[type="email"]')
@@ -75,6 +75,3 @@ ranges.forEach((range, index) => {
         }
     })
 })
-
-=======
->>>>>>> dashboard-kaan

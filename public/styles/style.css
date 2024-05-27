@@ -21,7 +21,7 @@
     box-sizing: border-box;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading);
 }
 
@@ -203,7 +203,154 @@ h1 {
         border: 2px solid red;
     }
 }
+/* ------------------------------------------------------DASHBOARD---------------------------------------------------------- */
 
+.dashboard nav {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    backdrop-filter: blur(1000px);
+    transition: all .6s ease-out;
+    background-image: linear-gradient(120deg, rgba(216, 216, 216, 0.674), rgba(252, 252, 252, 0.491));
+    background-color: transparent;
+    padding: 1em 0;
+    width: 75px;
+    height: 100%;
+    color: var(--text-color);
+
+    ul {
+        display: flex;
+        position: relative;
+        column-gap: 0.5em;
+        flex-direction: column;
+        margin: 0;
+        margin-top: 5em;
+        padding: 0;
+        width: 100%;
+        list-style-type: none;
+    }
+
+    li {
+
+        svg {
+            stroke: var(--text-color);
+            width: 1.75em;
+            height: 1.75em;
+        }
+    
+        a {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 1.75em;
+            padding: 0 1em;
+            height: 3.5em;
+            overflow: hidden;
+            color: var(--text-color);
+            font-size: 1.25em;
+            text-decoration: none;
+        }
+    
+        p {
+            display: inline-block;
+            display: none;
+            margin-left: 10px;
+        }
+    
+        a:hover { color: #95c5fc;
+            svg { stroke: #95c5fc; color: #95c5fc; }
+        }
+    }
+    
+    &:hover { width: 250px;
+        p { display: block; }
+        a{ animation: entrance .6s ease-out; }
+        /* svg{ animation: entrance .6s ease-out; } */
+    }
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--body-text);
+
+    header {
+      margin: auto;
+      color: #ededed;
+    }
+
+    main {
+      margin-left: 200px;
+      padding: 2em;
+      width: 100%;
+      background-color: goldenrod;
+  
+      .center-aligned {
+        text-align: center;
+      }
+      .company-summary {
+        backdrop-filter: blur(1000px);
+        background-image: linear-gradient(120deg, rgba(216, 216, 216, 0.674), rgba(252, 252, 252, 0.491));
+        background-color: transparent;
+        padding: 1em;
+        width: 70vw;
+        margin-block-end: 1em;
+        border-radius: var(--object-radius);
+  
+        .half-width{
+          display: inline-block;
+          width: 100%;
+          padding: 1em;
+  
+          .company-status{
+            display: inline-block;
+            width: 45%;
+            padding: .5em;
+          }
+        }
+  
+        ul{
+          display: flex;
+          flex-direction: row;
+          margin: auto;
+        }
+  
+        .calculate{
+          display:block;
+          margin-top: 3em;
+          margin-bottom: 1.5em;
+          text-align: center;
+  
+          button{
+          background-color: rgb(223, 203, 252);
+          color: var(--body-text);
+        }
+      }
+      }
+  
+      .breakdown{
+        backdrop-filter: blur(1000px);
+        background-image: linear-gradient(120deg, rgba(216, 216, 216, 0.674), rgba(252, 252, 252, 0.491));
+        background-color: transparent;
+        padding: 1em;
+        width: 70vw;
+        border-radius: var(--object-radius);
+  
+        ul{
+          display: flex;
+          flex-direction: row;
+          margin: auto;
+        }
+      }
+    }
+  
+    button{
+      border: none;
+      border-radius: var(--btn-radius);
+      padding: var(--btn-padding);
+      font-family: var(--heading);
+    }
+}
 
 /*---------------------------------------------- SCORE _ ANNA-KYRA ----------------------------------------------- */
 .vragenlijst {
@@ -751,7 +898,4 @@ h1 {
         transform: translateY(0);
         animation-timing-function: ease-out;
     }
-=======
-    scroll-behavior: smooth;
->>>>>>> dashboard-kaan
 }

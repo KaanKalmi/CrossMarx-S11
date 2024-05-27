@@ -1,12 +1,11 @@
-<<<<<<< main
-<%- include('partials/head') %>
 
-<%- include('partials/foot') %>
-=======
-<%- include('./partials/head')%>
+<%- include('./partials/head', {current:'dashboard'})%>
 <%- include('partials/nav') %>
-<link rel="stylesheet" href="styles/dashboard.css">
-<header>
+<!-- <link rel="stylesheet" href="styles/dashboard.css"> -->
+
+
+<main>
+    <header>
         <h1>Dashboard</h1>
         <small>Let's check your progress</small>
         <article>
@@ -21,8 +20,6 @@
             <p>Nieuw</p>
         </article>
 </header>
-
-<main>
     <section class="company-summary">
         <div class="center-aligned">
         <h2>Jouw Hand-Footprint</h2>
@@ -190,4 +187,3 @@
     </section>
 </main>
 <%- include('./partials/foot')%>
->>>>>>> dashboard-kaan
