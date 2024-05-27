@@ -1,7 +1,6 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   font-family: var(--body-text);
 
   h1, h2, h3, h4, h5, h6 {
@@ -10,16 +9,17 @@
 
   header {
     margin: auto;
+    color: #ededed;
   }
 
   main {
     margin-left: 200px;
     padding: 2em;
-    width: 100%;
+    width: 80%;
 
     .company-summary {
       backdrop-filter: blur(1000px);
-      background-image: linear-gradient(120deg, rgba(81, 13, 102, 0.3), rgba(25, 2, 51, 0.3));
+      background-image: linear-gradient(120deg, rgba(216, 216, 216, 0.674), rgba(252, 252, 252, 0.491));
       background-color: transparent;
       padding: 1em;
       width: 70vw;
@@ -59,10 +59,10 @@
 
     .breakdown{
       backdrop-filter: blur(1000px);
-      background-image: linear-gradient(120deg, rgba(81, 13, 102, 0.3), rgba(25, 2, 51, 0.3));
+      background-image: linear-gradient(120deg, rgba(216, 216, 216, 0.674), rgba(252, 252, 252, 0.491));
       background-color: transparent;
       padding: 1em;
-      width: 70%;
+      width: 70vw;
       border-radius: var(--object-radius);
 
       ul{
