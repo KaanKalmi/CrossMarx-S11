@@ -1,3 +1,193 @@
+<<<<<<< main
 <%- include('partials/head') %>
 
 <%- include('partials/foot') %>
+=======
+<%- include('./partials/head')%>
+<%- include('partials/nav') %>
+<link rel="stylesheet" href="styles/dashboard.css">
+<header>
+        <h1>Dashboard</h1>
+        <small>Let's check your progress</small>
+        <article>
+            <%= company.name %>
+            <p>Deelgenomen januari X</p>
+            <p>X medewerkers</p>
+
+            <img src="#" alt="profiel">
+        </article>
+        <article>
+            <div><img src="#" alt="nieuw"></div>
+            <p>Nieuw</p>
+        </article>
+</header>
+
+<main>
+    <section class="company-summary">
+        <div class="center-aligned">
+        <h2>Jouw Hand-Footprint</h2>
+        <small>Jouw hand-footprint uitgelegd</small>
+    </div>
+        <div class="progress-bar">
+            <span style="width: 25%;"></span>
+        </div>
+        <div class="half-width">
+        <section class="company-status">
+            <article>
+                <h2>20 <strong>%</strong></h2>
+                <img src="/icons/hand.svg" alt="hand" height="100" width="100">
+            </article>
+            <ul>
+                <li>
+                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>10 <strong>%</strong></h4>
+                    <p class="number">1.</p>
+                    <button>Bedrijf</button>
+                </li>
+                <li>
+                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>20 <strong>%</strong></h4>
+                    <p class="number">2.</p>
+                    <button>Financiers</button>
+                </li>
+                <li>
+                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>15 <strong>%</strong></h4>
+                    <p class="number">3.</p>
+                    <button>Omgeving</button>
+                </li>
+            </ul>
+        </section>
+
+        <section class="company-status">
+            <article>
+                <h2>80 <strong>%</strong></h2>
+                <img src="/icons/foot.svg" alt="voet" height="100" width="100">
+            </article>
+            <ul>
+                <li>
+                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>30 <strong>%</strong></h4>
+                    <p class="number">1.</p>
+                    <button>Bedrijf</button>
+                </li>
+                <li>
+                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>20 <strong>%</strong></h4>
+                    <p class="number">2.</p>
+                    <button>Omgeving</button>
+                </li>
+                <li>
+                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>15 <strong>%</strong></h4>
+                    <p class="number">3.</p>
+                    <button>Klanten</button>
+                </li>
+            </ul>
+        </section>
+    </div>
+        <div class="calculate">
+        <button>Calculeer opnieuw</button>
+        </div>
+    </section>
+
+    <section class="breakdown">
+        <div class="center-aligned">
+        <h2>Breakdown</h2>
+        <small>Jouw breakdown uitgelegd</small>
+            </div>
+        <section>
+            <h3>Handprint</h3>
+            <i>Je footprint is hetzelfde als ...kg</i>
+            <div class="progress-bar">
+                <span style="width: 10%;"></span>
+                <span class="medewerkers" style="width: 15%;"></span>
+                <span class="financiers" style="width: 20%;"></span>
+                <span class="leveranciers" style="width: 30%;"></span>
+                <span class="klanten" style="width: 10%;"></span>
+                <span class="omgeving" style="width: 15%;"></span>
+            </div>
+
+            <ul>
+                <li>
+                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>10<strong>%</strong></h4>
+                    <button>bedrijf</button>
+                </li>
+                <li>
+                    <img src="/icons/icons_medewerkers_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>15<strong>%</strong></h4>       
+                    <button>medewerkers</button>
+                </li>
+                <li>
+                    <img src="/icons/icons_aandeelhouders_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>20<strong>%</strong></h4>
+                    <button>financiers</button>    
+                </li>
+                <li>
+                    <img src="/icons/icons_leveranciers_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>30<strong>%</strong></h4>
+                    <button>leveranciers</button>
+                </li>
+                <li>
+                        <img src="/icons/icons_klanten_black.svg" alt="bedrijf" height="100" width="100">
+                        <h4>10<strong>%</strong></h4>     
+                        <button>klanten</button>
+                </li>
+                <li>
+                    <img src="/icons/icons_omgeving_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>15<strong>%</strong></h4>
+                    <button>omgeving</button>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Footprint</h3>
+            <i>Je footprint is hetzelfde als ...kg</i>
+            <div class="progress-bar">
+                <span style="width: 30%;"></span>
+                <span class="medewerkers" style="width: 10%;"></span>
+                <span class="financiers" style="width: 15%;"></span>
+                <span class="leveranciers" style="width: 10%;"></span>
+                <span class="klanten" style="width: 15%;"></span>
+                <span class="omgeving" style="width: 20%;"></span>
+            </div>
+
+            <ul>
+                <li>
+                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>10<strong>%</strong></h4>
+                    <button>bedrijf</button>
+                </li>
+                <li>
+                    <img src="/icons/icons_medewerkers_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>15<strong>%</strong></h4>       
+                    <button>medewerkers</button>
+                </li>
+                <li>
+                    <img src="/icons/icons_aandeelhouders_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>20<strong>%</strong></h4>
+                    <button>financiers</button>    
+                </li>
+                <li>
+                    <img src="/icons/icons_leveranciers_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>30<strong>%</strong></h4>
+                    <button>leveranciers</button>
+                </li>
+                <li>
+                        <img src="/icons/icons_klanten_black.svg" alt="bedrijf" height="100" width="100">
+                        <h4>10<strong>%</strong></h4>
+                        <button>klanten</button>
+                </li>
+                <li>
+                    <img src="/icons/icons_omgeving_black.svg" alt="bedrijf" height="100" width="100">
+                    <h4>15<strong>%</strong></h4>
+                    <button>omgeving</button>
+                </li>
+            </ul>
+        </section>
+    </section>
+</main>
+<%- include('./partials/foot')%>
+>>>>>>> dashboard-kaan

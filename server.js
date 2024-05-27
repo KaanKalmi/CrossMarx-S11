@@ -13,11 +13,21 @@ app.listen(app.get('port'), function () {
  console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
+<<<<<<< main
 const apiUrl = 'https://fdnd-agency.directus.app/items',
     sdgData = await fetchJson(apiUrl + '/hf_sdgs'), 
     stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders'),
     scoresData = await fetchJson(apiUrl + '/hf_scores'),
     companiesData = await fetchJson(apiUrl + '/hf_companies')
+=======
+// Stel het basis endpoint in
+const apiUrl = 'https://fdnd-agency.directus.app/items'
+
+const sdgData = await fetchJson(apiUrl + '/hf_sdgs'),
+    stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders?filter={"company_id":4}'),
+    scoresData = await fetchJson(apiUrl + '/hf_scores'),
+    companiesData = await fetchJson(apiUrl + '/hf_companies/4')
+>>>>>>> dashboard-kaan
 
 console.log(companiesData.data)
 
