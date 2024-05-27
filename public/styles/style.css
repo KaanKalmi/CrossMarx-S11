@@ -4,6 +4,7 @@
 
 :root{
     --bg-color: radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
+    --bg-color-light: #e6e6e6;
     --text-color:#f8f8f8;
     --accent-text-color:#242424;
     --accent:#067545;
@@ -21,8 +22,13 @@
     box-sizing: border-box;
 }
 
+h1 {
+    color: hsl(248, 62%, 24%);
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading);
+    
 }
 
 .login {
@@ -64,6 +70,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.6em;
         line-height: 1.2;
         font-family: var(--heading);
+        color: var(--text-color);
     }
 
     p {
@@ -204,7 +211,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 /* ------------------------------------------------------DASHBOARD---------------------------------------------------------- */
-
+/* 
 .dashboard nav {
     display: flex;
     position: fixed;
@@ -265,91 +272,152 @@ h1, h2, h3, h4, h5, h6 {
     &:hover { width: 250px;
         p { display: block; }
         a{ animation: entrance .6s ease-out; }
-        /* svg{ animation: entrance .6s ease-out; } */
     }
+} */
+
+.dashboard nav {
+    background: var(--bg-color);
 }
 
 .dashboard {
     display: flex;
     flex-direction: column;
-    font-family: var(--body-text);
+    font-family: var(--body-font);
+    width: 100vw;
 
-    header {
-      margin: auto;
-      color: #ededed;
+    section {
+        background-color: hotpink;
+        padding: 1em;
+        border-radius: var(--object-radius);
+        /* box-shadow: var(--shadow); */
+        background-color: var(--text-color);
+
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    progress {
+        width: 100%;
     }
 
     main {
-      margin-left: 200px;
-      padding: 2em;
-      width: 100%;
-      background-color: goldenrod;
-  
-      .center-aligned {
-        text-align: center;
-      }
-      .company-summary {
-        backdrop-filter: blur(1000px);
-        background-image: linear-gradient(120deg, rgba(216, 216, 216, 0.674), rgba(252, 252, 252, 0.491));
-        background-color: transparent;
-        padding: 1em;
-        width: 70vw;
-        margin-block-end: 1em;
-        border-radius: var(--object-radius);
-  
-        .half-width{
-          display: inline-block;
-          width: 100%;
-          padding: 1em;
-  
-          .company-status{
-            display: inline-block;
-            width: 45%;
-            padding: .5em;
-          }
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+        gap: 1em;
+        width: 100%;
+        background-color: var(--bg-color-light);
+
+        .company-summary {
+            .half-width{
+                display: inline-block;
+                width: 100%;
+                
+    
+                .company-status{
+                    display: inline-block;
+                    width: 45%;
+                    padding: .5em;
+                }
         }
-  
+
         ul{
-          display: flex;
-          flex-direction: row;
-          margin: auto;
+            display: flex;
+            flex-direction: row;
+            margin: auto;
         }
-  
+
         .calculate{
-          display:block;
-          margin-top: 3em;
-          margin-bottom: 1.5em;
-          text-align: center;
-  
-          button{
-          background-color: rgb(223, 203, 252);
-          color: var(--body-text);
+            display:block;
+            margin-top: 3em;
+            margin-bottom: 1.5em;
         }
-      }
-      }
-  
-      .breakdown{
-        backdrop-filter: blur(1000px);
-        background-image: linear-gradient(120deg, rgba(216, 216, 216, 0.674), rgba(252, 252, 252, 0.491));
-        background-color: transparent;
+    }
+
+    .set-up {
+        ol {
+            display: grid;
+            /* grid-template-columns: 1fr; */
+            gap: .5em;
+        }
+
+        li {
+            background-color: #ddd;
+            border-radius: 5px;
+            padding: 1em;
+            list-style: none;
+        }
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        ul {
+            /* background-color: #ddd; */
+            border-radius: 5px;
+            padding: 1em;
+            list-style: none;
+
+            li {
+                
+                
+                /* overflow: hidden; */
+                
+
+                a {
+                    all: unset;
+                    cursor: pointer;
+                    background-color: #ddd;
+                    max-width: 15em;
+                    max-width: 15em;
+                    padding: 2em;
+                    display: flex;
+                    border-radius: 5px;
+                    gap: 1em;
+                    align-items: center;
+
+                    transition: all .2s ease-out;
+
+                    color: hsl(248, 62%, 24%);
+
+                    &:hover {
+                      background: hsl(248, 62%, 24%);
+                      box-shadow: var(--shadow);
+                      color: #ddd;
+                    }
+
+                    &::before {
+                        content: '+';
+                        font-size: 1.3em;
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid;
+                        border-radius: 1000px;
+                        background-color: #ddd;
+                        color: hsl(248, 62%, 24%);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+
+    
+
+    .breakdown{
         padding: 1em;
-        width: 70vw;
-        border-radius: var(--object-radius);
-  
+
         ul{
-          display: flex;
-          flex-direction: row;
-          margin: auto;
+            display: flex;
+            flex-direction: row;
+            margin: auto;
         }
-      }
     }
-  
-    button{
-      border: none;
-      border-radius: var(--btn-radius);
-      padding: var(--btn-padding);
-      font-family: var(--heading);
-    }
+}
 }
 
 /*---------------------------------------------- SCORE _ ANNA-KYRA ----------------------------------------------- */
@@ -767,6 +835,13 @@ h1, h2, h3, h4, h5, h6 {
             width: 30em;
             border-radius: 12px;
             box-shadow: var(--shadow);
+        }
+    }
+
+    .dashboard .set-up {
+        ol {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
         }
     }
 

@@ -1,15 +1,16 @@
 
 <%- include('./partials/head', {current:'dashboard'})%>
 <%- include('partials/nav') %>
-<!-- <link rel="stylesheet" href="styles/dashboard.css"> -->
-
 
 <main>
     <header>
         <h1>Dashboard</h1>
-        <small>Let's check your progress</small>
+        <p>Let's check your progress</p>   
+    </header>
+
+    <section>
         <article>
-            <%= company.name %>
+            <h3><%= company.name %></h3>
             <p>Deelgenomen januari X</p>
             <p>X medewerkers</p>
 
@@ -19,171 +20,137 @@
             <div><img src="#" alt="nieuw"></div>
             <p>Nieuw</p>
         </article>
-</header>
-    <section class="company-summary">
-        <div class="center-aligned">
-        <h2>Jouw Hand-Footprint</h2>
-        <small>Jouw hand-footprint uitgelegd</small>
-    </div>
-        <div class="progress-bar">
-            <span style="width: 25%;"></span>
-        </div>
-        <div class="half-width">
-        <section class="company-status">
-            <article>
-                <h2>20 <strong>%</strong></h2>
-                <img src="/icons/hand.svg" alt="hand" height="100" width="100">
-            </article>
-            <ul>
-                <li>
-                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>10 <strong>%</strong></h4>
-                    <p class="number">1.</p>
-                    <button>Bedrijf</button>
-                </li>
-                <li>
-                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>20 <strong>%</strong></h4>
-                    <p class="number">2.</p>
-                    <button>Financiers</button>
-                </li>
-                <li>
-                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>15 <strong>%</strong></h4>
-                    <p class="number">3.</p>
-                    <button>Omgeving</button>
-                </li>
-            </ul>
-        </section>
-
-        <section class="company-status">
-            <article>
-                <h2>80 <strong>%</strong></h2>
-                <img src="/icons/foot.svg" alt="voet" height="100" width="100">
-            </article>
-            <ul>
-                <li>
-                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>30 <strong>%</strong></h4>
-                    <p class="number">1.</p>
-                    <button>Bedrijf</button>
-                </li>
-                <li>
-                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>20 <strong>%</strong></h4>
-                    <p class="number">2.</p>
-                    <button>Omgeving</button>
-                </li>
-                <li>
-                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>15 <strong>%</strong></h4>
-                    <p class="number">3.</p>
-                    <button>Klanten</button>
-                </li>
-            </ul>
-        </section>
-    </div>
-        <div class="calculate">
-        <button>Calculeer opnieuw</button>
-        </div>
     </section>
 
-    <section class="breakdown">
-        <div class="center-aligned">
-        <h2>Breakdown</h2>
-        <small>Jouw breakdown uitgelegd</small>
-            </div>
-        <section>
-            <h3>Handprint</h3>
-            <i>Je footprint is hetzelfde als ...kg</i>
-            <div class="progress-bar">
-                <span style="width: 10%;"></span>
-                <span class="medewerkers" style="width: 15%;"></span>
-                <span class="financiers" style="width: 20%;"></span>
-                <span class="leveranciers" style="width: 30%;"></span>
-                <span class="klanten" style="width: 10%;"></span>
-                <span class="omgeving" style="width: 15%;"></span>
-            </div>
+    <section class="set-up">
+        <h2>Begin met opzetten</h2>
+        <label> Beginner
+            <progress id="file" value="32" max="100"> 32% </progress>
+        </label>
+        <i>Info over hoe de badge gehaald kan worden</i>
+            <ol>
+                <li><h3>1. Stakeholders</h3>
+                    <i>Info over hoe stakeholders werken</i>
+                </li>
+                <li>
+                    <h3>2. SDG's</h3>
+                <i>Info over hoe sdg's werken</i>
+                </li>
+                <li>
+                    <h3>3. Scores</h3>
+                    <i>Info over hoe scores op sdg's werken</i>
+                </li>
+            </ol>
+    </section>
 
+    <section class="stakeholders">
+        <h2>Stakeholders</h2>
+        <i>Info over hoe stakeholders werken</i>
+
+        <article>
+            <header>
+                <h3>Klanten</h3>
+                <p>Voeg nog 2 klanten toe*</p>
+            </header>
             <ul>
+                <% if (stakeholder.name) { %> 
+                <!-- En een for each wanneer er klanten zijn uitgekozen na de vragenlijst zoiets kan veranderd worden-->
                 <li>
-                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>10<strong>%</strong></h4>
-                    <button>bedrijf</button>
+                    <a href="/gegevens-form/<%= company.name %>">
+                        <h4><%= stakeholder.name %></h4>
+                        <i>info over deze klant</i>
+                        <img src="blabla/<%= stakeholder.avatar %>" alt="">
+                    </a>
                 </li>
+                <% } %>
                 <li>
-                    <img src="/icons/icons_medewerkers_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>15<strong>%</strong></h4>       
-                    <button>medewerkers</button>
-                </li>
-                <li>
-                    <img src="/icons/icons_aandeelhouders_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>20<strong>%</strong></h4>
-                    <button>financiers</button>    
-                </li>
-                <li>
-                    <img src="/icons/icons_leveranciers_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>30<strong>%</strong></h4>
-                    <button>leveranciers</button>
-                </li>
-                <li>
-                        <img src="/icons/icons_klanten_black.svg" alt="bedrijf" height="100" width="100">
-                        <h4>10<strong>%</strong></h4>     
-                        <button>klanten</button>
-                </li>
-                <li>
-                    <img src="/icons/icons_omgeving_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>15<strong>%</strong></h4>
-                    <button>omgeving</button>
+                    <a href="/gegevens-form/<%= company.name %>">voeg klant toe</a>
                 </li>
             </ul>
-        </section>
-
-        <section>
-            <h3>Footprint</h3>
-            <i>Je footprint is hetzelfde als ...kg</i>
-            <div class="progress-bar">
-                <span style="width: 30%;"></span>
-                <span class="medewerkers" style="width: 10%;"></span>
-                <span class="financiers" style="width: 15%;"></span>
-                <span class="leveranciers" style="width: 10%;"></span>
-                <span class="klanten" style="width: 15%;"></span>
-                <span class="omgeving" style="width: 20%;"></span>
-            </div>
-
+        </article>
+        <article>
+            <header>
+                <h3>Leveranciers</h3>
+                <p>Voeg nog 2 leveranciers toe*</p>
+            </header>
             <ul>
+                <% if (stakeholder.name) { %> 
+                <!-- En een for each wanneer er klanten zijn uitgekozen na de vragenlijst zoiets kan veranderd worden-->
                 <li>
-                    <img src="/icons/icons_bedrijf_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>10<strong>%</strong></h4>
-                    <button>bedrijf</button>
+                    <a href="/gegevens-form/<%= company.name %>">
+                        <h4><%= stakeholder.name %></h4>
+                        <i>info over deze leveranciers</i>
+                        <img src="blabla/<%= stakeholder.avatar %>" alt="">
+                    </a>
                 </li>
+                <% } %>
                 <li>
-                    <img src="/icons/icons_medewerkers_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>15<strong>%</strong></h4>       
-                    <button>medewerkers</button>
-                </li>
-                <li>
-                    <img src="/icons/icons_aandeelhouders_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>20<strong>%</strong></h4>
-                    <button>financiers</button>    
-                </li>
-                <li>
-                    <img src="/icons/icons_leveranciers_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>30<strong>%</strong></h4>
-                    <button>leveranciers</button>
-                </li>
-                <li>
-                        <img src="/icons/icons_klanten_black.svg" alt="bedrijf" height="100" width="100">
-                        <h4>10<strong>%</strong></h4>
-                        <button>klanten</button>
-                </li>
-                <li>
-                    <img src="/icons/icons_omgeving_black.svg" alt="bedrijf" height="100" width="100">
-                    <h4>15<strong>%</strong></h4>
-                    <button>omgeving</button>
+                    <a href="/gegevens-form/<%= company.name %>">voeg leveranciers toe</a>
                 </li>
             </ul>
-        </section>
+        </article>
+        <article>
+            <header>
+                <h3>Financiers</h3>
+            </header>
+            <ul>
+                <% if (stakeholder.name) { %> 
+                <!-- En een for each wanneer er klanten zijn uitgekozen na de vragenlijst zoiets kan veranderd worden-->
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>">
+                        <h4><%= stakeholder.name %></h4>
+                        <i>info over deze financier</i>
+                        <img src="blabla/<%= stakeholder.avatar %>" alt="">
+                    </a>
+                </li>
+                <% } %>
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>">voeg financier toe</a>
+                </li>
+            </ul>
+        </article>
+        
+        <article>
+            <header>    
+                <h3>Medewerkers</h3>
+            </header>
+            <ul>
+                <% if (stakeholder.name) { %> 
+                <!-- En een for each wanneer er klanten zijn uitgekozen na de vragenlijst zoiets kan veranderd worden-->
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>">
+                        <h4><%= stakeholder.name %></h4>
+                        <i>info over deze medewerkers</i>
+                        <img src="blabla/<%= stakeholder.avatar %>" alt="">
+                    </a>
+                </li>
+                <% } %>
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>">voeg medewerkers toe</a>
+                </li>
+            </ul>
+        </article>
+
+        <article>
+            <header>
+                <h3>Omgeving</h3>
+            </header>
+            <ul>
+                <% if (stakeholder.name) { %> 
+                <!-- En een for each wanneer er klanten zijn uitgekozen na de vragenlijst zoiets kan veranderd worden-->
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>">
+                        <h4><%= stakeholder.name %></h4>
+                        <i>info over deze omgeving</i>
+                        <img src="blabla/<%= stakeholder.avatar %>" alt="">
+                    </a>
+                </li>
+                <% } %>
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>">voeg omgeving toe</a>
+                </li>
+            </ul>
+        </article>
     </section>
 </main>
 <%- include('./partials/foot')%>
