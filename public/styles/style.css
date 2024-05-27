@@ -278,9 +278,9 @@ h1, h2, h3, h4, h5, h6 {
 .dashboard nav {
     grid-area: nav;
     background: var(--bg-color);
-    position: fixed;
-    height: 100vh;
-    width: fit-content;
+    position: relative;
+    height: fit-content;
+    width: 100%;
     color: var(--text-color);
     padding: 2em;
 
@@ -339,10 +339,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--body-font);
     width: 100vw;
     background-color: var(--text-color);
-
-    display: grid;
-    grid-template-columns: 1fr 8fr;
-    grid-template-areas: 'nav main';
 
     .alert { /* welke stakeholder nog ingevuld moet worden*/
         color: rgb(187 88 88);
@@ -425,17 +421,11 @@ h1, h2, h3, h4, h5, h6 {
             list-style: none;
 
             li {
-                
-                
-                /* overflow: hidden; */
-                
 
                 a {
                     all: unset;
                     cursor: pointer;
                     background-color: #c7c7c7;
-                    max-width: 15em;
-                    max-width: 15em;
                     padding: 2em;
                     display: flex;
                     border-radius: 5px;
@@ -447,15 +437,15 @@ h1, h2, h3, h4, h5, h6 {
                     color: hsl(248, 62%, 24%);
 
                     &:hover {
-                      background: hsl(248, 62%, 24%);
-                      box-shadow: var(--shadow);
-                      color: #c7c7c7;
+                        background: hsl(248, 62%, 24%);
+                        box-shadow: var(--shadow);
+                        color: #c7c7c7;
                     }
 
                     &:active {
                         background: hsl(248, 26%, 52%);
                         box-shadow: none;
-                      }
+                    }
 
                     &::before {
                         content: '+';
@@ -930,12 +920,30 @@ footer {
         }
     }
 
+    .dashboard nav {
+        grid-area: nav;
+        position: fixed;
+        height: 100vh;
+        width: fit-content;
+        width: 15em;
+    }
+    
+
     .dashboard {
         background-color: var(--bg-color-light);
+        display: grid;
+        grid-template-columns: 15em calc(100% - 15em);
+        grid-template-areas: 'nav main';
 
         section {
             border-radius: var(--object-radius);
             border-top: 0;
+        }
+
+        main {
+            article ul li {
+                max-width: 18em;
+            }
         }
     }
 
