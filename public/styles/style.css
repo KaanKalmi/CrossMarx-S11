@@ -387,21 +387,24 @@ main {
 
 .sdg-picture img{
     border-radius: 8px;
+    opacity: 0.8;
 }
   
 
  .sdg-label input:checked + picture img {
   outline: 2px solid var(--text-color);
   transform: scale(1.05); /* Slightly increase the size */
+  transition: ease-in-out 0.2s;
+  opacity: 1;
 }
   .sdg-label input:checked + .sdg-picture::after {
     content: '✓';
     color: green;
-
     position: absolute;
     top: 10%;
     left: 85%;
     transform: translate(-50%, -50%);
+
     z-index: 1; 
   }
 
