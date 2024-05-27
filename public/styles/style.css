@@ -276,7 +276,61 @@ h1, h2, h3, h4, h5, h6 {
 } */
 
 .dashboard nav {
+    grid-area: nav;
     background: var(--bg-color);
+    position: fixed;
+    height: 100vh;
+    width: fit-content;
+    color: var(--text-color);
+    padding: 2em;
+
+    a {
+        color: var(--text-color);
+    }
+
+    ul {
+        display: flex;
+        position: relative;
+        column-gap: 0.5em;
+        flex-direction: column;
+        margin: 0;
+        margin-top: 5em;
+        padding: 0;
+        width: 100%;
+        list-style-type: none;
+    }
+
+    li {
+
+        svg {
+            stroke: var(--text-color);
+            width: 1.75em;
+            height: 1.75em;
+        }
+    
+        a {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 1.75em;
+            padding: 0 1em;
+            height: 3.5em;
+            overflow: hidden;
+            color: var(--text-color);
+            font-size: 1.25em;
+            text-decoration: none;
+        }
+    
+        p {
+            display: inline-block;
+            display: none;
+            margin-left: 10px;
+        }
+    
+        a:hover { color: #95c5fc;
+            svg { stroke: #95c5fc; color: #95c5fc; }
+        }
+    }
 }
 
 .dashboard {
@@ -284,17 +338,27 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     font-family: var(--body-font);
     width: 100vw;
+    background-color: var(--text-color);
+
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    grid-template-areas: 'nav main';
+
+    .alert { /* welke stakeholder nog ingevuld moet worden*/
+        color: rgb(187 88 88);
+    }
 
     section {
         background-color: hotpink;
         padding: 1em;
-        border-radius: var(--object-radius);
-        /* box-shadow: var(--shadow); */
+        
         background-color: var(--text-color);
 
         display: flex;
         flex-direction: column;
         gap: 1em;
+
+        border-top: 2px solid hsl(246, 25%, 77%); /* voor mobiel om de section te scheiden*/
     }
 
     progress {
@@ -302,12 +366,12 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     main {
+        grid-area: main;
         display: flex;
         flex-direction: column;
         padding: 2em;
         gap: 1em;
         width: 100%;
-        background-color: var(--bg-color-light);
 
         .company-summary {
             .half-width{
@@ -355,7 +419,7 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         gap: 1em;
         ul {
-            /* background-color: #ddd; */
+            background-color: #ddd;
             border-radius: 5px;
             padding: 1em;
             list-style: none;
@@ -369,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
                 a {
                     all: unset;
                     cursor: pointer;
-                    background-color: #ddd;
+                    background-color: #c7c7c7;
                     max-width: 15em;
                     max-width: 15em;
                     padding: 2em;
@@ -378,15 +442,20 @@ h1, h2, h3, h4, h5, h6 {
                     gap: 1em;
                     align-items: center;
 
-                    transition: all .2s ease-out;
+                    transition: all .1s ease-out;
 
                     color: hsl(248, 62%, 24%);
 
                     &:hover {
                       background: hsl(248, 62%, 24%);
                       box-shadow: var(--shadow);
-                      color: #ddd;
+                      color: #c7c7c7;
                     }
+
+                    &:active {
+                        background: hsl(248, 26%, 52%);
+                        box-shadow: none;
+                      }
 
                     &::before {
                         content: '+';
@@ -395,7 +464,7 @@ h1, h2, h3, h4, h5, h6 {
                         height: 30px;
                         border: 1px solid;
                         border-radius: 1000px;
-                        background-color: #ddd;
+                        background-color: #c7c7c7;
                         color: hsl(248, 62%, 24%);
                         display: flex;
                         justify-content: center;
@@ -406,8 +475,6 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    
-
     .breakdown{
         padding: 1em;
 
@@ -416,6 +483,31 @@ h1, h2, h3, h4, h5, h6 {
             flex-direction: row;
             margin: auto;
         }
+    }
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+
+    a {
+        color: black;
+        text-shadow: var(--shadow);
+    }
+
+    & ul {
+        display: flex;
+        gap: 1em;
+
+        
+    }
+
+    & li {
+        all: unset;
     }
 }
 }
@@ -835,6 +927,15 @@ h1, h2, h3, h4, h5, h6 {
             width: 30em;
             border-radius: 12px;
             box-shadow: var(--shadow);
+        }
+    }
+
+    .dashboard {
+        background-color: var(--bg-color-light);
+
+        section {
+            border-radius: var(--object-radius);
+            border-top: 0;
         }
     }
 

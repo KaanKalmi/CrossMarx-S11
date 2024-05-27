@@ -50,7 +50,7 @@
         <article>
             <header>
                 <h3>Klanten</h3>
-                <p>Voeg nog 2 klanten toe*</p>
+                <p class="alert">Voeg nog 2 klanten toe*</p>
             </header>
             <ul>
                 <% if (stakeholder.name) { %> 
@@ -71,7 +71,7 @@
         <article>
             <header>
                 <h3>Leveranciers</h3>
-                <p>Voeg nog 2 leveranciers toe*</p>
+                <p class="alert">Voeg nog 2 leveranciers toe*</p>
             </header>
             <ul>
                 <% if (stakeholder.name) { %> 
@@ -152,5 +152,14 @@
             </ul>
         </article>
     </section>
+    <footer>
+        <ul>
+            <li><a href="#">Onze Visie</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy voorwaarde</a></li>   
+        </ul>
+        <p>&copy; 2023 CrossMarx</p>
+    </footer>
 </main>
 <%- include('./partials/foot')%>
