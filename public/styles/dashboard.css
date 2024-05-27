@@ -71,6 +71,105 @@ header {
     text-align: center;
 }
 
+
+@import url("./style.css");
+
+.accordion {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    gap: 24px;
+    transition: 0.3s;
+  }
+  
+  .accordion:hover {
+    gap: 8px;
+  }
+  
+  .accordion .accordion-image {
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 80px;
+    border-radius: 50px;
+    opacity: 0.75;
+    cursor: pointer;
+  }
+  
+  .accordion .accordion-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.5);
+  }
+  
+  .accordion .accordion-image,
+  .accordion .accordion-image img,
+  .accordion .accordion-image .content,
+  .accordion l.accordion-imagei .content span {
+    transition: 0.3s;
+  }
+  
+  .accordion h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 45px;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 10px;
+    white-space: nowrap;
+  }
+  
+  .accordion .accordion-image .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    color: #fff;
+    padding: 15px;
+    background: #02022e;
+    background: linear-gradient(
+      0deg,
+      rgb(0 0 0 / 30%) 10%,
+      rgb(255 255 255 / 0%) 100%
+    );
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .accordion .accordion-image .content span {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 50px;
+    translate: -300px 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .accordion .accordion-image:hover {
+    flex: 0 1 260px;
+    scale: 1.1;
+    z-index: 10;
+    opacity: 1;
+  }
+  
+  .accordion .accordion-image:hover .content {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .accordion .accordion-image:hover span {
+    translate: -50% 0;
+    opacity: 1;
+    visibility: visible;
+  }
 .stakeholders-list {
     display: block;
     grid-area: stakeholder;
@@ -89,24 +188,7 @@ header {
     width: 275px;
     height: 275px;
     overflow: hidden;
-
-    .stakeholder-background{
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: -1;
-        backdrop-filter: blur(100px);
-        background-image: linear-gradient(120deg, rgba(53, 56, 61, 0.3),rgba(18, 83, 78, 0.3));
-        background-color: transparent;
-        width: 100%;
-        height: 100%;
-    }
-    .stakeholder-information{
-       float: right;
-            h3{ margin: 0; }
-            p{text-align: right;}
-            img{ border-radius: 12px 0 0 0 ; position: absolute; top: 0; left: 0; }
-    }
+    
     .stakeholder-status{ margin-top: 40%; }
 
     .sdg-list{
@@ -122,18 +204,6 @@ header {
         }
     }
 
-    .edit{
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        float: right;
-        border: none;
-        border-radius: 8px 0 8px 0 ;
-        background-color: rgba(31, 6, 51, 0.7);
-        padding: var(--btn-padding);
-        color: var(--text-color);
-        font-family: var(--body-font);
-    }
 }
 
 }
