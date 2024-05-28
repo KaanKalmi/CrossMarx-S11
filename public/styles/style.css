@@ -4,6 +4,7 @@
 :root{
     --bg-color: radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
     --bg-color-light: #e6e6e6;
+    --bg-accent-color: #424242;
     --text-color:#f8f8f8;
     --accent-text-color:#242424;
     --accent:#067545;
@@ -215,10 +216,11 @@ h1, h2, h3, h4, h5, h6 {
     bottom:0;
     margin-top: 1em;
     grid-area: nav;
-    background: var(--bg-color);
+    background: var(--bg-accent-color);
     background-size: 200%;
     background-position: top;
     padding-inline: 2em;
+    padding-bottom: 1em;
     width: 100%;
     height: fit-content;
     color: var(--text-color);
