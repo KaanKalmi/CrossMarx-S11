@@ -8,5 +8,9 @@
     <link rel="stylesheet" href="/styles/style.css">
     <title>S11</title>
     <script src="/scripts/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </head>
-<body class="dashboard">
+
+<body <% if (current == 'vragenlijst') { %>class="vragenlijst"<% } %> 
+<% if (current == 'login') { %>class="login"<% } %>
+<% if (current == 'dashboard') { %>class="dashboard"<% } %>>

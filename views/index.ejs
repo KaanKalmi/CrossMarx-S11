@@ -1,17 +1,34 @@
-<%- include('partials/head') %>
+<%- include('partials/head', {current: 'login'}) %>
 <main>
-  <link rel="stylesheet" href="/styles/register.css">
   <section class="introduction-text">
     <h1> Measuring company impact simplified </h1>
+    <section class="more-info">
     <p> Gain insights into your company's environmental and social impact with our innovative tool.
       Instead of relying solely on theoretical knowledge, observe real-time calculations of handprint and footprint.
       Understanding how your actions affect the environment and society is crucial for responsible business practices.
     </p>
+
+    <details class="info-mobile">
+      <summary>Zie meer</summary>
+      <%- include('partials/info') %>
+    </details>
+
+    <div class="info-desk">
+        <%- include('partials/info') %>
+    </div>
+    
+      
+    </section>
   </section>
   <section class="signup-form entrance">
-    <form action="POST">
+    <form action="POST" class=".login-form">
+      <input type="hidden" name="stakeholder_id" value="39">
+      <input type="hidden" name="sdg_id" value="<%= sdgs.number%>">
+
+      <header><h1>Register</h1>
+      </header>
+    
       <fieldset>
-        <legend>Register</legend>
         <label> <span>Company Name</span>
           <input type="text" placeholder="Company Name" required>
         </label>
@@ -19,10 +36,28 @@
           <input type="email" placeholder="Email Address" required>
         </label>
         <label> <span>Password</span>
-          <input type="password" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!-*]).{8,}" 
+          <input type="password" placeholder="Password" id="password" 
           title="Must contain at least one number and one uppercase and lowercase letter, one special symbol, and at least 8 or more characters">
         </label>
+        <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!-*]).{8,}"  was van het wachtwoord code deed het kut -->
       </fieldset>
+
+      <details>
+        <summary>Bedrijf details</summary>
+        <fieldset>
+          <label for="company_description">
+              <span>Bedrijf descriptie</span>
+          </label>
+              <textarea name="description" id="company_description"  rows="2" cols="33" placeholder="bijv. ..."></textarea>
+          
+          <label class="profile" for="profile" >
+              <span>Profielfoto</span>
+          </label>  
+          <input type="file" id="profile" name="avatar" accept="image/png, image/jpeg" />
+          <small>300px x 300px recommended. JPGs JPEGs and PNGs supported</small>
+        </fieldset>
+      </details>
+      
       <button class="btn-green"> Register </button>
       <small> Already registered? <a href=#>Log in here</a></small>
     </form>
