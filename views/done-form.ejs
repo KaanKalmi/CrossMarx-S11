@@ -1,7 +1,28 @@
 <%- include('partials/head', {current: 'vragenlijst'}); %>
 <%- include('partials/vragenlijst_header', {current: 'done'}); %>
-<main>
+<main class="overview">
+    <div>
+        <h2>Overzicht</h2>
+        <i>Info over overzicht</i>
+    </div>
 
+    <section>
+        <h4>Geselecteerde sdgs</h4>
+        <article>   
+            <div class="sdgs selected">
+                <%- include('partials/sdgs-login'); %>
+            </div>
+        </article>
+        <button type="button">verander</button>
+    </section>
+    <hr>
+    <section>
+        <h4>SDG scores</h4>
+        <article>s
+
+        </article>
+        <button type="button">verander</button>
+    </section>
 </main>
 <footer></footer>
 <%- include('partials/foot') %>

@@ -213,11 +213,9 @@ h1 {
     background: var(--bg-color);
     height: 100vh;
     font-family: var(--body-font);
-
 }
 
-    /* ------------------------------------------------- HEADER ------------------------------------------------------------- */
-
+/* ------------------------------------------------- HEADER ------------------------------------------------------------- */
 .vragenlijst header {
         width: 100%;
         position: relative;
@@ -467,8 +465,6 @@ h1 {
     }
 }
 
-
-
 .selected {
     display: flex;
     flex-direction: column;
@@ -583,6 +579,35 @@ h1 {
 				background: #1597ff;
 			}
         }
+    }
+}
+
+.overview {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    
+    button {
+        width: fit-content;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    article {
+
+        padding: 1em;
+        background: #ddd;
+        border-radius: 5px;
+    }
+    article div div{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 1em;
     }
 }
 
