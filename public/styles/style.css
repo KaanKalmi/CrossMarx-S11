@@ -215,8 +215,9 @@ h1, h2, h3, h4, h5, h6 {
     bottom:0;
     margin-top: 1em;
     grid-area: nav;
-    background: hsl(248, 62%, 24%);
+    background: var(--bg-color);
     background-size: 200%;
+    background-position: top;
     padding-inline: 2em;
     width: 100%;
     height: fit-content;
