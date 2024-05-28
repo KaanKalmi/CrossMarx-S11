@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,62.5,300&display=swap');
-@import url(nav.css);
 
 :root{
     --bg-color: radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
@@ -212,11 +211,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* ------------------------------------------------------DASHBOARD---------------------------------------------------------- */
 .dashboard nav {
-    position: relative;
+    position: fixed;
+    bottom:0;
+    margin-top: 1em;
     grid-area: nav;
-    background: var(--bg-color);
+    background: hsl(248, 62%, 24%);
     background-size: 200%;
-    padding: 2em;
+    padding-inline: 2em;
     width: 100%;
     height: fit-content;
     color: var(--text-color);
@@ -224,24 +225,23 @@ h1, h2, h3, h4, h5, h6 {
     ul {
         display: flex;
         position: relative;
-        top: 20vh;
         column-gap: 0.5em;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         margin: 0;
-        margin-top: 5em;
         padding: 0;
         width: 100%;
         list-style-type: none;
     }
 
     li {
-
         svg {
             stroke: var(--text-color);
             width: 1.75em;
             height: 1.75em;
         }
-    
+
         a {
             display: flex;
             justify-content: left;
@@ -252,14 +252,19 @@ h1, h2, h3, h4, h5, h6 {
             font-size: 1.25em;
             text-decoration: none;
         }
-    
+
         p {
-            display: inline-block;
             margin-left: 16px;
+
         }
-    
-        a:hover { color: #95c5fc;
-            svg { stroke: #95c5fc; color: #95c5fc; }
+
+        a:hover {
+            color: #95c5fc;
+
+            svg {
+                stroke: #95c5fc;
+                color: #95c5fc;
+            }
         }
     }
 }
@@ -270,8 +275,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--text-color);
     width: 100vw;
     font-family: var(--body-font);
+
     .alert {
-        color: rgb(187 88 88); /* welke stakeholder nog ingevuld moet worden*/
+        color: rgb(187 88 88);
+        /* welke stakeholder nog ingevuld moet worden*/
     }
 
     section {
@@ -280,9 +287,10 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         gap: 1em;
 
-        border-top: 2px solid hsl(246, 25%, 77%); /* voor mobiel om de section te scheiden*/
+        border-top: 2px solid hsl(246, 25%, 77%);
+        /* voor mobiel om de section te scheiden*/
         background-color: hotpink;
-        
+
         background-color: var(--text-color);
         padding: 1em;
     }
@@ -298,74 +306,87 @@ h1, h2, h3, h4, h5, h6 {
         gap: 1em;
         padding: 2em;
         width: 100%;
-        
 
-        ul{
+
+        ul {
             display: flex;
             flex-direction: row;
+            justify-content: center;
         }
 
-        .calculate{
-            display:block;
+        .calculate {
+            display: block;
             margin-top: 3em;
             margin-bottom: 1.5em;
         }
+
+        .set-up {
+
+            ol {
+                display: grid;
+                gap: .5em;
+                list-style-type: none;
+            }
     
+            li {
+                gap: 1em;
+                border-radius: 5px;
+                background-color: #ddd;
+                padding: 1em;
+            }
 
-    .set-up {
-        .points[value] {
-            --w: 350px;
-            --color:
-                linear-gradient(red 0 0) 0 /calc(var(--w)*.3 - 100%) 1px,
-                linear-gradient(orange 0 0) 0 /calc(var(--w)*.6 - 100%) 1px,
-                green;
-            --background: black;
-        
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            -webkit-mask:
-                radial-gradient(circle closest-side, #000 98%, #0000 102%) 0/12.5% 100%,
-                linear-gradient(90deg, #000 50%, #0000 0) 8%/25% 100%;
-            appearance: none;
-            mask: radial-gradient(circle closest-side, #000 98%, #0000 102%) 0/12.5% 100%,
-                linear-gradient(90deg, #000 50%, #0000 0) 8%/25% 100%;
-            border: none;
-            background: var(--background);
-            width: var(--w)
+            .points[value] {
+                --w: 8em;
+                --color:
+                    linear-gradient(red 0 0) 0 /calc(var(--w)*.3 - 100%) 1px,
+                    linear-gradient(orange 0 0) 0 /calc(var(--w)*.6 - 100%) 1px,
+                    green;
+                --background: black;
+
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -webkit-mask:
+                    radial-gradient(circle closest-side, #000 98%, #0000 102%) 0/12.5% 100%,
+                    linear-gradient(90deg, #000 50%, #0000 0) 8%/25% 100%;
+                appearance: none;
+                mask: radial-gradient(circle closest-side, #000 98%, #0000 102%) 0/12.5% 100%,
+                    linear-gradient(90deg, #000 50%, #0000 0) 8%/25% 100%;
+                border: none;
+                background: var(--background);
+                width: var(--w)
+            }
+
+            .points[value]::-webkit-progress-bar {
+                background: var(--background);
+            }
+
+            .points[value]::-webkit-progress-value {
+                background: var(--color);
+            }
+
+            .points[value]::-moz-progress-bar {
+                background: var(--color);
+            }
         }
-        
-        .points[value]::-webkit-progress-bar { background: var(--background); }
-        .points[value]::-webkit-progress-value { background: var(--color); }
-        .points[value]::-moz-progress-bar { background: var(--color); }
     }
-        ol {
-            display: grid;
-            gap: .5em;
-            list-style-type: none;
-        }
 
-        li {
-            gap: 1em;
-            border-radius: 5px;
-            background-color: #ddd;
-            padding: 1em;
-        }
-    }
-
-    .stakeholders{
-        i{
+    .stakeholders {
+        i {
             max-width: 75ch;
         }
     }
+
     article {
         display: flex;
         flex-direction: column;
         gap: 1em;
+
         ul {
             border-radius: 5px;
             background-color: #ddd;
             padding: 1em;
             list-style: none;
+            justify-content: start;
 
             li {
 
@@ -374,13 +395,11 @@ h1, h2, h3, h4, h5, h6 {
                     display: flex;
                     align-items: center;
                     gap: 1em;
-
                     transition: all .1s ease-out;
                     cursor: pointer;
                     border-radius: 5px;
                     background-color: #c7c7c7;
                     padding: 2em;
-
                     color: hsl(248, 62%, 24%);
 
                     &:hover {
@@ -412,10 +431,10 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    .breakdown{
+    .breakdown {
         padding: 1em;
 
-        ul{
+        ul {
             display: flex;
             flex-direction: row;
             margin: auto;
@@ -436,18 +455,17 @@ footer {
         text-shadow: var(--shadow);
     }
 
-    & ul {
+    ul {
         display: flex;
         gap: 1em;
+        flex-direction: column;
+        flex-wrap: wrap;
 
-        
-    }
-
-    & li {
-        all: unset;
+        li {
+            all: unset;
+        }
     }
 }
-
 
 /*---------------------------------------------- SCORE _ ANNA-KYRA ----------------------------------------------- */
 .vragenlijst {
@@ -873,8 +891,19 @@ footer {
         width: fit-content;
         width: 15em;
         height: 100vh;
+
+        ul{
+        position: relative;
+        justify-content: left;
+        align-items: start;
+        top: 20vh;
+        flex-direction: column;
+        margin-top: 5em;
+        width: 100%;
+        list-style-type: none;
+        }
     }
-    
+
 
     .dashboard {
         display: grid;
@@ -892,20 +921,20 @@ footer {
                 max-width: 18em;
             }
         }
-    }
 
-    .dashboard .set-up {
-        ol {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            list-style-type:none;
-            
-            li {
-                gap: 1em;
-                margin-inline: 1em;
-                border-radius: 5px;
-                background-color: #ddd;
-                padding: 1em;
+        .set-up {
+            ol {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                list-style-type: none;
+
+                li {
+                    gap: 1em;
+                    margin-inline: 1em;
+                    border-radius: 5px;
+                    background-color: #ddd;
+                    padding: 1em;
+                }
             }
         }
     }
