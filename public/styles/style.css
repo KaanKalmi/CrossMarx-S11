@@ -211,7 +211,8 @@ h1 {
     margin: auto;
     background-color: #e6e6e6;
     background: var(--bg-color);
-    height: 100vh;
+    background-size: cover;
+    min-height: 100vh;
     font-family: var(--body-font);
 }
 
