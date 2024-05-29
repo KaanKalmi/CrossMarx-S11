@@ -1,12 +1,36 @@
-<%- include('partials/head', {current:'gegevens-form'}) %>
-<header>
-<h1>gegevens</h1>
-<form action="/sdg">
-<button class ="submit-button play-sound-button" type="submit" id="submit-button">Kies deze sdg's</button>
-</form>
-</header>
-<main>
+<%- include('partials/head', {current: 'gegevens-form' }); %>
+    <%- include('partials/vragenlijst_header', {current: 'vragenlijst' }); %>
 
-</main>
-<footer></footer>
-<%- include('partials/foot') %>
+        <header>
+            <h1>Gegevens</h1>
+        </header>
+        <main>
+
+            <article class="stakeholder-form">
+
+                <form action="/url" method="POST">
+
+                    <article class="enter-name">
+
+                        <input type="text">
+                        <label for="name">Naam</label>
+
+                    </article>
+
+                    <article class="enter-description">
+
+                        <input type="text">
+                        <label for="description">Beschrijving</label>
+
+                    </article>
+
+                    <button type="submit" value="Submit"> Submit </button>
+
+                </form>
+
+
+            </article>
+
+        </main>
+        <footer></footer>
+        <%- include('partials/foot') %>
