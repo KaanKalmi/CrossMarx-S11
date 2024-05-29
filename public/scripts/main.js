@@ -23,8 +23,10 @@ function handleSubmit(event) {
 ranges.forEach((range, index) => {
     range.addEventListener('input', function(event) {
         console.log(range.value)
-        console.log(`Slider ${index+1} is gewijzigd`); 
-        const output = document.querySelector(`.selected-${index+1}`);
+        const output = range.closest(`article`);
+
+        console.log(output);
+        
 
         if (range.value == 5){
             console.log('jup')
