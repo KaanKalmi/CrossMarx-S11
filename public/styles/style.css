@@ -480,7 +480,7 @@ h1, h2, h3, h4, h5, h6 {
         background-image: url('https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871');
         background-repeat: repeat-x;
         background-position: 0 -160%;
-        transition: 1.5s ease-out;
+        transition: 1s ease-out;
     }
     .btn:hover{
         background-position: center;   
