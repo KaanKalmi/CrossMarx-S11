@@ -28,7 +28,13 @@
                     <% } %>
                     <% if (current == 'sdgs') { %>
                         <div>2 </div>
-                    <% } else { %>
+                        <% } %>
+                    <% if (current == 'score') { %>
+                        <a href="/sdg">
+                            <div>✓</div>
+                        </a>
+                    <% } %>
+                    <% if (current == 'done') { %>
                         <a href="/sdg">
                             <div>✓</div>
                         </a>
