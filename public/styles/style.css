@@ -46,6 +46,22 @@ h1, h2, h3, h4, h5, h6 {
     height: 100vh;
 }
 
+input, textarea {
+    border-radius: 12px;
+    padding: var(--object-radius);
+    width: 100%;
+}
+
+input, textarea {
+    margin-bottom: 20px;
+    border: 2px solid hsl(246, 25%, 77%);
+    font-size: .9em;
+}
+
+input[type="file"] {
+    background-color: hsl(246, 25%, 77%);
+}
+
 /* ------------------------------------BUTTONS _ RUBEN-------------------------------------------- */
 .SDG-button-container{
    display: flex;
@@ -924,6 +940,64 @@ footer {
     width: 100%;
     max-width: 1000px;
 }
+
+
+/* ------------------------------------------GEGEVENS FORMULIER _ ILONA----------------------------------*/
+
+.stakeholder-form {
+    article {
+        background-color: #ddd;
+        padding: 1em;
+        padding-top: 2em;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        color: hsl(248, 62%, 24%);
+    }
+}
+.enter-name,
+.enter-description {
+    position: relative;
+    width: 100%;
+    transition: all .25s ease-out;
+}
+
+.stakeholder-form input, .stakeholder-form textarea {
+    background: none;
+    border-radius: var(--btn-radius);
+    width: 100%;
+    background-color: var(--text-color);
+    
+}
+
+.stakeholder-form label {
+    position: absolute;
+    bottom: 50%;
+    left: .5em;
+    
+    border: 2px solid transparent;
+    border-radius: var(--btn-radius);
+    pointer-events: none;
+    background-color: var(--text-color);
+    transition: all .25s ease-out;
+}
+
+.enter-name:focus-within label,
+:not(:has(placeholder-shown)) label {
+    bottom: 100%;
+    left: 0;
+    background-color: transparent;
+}
+
+.enter-description:focus-within label,
+:not(:has(placeholder-shown)) label {
+    bottom: 100%;
+    left: 0;
+    background-color: transparent;
+
+}
+
 
 /* --------------------------------------------------Tablet---------------------------------------------------------- */
 @media screen and (min-width:40em) {

@@ -1,35 +1,35 @@
-<%- include('partials/head', {current: 'gegevens-form' }); %>
-    <%- include('partials/vragenlijst_header', {current: 'vragenlijst' }); %>
-
-        <header>
-            <h1>Gegevens</h1>
-        </header>
-        <main>
-
-            <article class="stakeholder-form">
+<%- include('partials/head', {current: 'vragenlijst'}); %>
+<%- include('partials/vragenlijst_header', {current: 'gegevens'}); %>
+        <main class="stakeholder-form">
 
                 <form action="/sdg">
+                    <h2>Gegevens</h2>
+                    <i>Benoem uw klant of klanten groepen</i>
+                    <article>
+                        <section class="enter-name">
+                            <label for="name">Naam</label>
+                            <input type="text" name="name">
+                            
 
-                    <article class="enter-name">
+                        </section>
 
-                        <input type="text">
-                        <label for="name">Naam</label>
+                        <section class="enter-description">
+                            <label for="description">Beschrijving</label>
+                            <textarea name="description" rows="4" cols="33" placeholder="bijv. ..."></textarea>
+                            
 
+                        </section>
                     </article>
 
-                    <article class="enter-description">
-
-                        <input type="text">
-                        <label for="description">Beschrijving</label>
-
-                    </article>
-
-                    <button type="submit" value="Submit"> Submit </button>
+                    <section class="SDG-button-container">
+                        <a href="/dashboard/4">< Terug</a>
+                        <div>
+                            <button class="overslaan-button play-sound-button" type="button" id="overslaan-button">Overslaan</button>
+                            <button class ="submit-button play-sound-button" type="submit" id="submit-button">Kies deze sdg's</button>
+                        </div>
+                    </section>
 
                 </form>
-
-
-            </article>
 
         </main>
         <footer></footer>
