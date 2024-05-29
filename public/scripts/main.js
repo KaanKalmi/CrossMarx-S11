@@ -86,3 +86,50 @@ buttons.forEach(button => {
       audio.play();
     });
   });
+
+var checkboxes = document.querySelectorAll('input[type="checkbox"]')
+var checkboxOne = document.querySelector('input[type="checkbox"]:nth-of-type(1)')
+var submit = document.querySelector('.sdg-submit')
+var selecteerDrie = document.querySelector('.important-heading')
+console.log(checkboxes)
+
+
+checkboxes.forEach(checkbox => {
+    this.addEventListener('click', function(){
+        let geselecteerdeGoals = document.querySelectorAll('input[type="checkbox"]:checked');
+        console.log(geselecteerdeGoals.length)
+
+        if(geselecteerdeGoals.length >= 3) {
+            selecteerDrie.classList.remove("fat_wiggle")
+            console.log('jup')
+        }
+
+        submit.addEventListener('click', function(){
+            let geselecteerdeGoals = document.querySelectorAll('input[type="checkbox"]:checked');
+            console.log(geselecteerdeGoals.length)
+            if(geselecteerdeGoals.length < 3) {
+                checkboxOne.setCustomValidity("Selecteer at least 3 items")
+                checkboxOne.reportValidity()
+                console.log('lager dan 3')
+                selecteerDrie.classList.add("fat_wiggle")
+            }else{
+                checkboxOne.setCustomValidity("");
+                console.log('hoger dan 3')
+            }
+        })
+    })
+})
+
+submit.addEventListener('click', function(){
+    let geselecteerdeGoals = document.querySelectorAll('input[type="checkbox"]:checked');
+    console.log(geselecteerdeGoals.length)
+    if(geselecteerdeGoals.length < 3) {
+        checkboxOne.setCustomValidity("Selecteer at least 3 items")
+        checkboxOne.reportValidity()
+        console.log('lager dan 3')
+        selecteerDrie.classList.add("fat_wiggle")
+    }else{
+        checkboxOne.setCustomValidity("");
+        console.log('hoger dan 3')
+    }
+})
