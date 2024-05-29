@@ -620,8 +620,6 @@ footer {
                     p {
                         width: max-content;
                     }
-
-                    
                 } 
 
                 div div {
@@ -928,6 +926,28 @@ footer {
         }
     }
 }
+
+.overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 1em; 
+
+    .overview-sdgs {
+        background-color: #ddd;
+        width: fit-content;
+        padding: 1em;
+        border-radius: 5px;
+    }
+
+    p {
+        width: 100%;
+        background-color: #bababa;
+        padding: .5em;
+        border-radius: 5px;
+    }
+}
+
 
 .vragenlijst footer {
     display: flex;
