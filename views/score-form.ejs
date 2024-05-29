@@ -4,17 +4,17 @@
 
     <form action="/done-form" method="post">
         <fieldset>
-            <legend>Scores toevoegen</legend>
-            <i>Van de gekozen sdgs score van -5 tot 5</i>
+            <legend>Add scores</legend>
+            <i>to the chosen SDG's from -5 to 5</i>
             <div class="sdgs selected">
                 <%- include('partials/selected_sdgs'); %>
             </div>
         </fieldset>
         <section class="SDG-button-container">
-            <a href="/sdg"> < Terug</a>
+            <a href="/sdg"> < Back</a>
             <div>
-              <button class="overslaan-button play-sound-button" type="button" id="overslaan-button">Overslaan</button>
-              <button class ="submit-button play-sound-button" type="submit" id="submit-button">Kies deze sdg's</button>
+              <button class="overslaan-button play-sound-button" type="button" id="overslaan-button">Skip</button>
+              <button class ="submit-button play-sound-button" type="submit" id="submit-button">Confirm score</button>
             </div>
         </section>
     </form>

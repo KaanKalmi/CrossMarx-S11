@@ -4,19 +4,20 @@
   <form class="SDG-pagina" id="SDG-pagina" action="/score-form" method="POST">
       <section class="SDG-pagina-text">
         <div class="container">
-          <h2 tabindex="1">Aan welke SDG's wordt een <span>positieve</span> bijdrage geleverd doordat deze mensen bij jouw bedrijf werken?</h2>
-          <p tabindex="2">Denk bijvoorbeeld aan het feit dat jouw bedrijf loon betaalt, waardoor SDG 1 en 2 worden geholpen. Of kijk naar de arbeidsomstandigheden (bureau, stoel, licht, werktijden) waarmee SDG 3 wordt geholpen.</p>
-          <p class="important-heading" tabindex="3">Kies <span>MINIMAAL</span> 3 SDG's voor jouw stakeholder</p>
+          <h2 tabindex="1">
+            Which SDGs are being addressed? <span>positive</span> contribution because these people work at your company?</h2>
+          <p tabindex="2">For example, consider the fact that your company pays wages, which helps SDG 1 and 2. Or look at the working conditions (desk, chair, lighting, working hours) that help achieve SDG 3.</p>
+          <p class="important-heading" tabindex="3">Choose a <span>MINIMUM</span> of 3 SDG's for your stakeholder</p>
         </div>
       </section>
       <section class="SDGs">
         <%- include('partials/sdgs-login') %>
       </section>
       <section class="SDG-button-container">
-        <a href="/gegevens-form/JUMBO"> < Terug</a>
+        <a href="/gegevens-form/JUMBO"> < Back</a>
         <div>
-          <button class="overslaan-button play-sound-button" type="button" id="overslaan-button">Overslaan</button>
-          <button class ="submit-button play-sound-button" type="submit" id="submit-button">Kies deze sdg's</button>
+          <button class="overslaan-button play-sound-button" type="button" id="overslaan-button">Skip</button>
+          <button class ="submit-button play-sound-button" type="submit" id="submit-button">Choose these SDG's</button>
         </div>
       </section>
   </form>
