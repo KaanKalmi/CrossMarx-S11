@@ -57,7 +57,7 @@ app.get('/gegevens-form/:stakeholder_type', function (request, response) {
 })
 
 
-app.get('/sdg-form', function (request, response) { 
+app.get('/sdg', function (request, response) { 
     response.render('sdg-form', {
         sdgs: sdgData.data,
         stakeholder: stakeholdersData.data,
@@ -90,7 +90,7 @@ app.get('/done', function (request, response) {
 app.post('/gegevens-form/:stakeholder_type', function (request, response) {
 })
 
-app.post('/sdg-form', function (request, response) {
+app.post('/sdg', function (request, response) {
 })
 
 // PUT routes ----------------------------------------------------
