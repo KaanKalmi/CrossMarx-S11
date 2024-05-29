@@ -404,9 +404,9 @@ h1, h2, h3, h4, h5, h6 {
                     color: hsl(248, 62%, 24%);
 
                     &:hover {
-                        box-shadow: var(--shadow);
+                        /* box-shadow: var(--shadow);
                         background: hsl(248, 62%, 24%);
-                        color: #c7c7c7;
+                        color: #c7c7c7; */
                     }
 
                     &:active {
@@ -440,6 +440,18 @@ h1, h2, h3, h4, h5, h6 {
             flex-direction: row;
             margin: auto;
         }
+    }
+
+    .btn{
+        cursor: pointer;
+        background: #c7c7c7;
+        background-image: url('https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871');
+        background-repeat: repeat-x;
+        background-position: 0 -160%;
+        transition: 1.5s ease-out;
+    }
+    .btn:hover{
+        background-position: center;   
     }
 }
 
