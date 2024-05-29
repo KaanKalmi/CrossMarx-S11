@@ -62,6 +62,8 @@ input[type="file"] {
     background-color: hsl(246, 25%, 77%);
 }
 
+
+
 /* ------------------------------------BUTTONS _ RUBEN-------------------------------------------- */
 .SDG-button-container{
    display: flex;
@@ -1377,3 +1379,21 @@ footer {
     transform: translateY(4px); /* Simuleert klikgevoel */
  }
 
+ .fat_wiggle {
+    font-weight: bold;
+    @media (prefers-reduced-motion:no-preference) {
+        animation: wiggle 1s ease-in-out infinite;
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        rotate: 1deg;
+    }
+    50% {
+        rotate: -1deg;
+    }
+    100% {
+        rotate: 1deg;
+    }
+}

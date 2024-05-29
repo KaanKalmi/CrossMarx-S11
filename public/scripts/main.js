@@ -90,7 +90,7 @@ buttons.forEach(button => {
 var checkboxes = document.querySelectorAll('input[type="checkbox"]')
 var checkboxOne = document.querySelector('input[type="checkbox"]:nth-of-type(1)')
 var submit = document.querySelector('.sdg-submit')
-var selecteerDrie = document.querySelector('.selecteer_3')
+var selecteerDrie = document.querySelector('.important-heading')
 console.log(checkboxes)
 
 
@@ -100,7 +100,7 @@ checkboxes.forEach(checkbox => {
         console.log(geselecteerdeGoals.length)
 
         if(geselecteerdeGoals.length >= 3) {
-            // selecteerDrie.classList.remove("fat_wiggle")
+            selecteerDrie.classList.remove("fat_wiggle")
             console.log('jup')
         }
 
@@ -111,7 +111,7 @@ checkboxes.forEach(checkbox => {
                 checkboxOne.setCustomValidity("Selecteer at least 3 items")
                 checkboxOne.reportValidity()
                 console.log('lager dan 3')
-                // selecteerDrie.classList.add("fat_wiggle")
+                selecteerDrie.classList.add("fat_wiggle")
             }else{
                 checkboxOne.setCustomValidity("");
                 console.log('hoger dan 3')
@@ -127,7 +127,7 @@ submit.addEventListener('click', function(){
         checkboxOne.setCustomValidity("Selecteer at least 3 items")
         checkboxOne.reportValidity()
         console.log('lager dan 3')
-        // selecteerDrie.classList.add("fat_wiggle")
+        selecteerDrie.classList.add("fat_wiggle")
     }else{
         checkboxOne.setCustomValidity("");
         console.log('hoger dan 3')
