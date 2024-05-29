@@ -1,9 +1,29 @@
-<%- include('partials/head') %>
+<%- include('partials/head', {current: 'vragenlijst'}) %>
 <header>
 <h1>done</h1>
+
+
 </header>
 <main>
-
+    <% Object.keys(selectSdgs).forEach(function(key) { %>
+        <% var sdgNumber = key.replace('selectSdg_', ''); %>
+        <% var selectedSdg = selectedSdgs.find(sdg => sdg.number == parseInt(sdgNumber)); %>
+        <% if (selectedSdg) { %>
+            <article class="selected">
+                <picture class="sdg-picture">
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>?format=avif" type="image/avif">
+                    <source srcset="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>?format=webp">
+                    <img src="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>" alt="<%= selectedSdg.title %>" height="100" width="100" loading="lazy">
+                </picture>
+                <p>Score: <%= selectSdgs[key] %></p>
+            </article>
+        <% } %>
+    <% }); %>
+    
+    
+    
+    
+    
 </main>
 <footer></footer>
 <%- include('partials/foot') %>

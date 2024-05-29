@@ -67,24 +67,29 @@ app.get('/sdg', function (request, response) {
 
 })
 
-app.get('/score-form/:sdg_id', function (request, response) {
-    var sdgId = request.params.sdg_id
-    response.render('score-form', {
-        sdgs: sdgData.data,
-        stakeholder: stakeholdersData.data,
-        score: scoresData.data,
-        company: companiesData.data,
-    })
-})
+app.post('/score-form', function (request, response) {
+    const selectedSdgs = request.body['sdg-selection']; // Array of selected SDG IDs
 
-app.get('/done', function (request, response) {
-    response.render('done-form', {
+    // Check if any SDGs were selected
+    if (!selectedSdgs) {
+        return response.redirect('/sdg'); // Redirect back if none selected
+    }
+
+    // If a single SDG is selected, convert it to an array
+    const selectedSdgsArray = Array.isArray(selectedSdgs) ? selectedSdgs : [selectedSdgs];
+
+    // Find the SDG objects based on selected IDs
+    const selectedSdgObjects = selectedSdgsArray.map(sdgId => sdgData.data.find(sdg => sdg.id == sdgId));
+
+    // Render the score-form with selected SDGs
+    response.render('score-form', {
+        selectedSdgs: selectedSdgObjects,
         sdgs: sdgData.data,
         stakeholder: stakeholdersData.data,
         score: scoresData.data,
         company: companiesData.data,
-    })
-})
+    });
+});
 
 // POST routes ---------------------------------------------------
 app.post('/gegevens-form/:stakeholder_type', function (request, response) {
@@ -96,3 +101,27 @@ app.post('/sdg', function (request, response) {
 // PUT routes ----------------------------------------------------
 app.put('/score-form/:sdg_id', function (request, response) {
 })
+
+app.post('/done-form', function(req, res) {
+    // Get the selected SDGs from the request body
+    const selectSdgs = req.body;
+
+    // Create an array of selected SDG objects by extracting the numbers from the keys
+    const selectedSdgObjects = Object.keys(selectSdgs).map(key => {
+        const sdgNumber = key.replace('selectSdg_', '');
+        return sdgData.data.find(sdg => sdg.number == parseInt(sdgNumber));
+    }).filter(sdg => sdg); // Filter out any undefined values
+
+    // Debugging: Log the values to ensure they're correct
+    console.log("selectSdgs:", selectSdgs);
+    console.log("selectedSdgObjects:", selectedSdgObjects.map(sdg => ({
+        number: sdg.number,
+        icon: sdg.icon
+    })));
+
+    // Render the done-form with both selectSdgs and selectedSdgs
+    res.render('done-form', {
+        selectSdgs: selectSdgs,
+        selectedSdgs: selectedSdgObjects
+    });
+});

@@ -1,7 +1,6 @@
 <%- include('partials/head', {current: 'vragenlijst'}); %>
 <%- include('partials/vragenlijst_header', {current: 'scores'}); %>
 <main>
-    <form action="/klant-toevoegen-scores">
         <fieldset>
             <legend>Scores toevoegen</legend>
             <i>Van de gekozen sdgs score van -5 tot 5</i>
@@ -9,14 +8,6 @@
                 <%- include('partials/selected_sdgs'); %>
             </div>
         </fieldset>
-        <section class="SDG-button-container">
-            <a href="/dashboard/4">< Terug</a>
-            <div>
-                <button class="overslaan-button play-sound-button" type="button" id="overslaan-button">Overslaan</button>
-                <button class ="submit-button play-sound-button" type="submit" id="submit-button">Kies deze sdg's</button>
-            </div>
-        </section>
-    </form>
 </main>
 <footer>
 

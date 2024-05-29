@@ -1,13 +1,21 @@
-<article class="sdgs-login">
+<div class="sdgs-login">
         <% sdgs.forEach(function(sdg) { %>
-            <label class="sdg-label">
-                <input type="checkbox" name="sdg-selection" value="<%= sdg %>" class="visually-hidden">
-                <picture class="sdg-picture">
-                <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=avif" type="image/avif">
-                <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=webp" type="image/webp">
-                <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>" alt="<%= sdg.title %>" height="100" width="100" loading="lazy">
-                </picture>
-            </label>
-
-        <% }) %>
-</article>
+          <label class="sdg-label">
+            <input type="checkbox" name="sdg-selection" value="<%= sdg.id %>" class="visually-hidden">
+            <picture class="sdg-picture">
+              <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=avif" type="image/avif">
+              <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=webp" type="image/webp">
+              <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>" alt="<%= sdg.title %>" height="100" width="100" loading="lazy">
+            </picture>
+          </label>
+        <% }); %>
+        <footer>
+            <a href="/klant-toevoegen-sdgs"> < Terug</a>
+            <div>
+                <a href="/dashboard" class="skip">Overslaan</a>
+                <button class="submit-button play-sound-button" type="submit" id="submit-button">Kies deze sdg's</button>
+                <audio id="clickSound"src="/202313__7778__click-2.mp3" preload="auto"></audio>
+            </div>
+        </footer>
+        
+</div>
