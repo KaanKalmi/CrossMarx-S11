@@ -1,3 +1,164 @@
-<%- include('partials/head') %>
 
-<%- include('partials/foot') %>
+<%- include('./partials/head', {current:'dashboard'})%>
+<%- include('partials/nav') %>
+
+<main>
+    <header>
+        <h1>Dashboard</h1>
+        <p>Let's check your progress</p>   
+    </header>
+
+    <section>
+        <article>
+            <h3><%= company.name %></h3>
+            <p>1834 Employees</p>
+            <picture>
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=avif&height=75&width=275" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= company.logo %>?format=webp&height=75&width=275" type="image/webp">
+                <img src="https://fdnd-agency.directus.app/assets/<%= company.logo %>" height="75" width="225">
+            </picture>
+        </article>
+    </section>
+
+    <section class="set-up">
+        <h2>Setting up your account</h2>
+        <label> Beginner
+            <progress class="points" max="100" value="20"></progress>
+        </label>
+        <i>You can get the profile badge by getting a green (>80%) Score</i>
+            <ol>
+                <li><h3>1. Stakeholders</h3>
+                    <i>Adding stakeholders will help us calculate your ecological impact</i>
+                </li>
+                <li>
+                    <h3>2. SDG's</h3>
+                <i>SDG's are a call to action to end poverty and inequality, protect the planet, and ensure that all people enjoy health, justice and prosperity.</i>
+                </li>
+                <li>
+                    <h3>3. Scores</h3>
+                    <i>Scoring a SDG means that the stakeholder either positively or negetively impacts the chosen SDG</i>
+                </li>
+            </ol>
+    </section>
+
+    <section class="stakeholders">
+        <h2>Stakeholders</h2>
+        <i>Stakeholders are divided into 5 categories: clients, suppliers, financers, employees and environment. You will assign them a minimum of 3 SDG's and we'll calculate their overall impact!</i>
+
+        <article>
+            <header>
+                <h3>Clients</h3>
+                <p class="alert">Add 2 Clients*</p>
+            </header>
+            <ul>
+                <% if (stakeholder.name) { %> 
+                <!-- En een for each wanneer er klanten zijn uitgekozen na de vragenlijst zoiets kan veranderd worden-->
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>">
+                        <h4><%= stakeholder.name %></h4>
+                        <i>info about client</i>
+                        <img src="blabla/<%= stakeholder.avatar %>" alt="">
+                    </a>
+                </li>
+                <% } %>
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>" class="btn">Add client</a>
+                </li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h3>Suppliers</h3>
+                <p class="alert">Add 2 Suppliers*</p>
+            </header>
+            <ul>
+                <% if (stakeholder.name) { %> 
+                <!-- En een for each wanneer er klanten zijn uitgekozen na de vragenlijst zoiets kan veranderd worden-->
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>">
+                        <h4><%= stakeholder.name %></h4>
+                        <i>info about suppliers</i>
+                        <img src="blabla/<%= stakeholder.avatar %>" alt="">
+                    </a>
+                </li>
+                <% } %>
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>" class="btn">Add Supplier</a>
+                </li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h3>Financers</h3>
+            </header>
+            <ul>
+                <% if (stakeholder.name) { %> 
+                <!-- En een for each wanneer er klanten zijn uitgekozen na de vragenlijst zoiets kan veranderd worden-->
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>">
+                        <h4><%= stakeholder.name %></h4>
+                        <i>info about Financers</i>
+                        <img src="blabla/<%= stakeholder.avatar %>" alt="">
+                    </a>
+                </li>
+                <% } %>
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>" class="btn">Add Financers</a>
+                </li>
+            </ul>
+        </article>
+        
+        <article>
+            <header>    
+                <h3>Employees</h3>
+            </header>
+            <ul>
+                <% if (stakeholder.name) { %> 
+                <!-- En een for each wanneer er klanten zijn uitgekozen na de vragenlijst zoiets kan veranderd worden-->
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>">
+                        <h4><%= stakeholder.name %></h4>
+                        <i>info about employees</i>
+                        <img src="blabla/<%= stakeholder.avatar %>" alt="">
+                    </a>
+                </li>
+                <% } %>
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>" class="btn">Add employees</a>
+                </li>
+            </ul>
+        </article>
+
+        <article>
+            <header>
+                <h3>Environment</h3>
+            </header>
+            <ul>
+                <% if (stakeholder.name) { %> 
+                <!-- En een for each wanneer er klanten zijn uitgekozen na de vragenlijst zoiets kan veranderd worden-->
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>">
+                        <h4><%= stakeholder.name %></h4>
+                        <i>info about Environment</i>
+                        <img src="blabla/<%= stakeholder.avatar %>" alt="">
+                    </a>
+                </li>
+                <% } %>
+                <li>
+                    <a href="/gegevens-form/<%= company.name %>" class="btn">Add Environment</a>
+                </li>
+            </ul>
+        </article>
+    </section>
+    <footer>
+        <ul>
+            <li><a href="#">Our vision</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>   
+        </ul>
+        <p>&copy; 2023 CrossMarx</p>
+    </footer>
+</main>
+
+<%- include('./partials/foot')%>

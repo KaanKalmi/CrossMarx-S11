@@ -75,7 +75,6 @@ ranges.forEach((range, index) => {
         }
     })
 })
-
 const button = document.getElementById("overslaan-button");
 const button2 = document.getElementById("submit-button");
 const audio = document.getElementById("clickSound");
