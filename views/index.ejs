@@ -1,4 +1,4 @@
-<%- include('partials/head') %>
+<%- include('partials/head', {current: 'login'}) %>
 <main>
   <section class="introduction-text">
     <h1> Measuring company impact simplified </h1>
@@ -21,14 +21,15 @@
     </section>
   </section>
   <section class="signup-form entrance">
-    
-    <form action="/sdg" method="get">
+
+    <form action="POST" class=".login-form">
+      <input type="hidden" name="stakeholder_id" value="39">
+      <input type="hidden" name="sdg_id" value="<%= sdgs.number%>">
+
       <header><h1>Register</h1>
       </header>
     
       <fieldset>
-        
-        
         <label> <span>Company Name</span>
           <input type="text" placeholder="Company Name" >
         </label>
@@ -36,9 +37,10 @@
           <input type="email" placeholder="Email Address" >
         </label>
         <label> <span>Password</span>
-          <input type="password" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!-*]).{8,}" 
+          <input type="password" placeholder="Password" id="password" 
           title="Must contain at least one number and one uppercase and lowercase letter, one special symbol, and at least 8 or more characters">
         </label>
+        <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!-*]).{8,}"  was van het wachtwoord code deed het kut -->
       </fieldset>
 
       <details>
