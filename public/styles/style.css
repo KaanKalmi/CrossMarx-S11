@@ -39,6 +39,38 @@ h1 {
     /* width: 90vw; */
     height: 100vh;
 }
+
+/* ------------------------------------BUTTONS _ RUBEN-------------------------------------------- */
+.SDG-button-container{
+   display: flex;
+   justify-content: space-between;
+   margin-top: 20px;
+}
+
+.overslaan-button,
+.submit-button{
+   background-color: #28a745; 
+   color: white;
+   padding: 15px 30px;
+   border: none;
+   border-radius: 8px;
+   font-size: 16px;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-bottom: 20px;
+   font-weight: bold;
+   cursor: pointer;
+   box-shadow: 0 5px #1c7430; 
+   transition: all 0.2s ease-in-out;
+   outline: none;
+}
+
+.overslaan-button:active,
+.submit-button:active{
+   background-color: #218838; 
+   box-shadow: 0 2px #1c7430;
+   transform: translateY(4px); 
+}
 /* ------------------------------------DETAILS _ ANNA_KYRA-------------------------------------------- */
 .info-mobile {
     display: block;
