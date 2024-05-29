@@ -94,6 +94,7 @@ input[type="file"] {
    box-shadow: 0 5px #1c7430; 
    transition: all 0.2s ease-in-out;
    outline: none;
+   width: 100%;
 }
 
 .overslaan-button:active,
@@ -1158,6 +1159,10 @@ footer {
                 min-width: 30em;
             }
         }
+    }
+
+    .overslaan-button, .submit-button { 
+        width: fit-content;
     }
 }
 
