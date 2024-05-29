@@ -3,22 +3,29 @@
         <main class="stakeholder-form">
 
                 <form action="/sdg">
-                    <h2>Gegevens</h2>
-                    <i>Benoem uw klant of klanten groepen</i>
+                    <section>
+                        <h2>Gegevens</h2>
+                        <i>Benoem uw klant of klanten groepen</i>
+                    </section>
                     <article>
                         <section class="enter-name">
                             <label for="name">Naam</label>
-                            <input type="text" name="name">
-                            
-
+                            <input type="text" id="name">
                         </section>
 
                         <section class="enter-description">
                             <label for="description">Beschrijving</label>
-                            <textarea name="description" rows="4" cols="33" placeholder="bijv. ..."></textarea>
-                            
-
+                            <textarea id="description" rows="4" cols="33"></textarea>
                         </section>
+                        <section class="enter-avatar">
+
+                            <label class="profile" for="profile" >
+                                <span>Klant foto</span>
+                            </label>  
+                            <input type="file" id="profile" name="avatar" accept="image/png, image/jpeg" />
+                            <small>300px x 300px recommended. JPGs JPEGs and PNGs supported</small>
+                        </section>
+                        
                     </article>
 
                     <section class="SDG-button-container">

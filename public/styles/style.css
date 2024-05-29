@@ -945,6 +945,12 @@ footer {
 /* ------------------------------------------GEGEVENS FORMULIER _ ILONA----------------------------------*/
 
 .stakeholder-form {
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
     article {
         background-color: #ddd;
         padding: 1em;
@@ -964,16 +970,19 @@ footer {
 }
 
 .stakeholder-form input, .stakeholder-form textarea {
+    margin-bottom: 1em;
     background: none;
     border-radius: var(--btn-radius);
     width: 100%;
     background-color: var(--text-color);
     
+    
 }
 
 .stakeholder-form label {
+    margin-bottom: 0;
     position: absolute;
-    bottom: 50%;
+    bottom: 40%;
     left: .5em;
     
     border: 2px solid transparent;
@@ -983,8 +992,11 @@ footer {
     transition: all .25s ease-out;
 }
 
+
+
 .enter-name:focus-within label,
 :not(:has(placeholder-shown)) label {
+    margin-bottom: 0;
     bottom: 100%;
     left: 0;
     background-color: transparent;
@@ -992,10 +1004,21 @@ footer {
 
 .enter-description:focus-within label,
 :not(:has(placeholder-shown)) label {
+    margin-bottom: 0;
     bottom: 100%;
     left: 0;
     background-color: transparent;
 
+}
+.enter-avatar label{
+   position: relative;
+   bottom: 50%;
+   left: 0;
+   background-color: transparent;
+}
+
+.enter-avatar input[type="file"] {
+    background-color: hsl(246, 25%, 77%);
 }
 
 
