@@ -397,7 +397,7 @@ input[type="file"] {
                     linear-gradient(red 0 0) 0 /calc(var(--w)*.3 - 100%) 1px,
                     linear-gradient(orange 0 0) 0 /calc(var(--w)*.6 - 100%) 1px,
                     green;
-                --background: black;
+                --background: #ddd;
 
                 -webkit-appearance: none;
                 -moz-appearance: none;
@@ -445,6 +445,7 @@ input[type="file"] {
             justify-content: start;
 
             li {
+                width: 100%;
 
                 a {
                     all: unset;
@@ -500,10 +501,10 @@ input[type="file"] {
     .btn{
         cursor: pointer;
         background: #c7c7c7;
-        background-image: url('https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871');
+        background-image: url('./wave.svg');
         background-repeat: repeat-x;
-        background-position: 0 -160%;
-        transition: 1s ease-out;
+        background-position: 0 -250%;
+        transition: .3s ease-out;
     }
     .btn:hover{
         background-position: center;   
@@ -1103,7 +1104,7 @@ footer {
 
         main {
             article ul li {
-                max-width: 18em;
+                max-width: 15em;
             }
         }
 
