@@ -542,6 +542,7 @@ footer {
         h1 {
             grid-area: header;
             width: 100%;
+            color: var(--text-color);
         }
 
         a {
