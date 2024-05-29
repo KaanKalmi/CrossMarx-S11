@@ -1,12 +1,43 @@
-<%- include('partials/head', {current:'gegevens-form'}) %>
-<header>
-<h1>gegevens</h1>
-<form action="/sdg">
-<button class ="submit-button play-sound-button" type="submit" id="submit-button">Kies deze sdg's</button>
-</form>
-</header>
-<main>
+<%- include('partials/head', {current: 'vragenlijst'}); %>
+<%- include('partials/vragenlijst_header', {current: 'gegevens'}); %>
+        <main class="stakeholder-form">
 
-</main>
-<footer></footer>
-<%- include('partials/foot') %>
+                <form action="/sdg">
+                    <section>
+                        <h2>Gegevens</h2>
+                        <i>Benoem uw klant of klanten groepen</i>
+                    </section>
+                    <article>
+                        <section class="enter-name">
+                            <label for="name">Naam</label>
+                            <input type="text" id="name">
+                        </section>
+
+                        <section class="enter-description">
+                            <label for="description">Beschrijving</label>
+                            <textarea id="description" rows="4" cols="33"></textarea>
+                        </section>
+                        <section class="enter-avatar">
+
+                            <label class="profile" for="profile" >
+                                <span>Klant foto</span>
+                            </label>  
+                            <input type="file" id="profile" name="avatar" accept="image/png, image/jpeg" />
+                            <small>300px x 300px recommended. JPGs JPEGs and PNGs supported</small>
+                        </section>
+                        
+                    </article>
+
+                    <section class="SDG-button-container">
+                        <a href="/dashboard/4">< Terug</a>
+                        <div>
+                            <button class="overslaan-button play-sound-button" type="button" id="overslaan-button">Overslaan</button>
+                            <button class ="submit-button play-sound-button" type="submit" id="submit-button">Kies deze sdg's</button>
+                        </div>
+                    </section>
+
+                </form>
+
+        </main>
+        <footer></footer>
+        <%- include('partials/foot') %>

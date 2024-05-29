@@ -1,4 +1,5 @@
 <%- include('partials/head',{current: 'vragenlijst'}) %>
+<main>
 <form class="SDG-pagina" id="SDG-pagina" action="/score-form" method="POST">
       <section class="SDG-pagina-text">
         <div class="container">
@@ -7,17 +8,14 @@
           <p class="important-heading" tabindex="3">Kies <span>MINIMAAL</span> 3 SDG's voor jouw stakeholder</p>
         </div>
       </section>
-      
       <section class="SDGs">
         <%- include('partials/sdgs-login') %>
       </section>
-
       <section class="SDG-button-container">
        <button class="overslaan-button play-sound-button" type="button" id="overslaan-button">Overslaan</button>
        <button class ="submit-button play-sound-button" type="submit" id="submit-button">Kies deze sdg's</button>
       </section>
       </form>
-
+</main>
 <audio id="clickSound"src="/202313__7778__click-2.mp3" preload="auto"></audio>
-
 <%- include('partials/foot') %>
