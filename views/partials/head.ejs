@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
     <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>S11</title>
     <script src="/scripts/main.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </head>
-<body <% if (current == 'vragenlijst') { %>class="vragenlijst"<% } %> <% if (current == 'login') { %>class="login"<% } %>>
-    
+
+<body <% if (current == 'vragenlijst') { %>class="vragenlijst"<% } %> 
+<% if (current == 'login') { %>class="login"<% } %>
+<% if (current == 'dashboard') { %>class="dashboard"<% } %>>

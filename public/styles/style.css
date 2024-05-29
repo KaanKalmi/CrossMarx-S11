@@ -2,26 +2,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,62.5,300&display=swap');
 
 :root{
-    --bg-color: radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
+    --bg-color: radial-gradient(at left bottom, hsl(221, 26%, 52%), hsl(234, 62%, 24%), hsl(229, 91%, 9%));
+    --bg-color-light: #e6e6e6;
     --text-color:#f8f8f8;
     --accent-text-color:#242424;
     --accent:#067545;
     --heading: "roboto mono", Arial, Helvetica, sans-serif;
     --body-font: "roboto serif", Arial, Helvetica, sans-serif;
     --btn-radius:8px;
-    --btn-padding:14px;
+    --btn-padding:6px;
     --object-radius:12px;
     --shadow: 0 0 20px hsla(248, 62%, 24%, 0.2);
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 h1 {
+    color: hsl(248, 62%, 24%);
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading);
+    
 }
 
 .login {
@@ -85,13 +91,14 @@ h1 {
 /* --------------------------------------------------LOGIN / REGISTER---------------------------------------------------------- */
 
 .introduction-text {
-    margin: auto;
-    width: 100%;
     justify-content: center;
+    margin: auto;
     padding: 3em 2em 0;
+    width: 100%;
 
     h1 {
         margin-bottom: .25em;
+        color: var(--text-color);
         font-size: 1.6em;
         line-height: 1.2;
         font-family: var(--heading);
@@ -108,15 +115,15 @@ h1 {
     }
 
     details > summary {
+        cursor: pointer;
+        margin: .2em 0;
+        /* border-radius: 5px; */
+        border-top: 1px solid var(--text-color);
+        padding: .5em;
         /* background-color: white; */
     
         color: var(--text-color);
-        padding: .5em;
-        /* border-radius: 5px; */
-        border-top: 1px solid var(--text-color);
-        margin: .2em 0;
         font-family: var(--heading);
-        cursor: pointer;
         
     }
     
@@ -129,8 +136,8 @@ h1 {
 
 .signup-form {
     margin: auto;
-    width: 100%;
     background-color: var(--text-color);
+    width: 100%;
     height: 100%;
     overflow-y: auto;
 
@@ -155,10 +162,10 @@ h1 {
         
         legend, h1 {
             margin-bottom: 1em;
-            font-weight: bold;
-            text-align: left;
             color: hsl(248, 62%, 24%);
+            font-weight: bold;
             font-family: var(--heading);
+            text-align: left;
         }
 
         fieldset {
@@ -189,10 +196,10 @@ h1 {
         }
 
         details > fieldset {
-            /* margin: 1em 0; */
-            padding: 1em;
             border-radius: var(--btn-radius);
             background-color: rgba(148, 148, 148, 0.273);
+            /* margin: 1em 0; */
+            padding: 1em;
         }
 
     }
@@ -208,8 +215,8 @@ h1 {
     }
 
     span {
-        font-weight: 200;
         color: hsl(248, 62%, 24%);
+        font-weight: 200;
     }
 
     .btn-green {
@@ -234,15 +241,285 @@ h1 {
         border: 2px solid red;
     }
 }
+/* ------------------------------------------------------DASHBOARD---------------------------------------------------------- */
+.dashboard nav {
+    position: fixed;
+    bottom:0;
+    grid-area: nav;
+    background: var(--bg-color);
+    background-size: 200%;
+    background-position: top;
+    padding-inline: 2em;
+    padding-bottom: 1em;
+    width: 100%;
+    height: fit-content;
+    color: var(--text-color);
 
+    ul {
+        display: flex;
+        position: relative;
+        column-gap: 0.5em;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        list-style-type: none;
+    }
+
+    li {
+        svg {
+            stroke: var(--text-color);
+            width: 1.75em;
+            height: 1.75em;
+        }
+
+        a {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 3.5em;
+            overflow: hidden;
+            color: var(--text-color);
+            font-size: 1.25em;
+            text-decoration: none;
+        }
+
+        p {
+            margin-left: 16px;
+
+        }
+
+        a:hover {
+            color: #95fcf3;
+
+            svg {
+                stroke: #95fcf3;
+                color: #95fcf3;
+            }
+        }
+    }
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--text-color);
+    width: 100vw;
+    font-family: var(--body-font);
+
+    .alert {
+        color: rgb(187 88 88);
+        /* welke stakeholder nog ingevuld moet worden*/
+    }
+
+    section {
+
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        border-top: 2px solid hsl(246, 25%, 77%);
+        /* voor mobiel om de section te scheiden*/
+        background-color: hotpink;
+
+        background-color: var(--text-color);
+        padding: 1em;
+    }
+
+    progress {
+        width: 100%;
+    }
+
+    main {
+        display: flex;
+        grid-area: main;
+        flex-direction: column;
+        gap: 1em;
+        padding: 2em;
+        width: 100%;
+
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .calculate {
+            display: block;
+            margin-top: 3em;
+            margin-bottom: 1.5em;
+        }
+
+        .set-up {
+
+            ol {
+                display: grid;
+                gap: .5em;
+                list-style-type: none;
+            }
+    
+            li {
+                gap: 1em;
+                border-radius: 5px;
+                background-color: #ddd;
+                padding: 1em;
+            }
+
+            .points[value] {
+                --w: 8em;
+                --color:
+                    linear-gradient(red 0 0) 0 /calc(var(--w)*.3 - 100%) 1px,
+                    linear-gradient(orange 0 0) 0 /calc(var(--w)*.6 - 100%) 1px,
+                    green;
+                --background: black;
+
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -webkit-mask:
+                    radial-gradient(circle closest-side, #000 98%, #0000 102%) 0/12.5% 100%,
+                    linear-gradient(90deg, #000 50%, #0000 0) 8%/25% 100%;
+                appearance: none;
+                mask: radial-gradient(circle closest-side, #000 98%, #0000 102%) 0/12.5% 100%,
+                    linear-gradient(90deg, #000 50%, #0000 0) 8%/25% 100%;
+                border: none;
+                background: var(--background);
+                width: var(--w)
+            }
+
+            .points[value]::-webkit-progress-bar {
+                background: var(--background);
+            }
+
+            .points[value]::-webkit-progress-value {
+                background: var(--color);
+            }
+
+            .points[value]::-moz-progress-bar {
+                background: var(--color);
+            }
+        }
+    }
+
+    .stakeholders {
+        i {
+            max-width: 75ch;
+        }
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        ul {
+            border-radius: 5px;
+            background-color: #ddd;
+            padding: 1em;
+            list-style: none;
+            justify-content: start;
+
+            li {
+
+                a {
+                    all: unset;
+                    display: flex;
+                    align-items: center;
+                    gap: 1em;
+                    transition: all .1s ease-out;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    background-color: #c7c7c7;
+                    padding: 2em;
+                    color: hsl(248, 62%, 24%);
+ 
+                    /* &:hover {
+                         box-shadow: var(--shadow);
+                        background: hsl(248, 62%, 24%);
+                        color: #c7c7c7; 
+                    } */
+
+                    &:active {
+                        box-shadow: none;
+                        background: hsl(248, 26%, 52%);
+                    }
+
+                    &::before {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid;
+                        border-radius: 1000px;
+                        background-color: #c7c7c7;
+                        width: 30px;
+                        height: 30px;
+                        content: '+';
+                        color: hsl(248, 62%, 24%);
+                        font-size: 1.3em;
+                    }
+                }
+            }
+        }
+    }
+
+    .breakdown {
+        padding: 1em;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+        }
+    }
+
+    .btn{
+        cursor: pointer;
+        background: #c7c7c7;
+        background-image: url('https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871');
+        background-repeat: repeat-x;
+        background-position: 0 -160%;
+        transition: 1.5s ease-out;
+    }
+    .btn:hover{
+        background-position: center;   
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-bottom:6em;
+
+    a {
+        color: black;
+        text-shadow: var(--shadow);
+    }
+
+    ul {
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        li {
+            all: unset;
+        }
+    }
+}
 
 /*---------------------------------------------- SCORE _ ANNA-KYRA ----------------------------------------------- */
 .vragenlijst {
+    margin: auto;
+    background: var(--bg-color);
+    background-color: #e6e6e6;
     padding: 2rem 2rem;
     max-width: 1200px;
-    margin: auto;
-    background-color: #e6e6e6;
-    background: var(--bg-color);
     font-family: var(--body-font);
 
 }
@@ -250,10 +527,10 @@ h1 {
     /* ------------------------------------------------- HEADER ------------------------------------------------------------- */
 
 .vragenlijst header {
-        width: 100%;
         position: relative;
-        border-radius: 10px;
         box-shadow: var(--shadow);
+        border-radius: 10px;
+        width: 100%;
         color: var(--text-color);
 
         section:first-child {
@@ -279,31 +556,31 @@ h1 {
         }
 
         ol {
-            background: rgba(148, 148, 148, 0.273);
-            border-radius: 10px;
-            padding: 1em 2em ;
             display: flex;
             justify-content: space-between;
+            border-radius: 10px;
+            background: rgba(148, 148, 148, 0.273);
+            padding: 1em 2em ;
             /* box-shadow: var(--shadow); */
             
 
             li {
                 display: flex;
+                position: relative;
+                align-items: center;
                 margin-right: 1em;
+                width: 100%;
                 /* flex-direction: column; */
                 text-align: center;
-                align-items: center;
-                position: relative;
-                width: 100%;
 
                 &::after {
-                    content: '';
+                    margin-top: -1em;
+                    margin-left: 1em;
+                    border-radius: 5px;
                     background-color: #595959;
                     width: 100%;
                     height: 7px;
-                    margin-left: 1em;
-                    border-radius: 5px;
-                    margin-top: -1em;
+                    content: '';
                 }
 
                 &:last-child, &:last-child::after {
@@ -314,10 +591,10 @@ h1 {
                 div {
                     display: flex;
                     flex-direction: column;
-                    text-align: center;
                     align-items: center;
-                    width: max-content;
                     gap: .5em;
+                    width: max-content;
+                    text-align: center;
 
                     p {
                         width: max-content;
@@ -327,16 +604,16 @@ h1 {
                 } 
 
                 div div {
-                    width: 40px;
-                    height: 40px;
-                    background-color: #e6e6e6;
                     border: 4px solid;
                     border-color: transparent;
                     border-radius: 50%;
+                    background-color: #e6e6e6;
+                    width: 40px;
+                    height: 40px;
                     color: #595959;
                     font-weight: 600;
-                    text-align: center;
                     line-height: 35px;
+                    text-align: center;
                 }
 
                 hr {
@@ -347,28 +624,28 @@ h1 {
             }
 
             .active div div {
-                /* border: 4px solid #4763c8; */
-                color: #4763c8;
                 animation: progress-active .3s cubic-bezier(0.23, 0.15, 0.51, 1.65) forwards;
                 animation-delay: 1.2s;
+                /* border: 4px solid #4763c8; */
+                color: #4763c8;
             }
 
             .done  {
                 &::after {
-                    background: linear-gradient(to left, var(--text-color) 50%, rgb(88, 187, 88) 50%) right;
                     animation: progress .5s cubic-bezier(0.81, -0.14, 0.2, 1) forwards;
-                    background-size: 200%;
                     animation-delay: .7s;
+                    background: linear-gradient(to left, var(--text-color) 50%, rgb(88, 187, 88) 50%) right;
+                    background-size: 200%;
                 }
 
                 div div {
-                    background-color: rgb(88, 187, 88);
-                    background: var(--text-color);
-                    color: #fff;
-                    color: var(--accent-text-color);
                     
                     animation: progress-done .3s cubic-bezier(0.23, 0.15, 0.51, 1.65) forwards;
                     animation-delay: .5s;
+                    background: var(--text-color);
+                    background-color: rgb(88, 187, 88);
+                    color: #fff;
+                    color: var(--accent-text-color);
                 }
             }
 
@@ -439,15 +716,15 @@ h1 {
 .vragenlijst main {
     margin: 1em auto;
     box-shadow: var(--shadow);
-    background-color: var(--text-color);
     border-radius: 10px;
+    background-color: var(--text-color);
     padding: 1em 2em 2em;
     
     fieldset {
-        border: unset;
         display: flex;  
         flex-direction: column;
         gap: 2em;
+        border: unset;
         border-radius: 10px;
 
         label {
@@ -455,37 +732,37 @@ h1 {
         }
 
         legend {
-            font-family: var(--heading);
             color: hsl(248, 62%, 24%);
+            font-family: var(--heading);
         }
 
         section {
-            justify-self: center;
             display: flex;
             
             flex-wrap: wrap;
             justify-content: center;
+            justify-self: center;
 
             label {
+                position: relative;
+                /* transition-duration: 0.2s; */
+                transform-origin: 50% 50%;
+                transition: all 100ms cubic-bezier(0.74, 0.67, 0.59, 1.8);
                 cursor: pointer;
+                margin: .5em;
+                border: 3px solid black;
+                border-radius: 5px;
                 width: fit-content;
                 /* background-color: red; */
                 height: fit-content;
-                transition: all 100ms cubic-bezier(0.74, 0.67, 0.59, 1.8);
-                border-radius: 5px;
-                border: 3px solid black;
-                /* transition-duration: 0.2s; */
-                transform-origin: 50% 50%;
-                position: relative;
-                margin: .5em;
 
                 :hover {
                     transform: scale(95%);
                 }
 
                 :active {
-                    box-shadow: 0 0 2em #4763c8;
                     transform: scale(70%);
+                    box-shadow: 0 0 2em #4763c8;
                 }
             }
 
@@ -515,25 +792,25 @@ h1 {
         
 
         img {
+            outline: 5px solid #dddd;
             border-radius: 5px;
             overflow: hidden;
-            outline: 5px solid #dddd;
         }
     }
 
     
 
     article {
+        --range-clr:rgba(148, 148, 148, 0.273);
         display: flex;
-        width: 100%;
         justify-content: center;
         align-items: center;
         gap: 2em;
-        padding: 1em;
         border-radius: 10px;
-        --range-clr:rgba(148, 148, 148, 0.273); 
+        background: var(--range-clr); 
         background-color: rgba(148, 148, 148, 0.273);
-        background: var(--range-clr);
+        padding: 1em;
+        width: 100%;
 
         p {
             width: 100%;
@@ -547,24 +824,24 @@ h1 {
     }
 
     input[type="range"] {
-        width: 100%;
         margin: 0;
+        width: 100%;
     }
 
     datalist {
-        cursor: default;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        writing-mode: vertical-lr;
+        cursor: default;
         width: 100%;
+        writing-mode: vertical-lr;
 
         option {
             rotate: -90deg;
             font-weight: bold;
             [label="0"] {
-                font-weight: normal;
                 align-self: center;
+                font-weight: normal;
             }
         }
     }
@@ -591,22 +868,22 @@ h1 {
 
         @media screen and (-webkit-min-device-pixel-ratio:0) {
 			& {
-				overflow: hidden;
 				/* height: 40px; */
 				background-color: #ddd;
+				overflow: hidden;
 			}
 			&::-webkit-slider-runnable-track {
 				/* height: 40px; */
 				color: #444;
 			}
 			&::-webkit-slider-thumb {
-				width: 40px;
-				height: 40px;
+				position: relative;
 				cursor: ew-resize;
-				background: #1597ff;
 				/* box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 40px #1597ff; */
 				border-radius: 50%;
-				position: relative;
+				background: #1597ff;
+				width: 40px;
+				height: 40px;
                 
 			}
             
@@ -618,21 +895,21 @@ h1 {
 }
 
 .vragenlijst footer {
-    width: 100%;
-    max-width: 1000px;
-    bottom: 0;
     display: flex;
+    bottom: 0;
     justify-content: space-between;
     gap: 1em;
     margin: 1em 0;
+    width: 100%;
+    max-width: 1000px;
 }
 
 /* --------------------------------------------------Tablet---------------------------------------------------------- */
 @media screen and (min-width:40em) {
     .login main {
-        height: 100vh;
-        width: 100vw;
         display: grid;
+        width: 100vw;
+        height: 100vh;
     }
 
     .introduction-text {
@@ -641,16 +918,70 @@ h1 {
 
     .signup-form { 
         justify-content: center;
-        height: 100%;
-        padding: 3em;
         
 
         background-color: #e6e6e6;
+        padding: 3em;
+        height: 100%;
 
         form {
-            width: 30em;
-            border-radius: 12px;
             box-shadow: var(--shadow);
+            border-radius: 12px;
+            width: 30em;
+        }
+    }
+
+    .dashboard nav {
+        position: fixed;
+        grid-area: nav;
+        width: fit-content;
+        width: 15em;
+        height: 100vh;
+
+        ul{
+        position: relative;
+        justify-content: left;
+        align-items: start;
+        top: 20vh;
+        flex-direction: column;
+        margin-top: 5em;
+        width: 100%;
+        list-style-type: none;
+        }
+    }
+
+
+    .dashboard {
+        display: grid;
+        grid-template-columns: 15em calc(100% - 15em);
+        grid-template-areas: 'nav main';
+        background-color: var(--bg-color-light);
+
+        section {
+            border-top: 0;
+            border-radius: var(--object-radius);
+        }
+
+        main {
+            article ul li {
+                max-width: 18em;
+            }
+        }
+
+        .set-up {
+            ol {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                list-style-type: none;
+
+                li {
+                    gap: 1em;
+                    margin-inline: 1em;
+                    border-radius: 5px;
+                    background-color: #ddd;
+                    padding: 1em;
+                }
+            }
         }
     }
 
@@ -703,27 +1034,27 @@ h1 {
 
 
     .login main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100vw;
         /* flex-direction: row;
         justify-content: space-between; */
         /* align-items: center; */
         /* padding: 0 30px; */
         /* width: 90vw; */
         height: 100vh;
-        width: 100vw;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
         /* padding: 3em; */
     }
 
     .introduction-text {
-        margin: 0;
-        width: 100%;
-        height: 100vh;
 
         display: flex;
-        gap: 1em;
         flex-direction: column;
+        gap: 1em;
+        margin: 0;
         padding: 3em 5em;
+        width: 100%;
+        height: 100vh;
 
         h1 {
             /* margin-bottom: 1.25em; */
@@ -737,18 +1068,18 @@ h1 {
         }
 
         .more-info {
-            margin-bottom: 3em;
-            overflow-y: auto;
             display: flex;
             flex-direction: column;
             gap: 2em;
+            margin-bottom: 3em;
+            overflow-y: auto;
         }
     }
 
     .signup-form {
-        width: 100%;
         display: flex;
         flex-direction: column;
+        width: 100%;
 
         legend {
             font-size: 1.25em;
@@ -758,8 +1089,8 @@ h1 {
             padding: 36px;
             max-width: 420px;
 
-            @media (prefers-reduced-motion) { /* intro animatie werkt als reduce motion prefered */
-                animation: entrance 1s forwards;
+            @media (prefers-reduced-motion) {
+                animation: entrance 1s forwards; /* intro animatie werkt als reduce motion prefered */
             }
         }
     }
