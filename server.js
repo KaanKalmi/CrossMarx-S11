@@ -103,8 +103,25 @@ app.put('/score-form/:sdg_id', function (request, response) {
 })
 
 app.post('/done-form', function(req, res) {
-    // Haal de waarden op uit req.body
+    // Get the selected SDGs from the request body
     const selectSdgs = req.body;
-    // Doe iets met de waarden, zoals opslaan in een database, en render de done-form.ejs-pagina opnieuw
-    res.render('done-form', { selectSdgs: selectSdgs });
+
+    // Create an array of selected SDG objects by extracting the numbers from the keys
+    const selectedSdgObjects = Object.keys(selectSdgs).map(key => {
+        const sdgNumber = key.replace('selectSdg_', '');
+        return sdgData.data.find(sdg => sdg.number == parseInt(sdgNumber));
+    }).filter(sdg => sdg); // Filter out any undefined values
+
+    // Debugging: Log the values to ensure they're correct
+    console.log("selectSdgs:", selectSdgs);
+    console.log("selectedSdgObjects:", selectedSdgObjects.map(sdg => ({
+        number: sdg.number,
+        icon: sdg.icon
+    })));
+
+    // Render the done-form with both selectSdgs and selectedSdgs
+    res.render('done-form', {
+        selectSdgs: selectSdgs,
+        selectedSdgs: selectedSdgObjects
+    });
 });
