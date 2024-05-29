@@ -45,6 +45,38 @@ h1, h2, h3, h4, h5, h6 {
     /* width: 90vw; */
     height: 100vh;
 }
+
+/* ------------------------------------BUTTONS _ RUBEN-------------------------------------------- */
+.SDG-button-container{
+   display: flex;
+   justify-content: space-between;
+   margin-top: 20px;
+}
+
+.overslaan-button,
+.submit-button{
+   background-color: #28a745; 
+   color: white;
+   padding: 15px 30px;
+   border: none;
+   border-radius: 8px;
+   font-size: 16px;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-bottom: 20px;
+   font-weight: bold;
+   cursor: pointer;
+   box-shadow: 0 5px #1c7430; 
+   transition: all 0.2s ease-in-out;
+   outline: none;
+}
+
+.overslaan-button:active,
+.submit-button:active{
+   background-color: #218838; 
+   box-shadow: 0 2px #1c7430;
+   transform: translateY(4px); 
+}
 /* ------------------------------------DETAILS _ ANNA_KYRA-------------------------------------------- */
 .info-mobile {
     display: block;
@@ -1082,3 +1114,205 @@ footer {
         animation-timing-function: ease-out;
     }
 }
+
+.SDG-pagina-text{
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+    padding: 3em 2em 0;
+
+    h1 {
+        margin-bottom: .25em;
+        font-size: 1.4em;
+        font-family: var(--heading);
+    }
+
+    h2 {
+        padding-top: .2em;
+        max-width: 45ch;
+        font-size: 1.5em;
+    }
+
+    p span {
+    color: red;
+   }
+}
+
+.important-heading{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.sdgs-login{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px; /* Adjust the vertical gap */
+    column-gap: 10px; /* Adjust the horizontal gap */
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .sdg-picture {
+    position: relative;
+  }
+  
+  
+.sdg-label {
+    display: inline-block;
+    cursor: pointer;
+    width: 100px; 
+    height: 100px; 
+    box-sizing: border-box;
+    border: none;
+  }
+
+.sdg-picture img{
+    border-radius: 8px;
+    opacity: 0.8;
+}
+  
+
+ .sdg-label input:checked + picture img {
+  outline: 2px solid var(--text-color);
+  transform: scale(1.05); /* Slightly increase the size */
+  transition: ease-in-out 0.2s;
+  opacity: 1;
+}
+  .sdg-label input:checked + .sdg-picture::after {
+    content: '✓';
+    color: green;
+    position: absolute;
+    top: 10%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1; 
+  }
+
+  
+
+  .sdg-label input:not(:checked) + .sdg-picture::after {
+    content: none;
+  }
+  
+
+ .SDG-button-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Voeg een marge boven de container toe om wat ruimte te creëren */
+ }
+
+ .overslaan-button,
+ .submit-button{
+    background-color: #28a745; /* Heldere groene kleur */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px #1c7430; /* Schaduw voor 3D effect */
+    transition: all 0.2s ease-in-out;
+    outline: none;
+ }
+
+ .overslaan-button:active,
+ .submit-button:active{
+    background-color: #218838; /* Donkere groene kleur bij klikken */
+    box-shadow: 0 2px #1c7430;
+    transform: translateY(4px); /* Simuleert klikgevoel */
+ }
+ @media screen and (min-width: 48em) {
+   
+  .SDGs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .SDG-pagina{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    margin-top: 75px;
+  }
+
+  .SDG-pagina-text{
+    max-width: 1200px;
+    h1{
+        font-size: 3em;
+    }
+    p{
+        font-size: 1.5em;
+    }
+
+  }
+
+  .sdgs-login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px; /* Adjust the vertical gap */
+    column-gap: 10px; /* Adjust the horizontal gap */
+  }
+
+  .sdg-label {
+    display: inline-block;
+    cursor: pointer;
+    width: 150px; /* Set the desired width */
+    height: 150px; /* Set the desired height */
+    box-sizing: border-box;
+  }
+
+  .sdg-label img {
+    width: 100%; 
+    height: auto; 
+  }
+
+  /* Add visual styles for the selected state */
+  .sdg-label input:checked + .sdg-picture::after {
+    content: '✓';
+    color: green;
+    font-size: 24px;
+    position: absolute;
+    top: 20%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+  }
+
+  /* Hide the checkmark when input is not checked */
+  .sdg-label input:not(:checked) + .sdg-picture::after {
+    content: none;
+  }
+
+  .sdg-label input:checked + picture img {
+    outline: 2px solid var(--text-color);
+  }
+
+ }
+

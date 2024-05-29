@@ -56,6 +56,7 @@ app.get('/gegevens-form/:stakeholder_type', function (request, response) {
     })
 })
 
+
 app.get('/sdg-form', function (request, response) { 
     response.render('sdg-form', {
         sdgs: sdgData.data,
@@ -63,6 +64,7 @@ app.get('/sdg-form', function (request, response) {
         score: scoresData.data,
         company: companiesData.data,
     })
+
 })
 
 app.get('/score-form/:sdg_id', function (request, response) {

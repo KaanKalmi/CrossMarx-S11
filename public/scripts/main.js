@@ -1,4 +1,18 @@
 
+const button = document.getElementById("overslaan-button");
+const button2 = document.getElementById("submit-button");
+const audio = document.getElementById("clickSound");
+
+button.addEventListener("click", () => {
+  audio.currentTime = 0; // Reset playback position to avoid glitches
+  audio.play();
+});
+
+button2.addEventListener("click", () => {
+    audio.currentTime = 0; // Reset playback position to avoid glitches
+    audio.play();
+  });
+
 const loginBtn = document.querySelector('.btn-green')
 const requiredInputs = document.querySelectorAll('[required]')
 const emailInput = document.querySelector('[type="email"]')
@@ -75,3 +89,16 @@ ranges.forEach((range, index) => {
         }
     })
 })
+const button = document.getElementById("overslaan-button");
+const button2 = document.getElementById("submit-button");
+const audio = document.getElementById("clickSound");
+
+button.addEventListener("click", () => {
+  audio.currentTime = 0; // Reset playback position to avoid glitches
+  audio.play();
+});
+
+button2.addEventListener("click", () => {
+    audio.currentTime = 0; // Reset playback position to avoid glitches
+    audio.play();
+  });

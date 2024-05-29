@@ -1,0 +1,23 @@
+<%- include('partials/head') %>
+<form class="SDG-pagina" id="SDG-pagina">
+      <section class="SDG-pagina-text">
+        <div class="container">
+          <h1 tabindex="1">Aan welke SDG's wordt een <span>positieve</span> bijdrage geleverd doordat deze mensen bij jouw bedrijf werken?</h1>
+          <p tabindex="2">Denk bijvoorbeeld aan het feit dat jouw bedrijf loon betaalt, waardoor SDG 1 en 2 worden geholpen. Of kijk naar de arbeidsomstandigheden (bureau, stoel, licht, werktijden) waarmee SDG 3 wordt geholpen.</p>
+          <p class="important-heading" tabindex="3">Kies <span>MINIMAAL</span> 3 SDG's voor jouw stakeholder</p>
+        </div>
+      </section>
+      
+      <section class="SDGs">
+        <%- include('partials/sdgs-login') %>
+      </section>
+
+      <section class="SDG-button-container">
+       <button class="overslaan-button" type="button" id="overslaan-button">Overslaan</button>
+       <button class ="submit-button" type="submit" id="submit-button">Kies deze sdg's</button>
+      </section>
+</form>
+
+<audio id="clickSound"src="/202313__7778__click-2.mp3" preload="auto"></audio>
+
+<%- include('partials/foot') %>
