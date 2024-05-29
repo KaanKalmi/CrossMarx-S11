@@ -3,9 +3,11 @@
 <form action="/done-form" method="post">
     <% selectedSdgs.forEach(function(selectedSdg) { %>
 		<article class="selected-<%= selectedSdg.number %> ">
-			<li>
-				<img src="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>"height="100" width="100" loading="lazy">
-			</li>
+			<picture class="sdg-picture">
+				<source srcset="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>?format=avif" type="image/avif">
+				<source srcset="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>?format=webp" type="image/webp">
+				<img src="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>" alt="<%= selectedSdg.title %>" height="100" width="100" loading="lazy">
+			  </picture>
 			<p>
 				<label>
 					<input type="range" class="hi" min="-5" max="5" value="" name="selectSdg_<%= selectedSdg.number %>" list="values">
