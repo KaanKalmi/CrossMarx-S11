@@ -604,6 +604,11 @@ footer {
                     content: '';
                 }
 
+                &:last-child, &:last-child::after {
+                    all: unset;
+                    /* margin: 1em; */
+                }
+
                 div {
                     display: flex;
                     flex-direction: column;
@@ -615,6 +620,8 @@ footer {
                     p {
                         width: max-content;
                     }
+
+                    
                 } 
 
                 div div {
@@ -640,6 +647,7 @@ footer {
             .active div div {
                 animation: progress-active .3s cubic-bezier(0.23, 0.15, 0.51, 1.65) forwards;
                 animation-delay: 1.2s;
+                /* border: 4px solid #4763c8; */
                 color: #4763c8;
             }
 
