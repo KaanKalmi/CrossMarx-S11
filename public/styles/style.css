@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,62.5,300&display=swap');
 
 :root{
-    --bg-color: radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
+    --bg-color: radial-gradient(at left bottom, hsl(221, 26%, 52%), hsl(234, 62%, 24%), hsl(229, 91%, 9%));
     --bg-color-light: #e6e6e6;
     --text-color:#f8f8f8;
     --accent-text-color:#242424;
@@ -260,11 +260,11 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         a:hover {
-            color: #95c5fc;
+            color: #95fcf3;
 
             svg {
-                stroke: #95c5fc;
-                color: #95c5fc;
+                stroke: #95fcf3;
+                color: #95fcf3;
             }
         }
     }
@@ -402,12 +402,12 @@ h1, h2, h3, h4, h5, h6 {
                     background-color: #c7c7c7;
                     padding: 2em;
                     color: hsl(248, 62%, 24%);
-
-                    &:hover {
-                        /* box-shadow: var(--shadow);
+ 
+                    /* &:hover {
+                         box-shadow: var(--shadow);
                         background: hsl(248, 62%, 24%);
-                        color: #c7c7c7; */
-                    }
+                        color: #c7c7c7; 
+                    } */
 
                     &:active {
                         box-shadow: none;
