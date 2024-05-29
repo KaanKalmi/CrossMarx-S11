@@ -1,32 +1,34 @@
-<% sdgs.forEach(function(sdg) { %>	
 
-	<article class="selected-<%= sdg.number %>">
-		
-		<picture>
-			<source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=avif" type="image/avif">
-			<source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=webp" type="image/webp">
-			<img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>" alt="<%= sdg.title %>" height="100" width="100">	
-		</picture>
-		
-        <p>
-            <label>
-                <input type="range" class="hi" min="-5" max="5" value="" name="selectSdg" list="values">
-            </label>
-			<datalist id="values">
-				<option value="-5" label="-5"></option>
-				<option value="-4" label=""></option>
-				<option value="-3" label=""></option>
-				<option value="-2" label=""></option>
-				<option value="-1" label=""></option>
-				<option value="-0" label="0"></option>
-				<option value="1" label=""></option>
-				<option value="2" label=""></option>
-				<option value="3" label=""></option>
-				<option value="4" label=""></option>
-				<option value="5" label="5"></option>
-			</datalist>
-		</p>
 
-		
-	</article>
-<% }) %>
+<form action="/done-form" method="post">
+    <% selectedSdgs.forEach(function(selectedSdg) { %>
+		<article class="selected-<%= selectedSdg.number %> ">
+			<li>
+				<img src="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>"height="100" width="100" loading="lazy">
+			</li>
+			<p>
+				<label>
+					<input type="range" class="hi" min="-5" max="5" value="" name="selectSdg_<%= selectedSdg.number %>" list="values">
+				</label>
+				<datalist id="values">
+					<option value="-5" label="-5"></option>
+					<option value="-4" label=""></option>
+					<option value="-3" label=""></option>
+					<option value="-2" label=""></option>
+					<option value="-1" label=""></option>
+					<option value="0" label="0"></option>
+					<option value="1" label=""></option>
+					<option value="2" label=""></option>
+					<option value="3" label=""></option>
+					<option value="4" label=""></option>
+					<option value="5" label="5"></option>
+				</datalist>
+			</p>
+		</article>
+    <% }); %>
+    <button class ="submit-button" type="submit" id="submit-button">Kies deze scores</button>
+</form>
+
+
+
+

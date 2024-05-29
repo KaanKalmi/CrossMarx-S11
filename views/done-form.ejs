@@ -1,9 +1,13 @@
-<%- include('partials/head') %>
+<%- include('partials/head', {current: 'vragenlijst'}) %>
 <header>
 <h1>done</h1>
+
+
 </header>
 <main>
-
+    <% Object.keys(selectSdgs).forEach(function(key) { %>
+        <%= key %>: <%= selectSdgs[key] %><br>
+    <% }); %>
 </main>
 <footer></footer>
 <%- include('partials/foot') %>
