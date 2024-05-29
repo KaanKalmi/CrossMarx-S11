@@ -543,6 +543,7 @@ footer {
     padding: 2rem 2rem;
     max-width: 1200px;
     font-family: var(--body-font);
+    min-height: 100vh;
 
 }
 
