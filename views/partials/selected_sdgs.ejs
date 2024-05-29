@@ -1,7 +1,4 @@
-
-
-
-    <% selectedSdgs.forEach(function(selectedSdg) { %>
+<% selectedSdgs.forEach(function(selectedSdg) { %>
 		<article class="selected-<%= selectedSdg.number %> ">
 			<picture class="sdg-picture">
 				<source srcset="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>?format=avif" type="image/avif">
@@ -28,14 +25,7 @@
 			</p>
 		</article>
     <% }); %>
-	<footer>
-		<a href="/klant-toevoegen-sdgs"> < Back</a>
-		<section class="SDG-button-container">
-			<button class="overslaan-button play-sound-button" type="button" id="overslaan-button">Skip</button>
-			<button class ="submit-button play-sound-button" type="submit" id="submit-button">Choose SDG's</button>
-		   </section>
-	</footer>
-</form>
+
 
 
 
