@@ -24,6 +24,11 @@ h1 {
     font-family: var(--heading);
 }
 
+hr {
+    border: none;
+    border-top: 2px solid hsl(246, 25%, 77%);
+}
+
 .login {
     margin: 0;
     background: radial-gradient(at left bottom, hsl(248, 26%, 52%), hsl(248, 62%, 24%), hsl(249, 91%, 9%));
@@ -604,7 +609,7 @@ h1 {
         background: #ddd;
         border-radius: 5px;
     }
-    article div div{
+    article div {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;

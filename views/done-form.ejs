@@ -6,23 +6,26 @@
         <i>Info over overzicht</i>
     </div>
 
-    <section>
-        <h4>Geselecteerde sdgs</h4>
+    <details open>
+        <summary>Geselecteerde sdgs</summary>
         <article>   
             <div class="sdgs selected">
-                <%- include('partials/sdgs-login'); %>
+                <%- include('partials/selected-overview-sdgs'); %>
             </div>
         </article>
         <button type="button">verander</button>
-    </section>
+    </details>
     <hr>
-    <section>
-        <h4>SDG scores</h4>
+    <details open>
+        <summary>SDG scores</summary>
         <article>
-
+            <div class="sdgs selected">
+                <%- include('partials/score-overview'); %>
+            </div>
         </article>
         <button type="button">verander</button>
-    </section>
+    </details>
+    <button type="submit">submit</button>
 </main>
 <footer></footer>
 <%- include('partials/foot') %>

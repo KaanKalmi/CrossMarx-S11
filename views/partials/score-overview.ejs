@@ -1,0 +1,10 @@
+<% sdgs.forEach(function(sdg) { %>
+    <picture>
+        <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=avif" type="image/avif">
+        <source srcset="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>?format=webp" type="image/webp">
+        <img src="https://fdnd-agency.directus.app/assets/<%= sdg.icon %>" alt="<%= sdg.title %>" height="100" width="100" loading="lazy">	
+        <!-- Uit directus afbeelding kleiner maken -->
+    </picture>
+    <p><%= score.score %></p><!-- Moet nog score nummer worden-->
+
+<% }) %>
