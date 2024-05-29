@@ -1,19 +1,19 @@
 <header>
     <section>
 
-        <a href="/dashboard/4">Annuleren X</a>
+        <a href="/dashboard">Annuleren X</a>
         <h1>Klant toevoegen</h1>
         <p>* Geeft verplicht veld aan</p>
     </section>
 
     <section>
         <ol class="steps">
-            <li <% if (current == 'gegevens') { %> class="active"<% } %> <% if (current == 'sdgs') { %> class="done"<% } %> <% if (current == 'scores') { %> class="done-post" <% } %>>
+            <li <% if (current == 'gegevens') { %> class="active"<% } %> <% if (current == 'sdgs') { %> class="done"<% } %> <% if (current == 'scores') { %> class="done-post" <% } %><% if (current == 'done') { %> class="done-post" <% } %>>
                 <div>
                     <% if (current == 'gegevens') { %>
                         <div>1 </div>
                     <% } else { %>
-                        <a href="/gegevens-form/4">
+                        <a href="/gegevens-form/JUMBO">
                             <div>✓</div>
                         </a>
                     <% } %>
@@ -21,19 +21,17 @@
                 </div>
             </li>
 
-            <li <% if (current == 'sdgs') { %> class="active" <% } %><% if (current == 'scores') { %> class="done" <% } %>>
+            <li <% if (current == 'sdgs') { %> class="active" <% } %><% if (current == 'scores') { %> class="done" <% } %><% if (current == 'done') { %> class="done-post" <% } %>>
                 <div>
                     <% if (current == 'gegevens') { %>
                         <div>2 </div>
                     <% } %>
                     <% if (current == 'sdgs') { %>
                         <div>2 </div>
-                    <% } %>
-                    <% if (current == 'scores') { %>
-                        <a href="/score-form/4">
+                    <% } else { %>
+                        <a href="/sdg">
                             <div>✓</div>
                         </a>
-                        
                     <% } %>
                     <p>SDG's <span class="info-desk" >kiezen</span></p>
                 </div>
@@ -41,12 +39,31 @@
                 
             </li>
   
-            <li <% if (current == 'scores') { %> class="active" <% } %>>
+            <li <% if (current == 'scores') { %> class="active" <% } %><% if (current == 'done') { %> class="done" <% } %>>
                 <div>
-                    <div> 3 </div>
+                    <% if (current == 'gegevens') { %>
+                        <div>3 </div>
+                    <% } %>
+                    <% if (current == 'sdgs') { %>
+                        <div>3 </div>
+                    <% } %>
+                    <% if (current == 'scores') { %>
+                        <div>3 </div>
+                    <% } %>
+                    <% if (current == 'done') { %>
+                        <a href="/score-form">
+                            <div>✓</div>
+                        </a>
+                    <% } %>
                     <p>Scores <span class="info-desk" >toevoegen</span></p>
                 </div>
                 
+            </li>
+            <li <% if (current == 'done') { %> class="active" <% } %>>
+                <div>
+                    <div> 4 </div>
+                    <p>Overzicht</p>
+                </div>
             </li>
         </ol>
     </section>
