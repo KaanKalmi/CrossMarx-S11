@@ -7,7 +7,7 @@
 				<source srcset="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>?format=avif" type="image/avif">
 				<source srcset="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>?format=webp" type="image/webp">
 				<img src="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>" alt="<%= selectedSdg.title %>" height="100" width="100" loading="lazy">
-			  </picture>
+			</picture>
 			<p>
 				<label>
 					<input type="range" class="hi" min="-5" max="5" value="" name="selectSdg_<%= selectedSdg.number %>" list="values">
@@ -28,7 +28,14 @@
 			</p>
 		</article>
     <% }); %>
-    <button class ="submit-button" type="submit" id="submit-button">Kies deze scores</button>
+	<footer>
+		<a href="/klant-toevoegen-sdgs"> < Terug</a>
+		<div>
+			<button class="overslaan-button play-sound-button" type="button" id="overslaan-button">Overslaan</button>
+			<button class ="submit-button" type="submit" id="submit-button">Kies deze scores</button>
+			<audio id="clickSound"src="/202313__7778__click-2.mp3" preload="auto"></audio>
+		</div>
+	</footer>
 </form>
 
 
