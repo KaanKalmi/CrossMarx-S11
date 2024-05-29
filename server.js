@@ -58,7 +58,7 @@ app.get('/gegevens-form/:stakeholder_type', function (request, response) {
 
 
 app.get('/sdg', function (request, response) { 
-    response.render('sdg-form', {
+    response.render('sdg', {
         sdgs: sdgData.data,
         stakeholder: stakeholdersData.data,
         score: scoresData.data,

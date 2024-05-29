@@ -75,16 +75,12 @@ ranges.forEach((range, index) => {
         }
     })
 })
-const button = document.getElementById("overslaan-button");
-const button2 = document.getElementById("submit-button");
+const buttons = document.querySelectorAll(".play-sound-button");
 const audio = document.getElementById("clickSound");
 
-button.addEventListener("click", () => {
-  audio.currentTime = 0; // Reset playback position to avoid glitches
-  audio.play();
-});
-
-button2.addEventListener("click", () => {
-    audio.currentTime = 0; // Reset playback position to avoid glitches
-    audio.play();
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      audio.currentTime = 0; // Reset playback position to avoid glitches
+      audio.play();
+    });
   });

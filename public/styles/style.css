@@ -807,8 +807,8 @@ footer {
         align-items: center;
         gap: 2em;
         border-radius: 10px;
-        background: var(--range-clr); 
         background-color: rgba(148, 148, 148, 0.273);
+        background: var(--range-clr); 
         padding: 1em;
         width: 100%;
 
