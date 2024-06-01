@@ -10,11 +10,11 @@ app.use(express.urlencoded({ extended: true }))
 app.set('port', process.env.PORT || 8009)
 
 app.listen(app.get('port'), function () {
-    console.log(`Application started on http://localhost:${app.get('port')}`)
+ console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
 const apiUrl = 'https://fdnd-agency.directus.app/items',
-    sdgData = await fetchJson(apiUrl + '/hf_sdgs'),
+    sdgData = await fetchJson(apiUrl + '/hf_sdgs'), 
     stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders'),
     scoresData = await fetchJson(apiUrl + '/hf_scores'),
     companiesData = await fetchJson(apiUrl + '/hf_companies')
@@ -31,7 +31,7 @@ app.get('/', function (request, response) {
     })
 })
 
-app.get('/dashboard/:company_id', function (request, response) {
+app.get('/dashboard/:company_id', function (request, response) { 
     var companyId = request.params.company_id;
     var company = companiesData.data.find(company => company.id == companyId);
     if (!company) {
@@ -49,94 +49,79 @@ app.get('/dashboard/:company_id', function (request, response) {
 
 // VRAGENLIJST -----------------------------------------------------
 app.get('/gegevens-form/:stakeholder_type', function (request, response) {
-    var stakeholderType = request.params.stakeholder_type
+    var stakeholderType = request.params.stakeholder_type 
     response.render('gegevens-form', {
         stakeholder: stakeholdersData.data,
         company: companiesData.data,
     })
 })
 
-app.get('/sdg-form', function (request, response) {
-    response.render('sdg-form', {
+
+app.get('/sdg', function (request, response) { 
+    response.render('sdg', {
         sdgs: sdgData.data,
         stakeholder: stakeholdersData.data,
         score: scoresData.data,
         company: companiesData.data,
     })
+
 })
 
-app.get('/score-form/:sdg_id', function (request, response) {
-    var sdgId = request.params.sdg_id
+app.post('/score-form', function (request, response) {
+    const selectedSdgs = request.body['sdg-selection']; // Array of selected SDG IDs
+
+    // Check if any SDGs were selected
+    if (!selectedSdgs) {
+        return response.redirect('/sdg'); // Redirect back if none selected
+    }
+
+    // If a single SDG is selected, convert it to an array
+    const selectedSdgsArray = Array.isArray(selectedSdgs) ? selectedSdgs : [selectedSdgs];
+
+    // Find the SDG objects based on selected IDs
+    const selectedSdgObjects = selectedSdgsArray.map(sdgId => sdgData.data.find(sdg => sdg.id == sdgId));
+
+    // Render the score-form with selected SDGs
     response.render('score-form', {
+        selectedSdgs: selectedSdgObjects,
         sdgs: sdgData.data,
         stakeholder: stakeholdersData.data,
         score: scoresData.data,
         company: companiesData.data,
-    })
-})
-
-app.get('/done', function (request, response) {
-    response.render('done-form', {
-        sdgs: sdgData.data,
-        stakeholder: stakeholdersData.data,
-        score: scoresData.data,
-        company: companiesData.data,
-    })
-})
+    });
+});
 
 // POST routes ---------------------------------------------------
 app.post('/gegevens-form/:stakeholder_type', function (request, response) {
-
-    // Get the data from the form
-    fetch('https://fdnd-agency.directus.app/items/hf_stakeholders?fields=*,*,*,*,*,*', {
-        method: 'POST',
-        body: JSON.stringify({
-            companiesData: companiesData,
-            company_id: companiesData,
-            type: checkedRadio,
-            name: message
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8'
-        }
-    }).then((postresponse) => {
-        response.redirect('/sdg-form')
-    })
-}
-);
-
-app.post('/sdg-form', function (request, response) {
-    // Get the data from the form
- fetch('https://fdnd-agency.directus.app/items/hf_sdg?fields=*,*,*,*,*,*', {
-        method: 'POST',
-        body: JSON.stringify({
-            // companiesData: companiesData,
-            // company_id: companies,
-            // sdg_id: sdg,
-            // stakeholder_id: stakeholder,
-            // score_id: score
 })
-    }).then((postresponse) => {
-        response.redirect('/score-form')
-    })
-});
+
+app.post('/sdg', function (request, response) {
+})
 
 // PUT routes ----------------------------------------------------
 app.put('/score-form/:sdg_id', function (request, response) {
-    // Get the data from the form
-    fetch('https://fdnd-agency.directus.app/items/hf_scores?fields=*,*,*,*,*,*', {
-        method: 'PUT',
-        body: JSON.stringify({
-            // companiesData: companiesData,
-            // company_id: companies,
-            // sdg_id: sdg,
-            // stakeholder_id: stakeholder,
-            // score_id: score
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8'
-        }
-    }).then((putresponse) => {
-        response.redirect('/done')
-    })
+})
+
+app.post('/done-form', function(req, res) {
+    // Get the selected SDGs from the request body
+    const selectSdgs = req.body;
+
+    // Create an array of selected SDG objects by extracting the numbers from the keys
+    const selectedSdgObjects = Object.keys(selectSdgs).map(key => {
+        const sdgNumber = key.replace('selectSdg_', '');
+        return sdgData.data.find(sdg => sdg.number == parseInt(sdgNumber));
+    }).filter(sdg => sdg); // Filter out any undefined values
+
+    // Debugging: Log the values to ensure they're correct
+    console.log("selectSdgs:", selectSdgs);
+    console.log("selectedSdgObjects:", selectedSdgObjects.map(sdg => ({
+        number: sdg.number,
+        icon: sdg.icon
+    })));
+
+    // Render the done-form with both selectSdgs and selectedSdgs
+    res.render('done-form', {
+        selectSdgs: selectSdgs,
+        selectedSdgs: selectedSdgObjects
+    });
 });

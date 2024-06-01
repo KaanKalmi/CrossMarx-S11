@@ -1,9 +1,39 @@
-<%- include('partials/head') %>
-<header>
-<h1>done</h1>
-</header>
-<main>
+<%- include('partials/head', {current: 'vragenlijst'}); %>
+<%- include('partials/vragenlijst_header', {current: 'done'}); %>
 
+<main>
+    <form action="/dashboard/4">
+        <section>
+            <h2>Overview</h2>
+            <i>Information about the overview</i>
+        </section>
+        <article class="overview">
+            <% Object.keys(selectSdgs).forEach(function(key) { %>
+                <% var sdgNumber = key.replace('selectSdg_', ''); %>
+                <% var selectedSdg = selectedSdgs.find(sdg => sdg.number == parseInt(sdgNumber)); %>
+                <% if (selectedSdg) { %>
+                    <article class="selected overview-sdgs">
+                        <picture class="sdg-picture">
+                            <source srcset="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>?format=avif" type="image/avif">
+                            <source srcset="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>?format=webp">
+                            <img src="https://fdnd-agency.directus.app/assets/<%= selectedSdg.icon %>" alt="<%= selectedSdg.title %>" height="100" width="100" loading="lazy">
+                        </picture>
+                        <p>Score: <%= selectSdgs[key] %></p>
+                    </article>
+                <% } %>
+            <% }); %>
+        </article>
+        
+        <section class="SDG-button-container">
+            <a href="/score-form" class="info-desk"> < Back</a>
+            <div>
+                <button class="overslaan-button play-sound-button" type="button" id="overslaan-button">Edit SDG's</button>
+                <button class ="overslaan-button play-sound-button" type="button" id="submit-button">Edit scores</button>
+                <button class ="submit-button play-sound-button" type="submit" id="submit-button">Submit</button>
+            </div>
+        </section>
+    </form>
+    
 </main>
 <footer></footer>
 <%- include('partials/foot') %>
