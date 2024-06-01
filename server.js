@@ -93,14 +93,60 @@ app.post('/score-form', function (request, response) {
 
 // POST routes ---------------------------------------------------
 app.post('/gegevens-form/:stakeholder_type', function (request, response) {
-})
+    // get data from form
+    fetch('https://fdnd-agency.directus.app/items/hf_stakeholders?fields=*,*,*,*,*,*', {
+            method: 'POST',
+            body: JSON.stringify({
+                companiesData: companiesData,
+                company_id: companiesData,
+                type: checkedRadio,
+                name: message
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        }).then((postresponse) => {
+            response.redirect('/sdg')
+        })
+});
 
 app.post('/sdg', function (request, response) {
-})
+        // get data from form
+        fetch('https://fdnd-agency.directus.app/items/hf_sdgs?fields=*,*,*,*,*,*', {
+            method: 'POST',
+            body: JSON.stringify({
+                companiesData: companiesData,
+                company_id: companiesData,
+                type: checkedRadio,
+                name: message
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        }).then((postresponse) => {
+            response.redirect('/score-form:sdg_id')
+        })
+});
 
 // PUT routes ----------------------------------------------------
 app.put('/score-form/:sdg_id', function (request, response) {
-})
+    // get data from form
+    fetch('https://fdnd-agency.directus.app/items/hf_scores?fields=*,*,*,*,*,*', {
+            method: 'POST',
+            body: JSON.stringify({
+                companiesData: companiesData,
+                company_id: companiesData,
+                type: checkedRadio,
+                name: message
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        }).then((postresponse) => {
+            response.redirect('/done-form')
+        })
+});
+
 
 app.post('/done-form', function(req, res) {
     // Get the selected SDGs from the request body
